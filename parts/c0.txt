@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gurilla Finance — Free POS or modern checkout (if you qualify)</title>
+<meta name="description" content="Free Payanywhere Smart Flex path or modern checkout + Inovio — if you qualify. Board by Dec 15, 2026 for 90 days free Inovio. Gurilla Finance." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --black: #000000;
+    --ink: #050B16;
+    --charcoal: #0a0a0b;
+    --charcoal-2: #141416;
+    --paper: #ffffff;
+    --paper-soft: #f7f7f5;
+    --paper-dim: #e8e8e4;
+    --ink-gray: #2a2a2e;
+    --hero-bg: #f7f7f5;
+    --hero-fg: #050B16;
+    --hero-on-dark: #f7f7f5;
+    --hero-cta-bg: #000000;
+    --muted: #8a8a86;
+    --muted-dark: #5c5c58;
+    --line: rgba(255, 255, 255, 0.12);
+    --line-dark: rgba(5, 11, 22, 0.1);
+    --ok: #6b9b7a;
+    --danger: #c45c4a;
+    --radius: 16px;
+    --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-sans: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-label: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--black);
+    color: var(--paper);
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  button, input, select { font: inherit; }
+  a { color: rgba(255,255,255,.
