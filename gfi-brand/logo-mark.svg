@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Gurilla Finance">
+  <rect width="240" height="240" rx="28" fill="#000"/>
+  <g fill="#fff">
+    <ellipse cx="120" cy="86" rx="46" ry="40"/>
+    <circle cx="78" cy="62" r="22"/>
+    <circle cx="162" cy="62" r="22"/>
+    <circle cx="102" cy="84" r="7"/>
+    <circle cx="138" cy="84" r="7"/>
+    <ellipse cx="120" cy="102" rx="16" ry="11"/>
+    <path d="M96 108c8 16 40 16 48 0 2 14-10 24-24 24s-26-10-24-24z"/>
+    <text x="120" y="168" text-anchor="middle" font-family="Arial Black, Helvetica, sans-serif" font-size="34" font-weight="800" letter-spacing="-1">gurilla</text>
+    <text x="120" y="192" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="6">FINANCE</text>
+  </g>
+</svg>
