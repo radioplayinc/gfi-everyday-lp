@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Gurilla Finance</title>
-<style>
+<style id="gfi-boot-css">
   html,body{height:100%;margin:0;background:#050506;color:#f7f7f5;font-family:Inter,system-ui,sans-serif;overflow:hidden}
 </style>
 </head>
@@ -19,7 +19,7 @@
     <button id="gfiEnter" type="button" disabled>Enter</button>
   </div>
 </div>
-<style>
+<style id="gfi-gate-css">
   .gfi-gate{position:fixed;inset:0;z-index:2147483646;display:grid;place-items:center;background:#050506;transition:opacity .7s ease,visibility .7s ease}
   .gfi-gate.is-out{opacity:0;visibility:hidden;pointer-events:none}
   .gfi-gate-card{width:min(520px,calc(100vw - 1.5rem));text-align:center;padding:.6rem .6rem 1.2rem}
@@ -47,14 +47,14 @@
   fetch("gfi-brand/gate-logo.b64",{cache:"force-cache"}).then(function(r){return r.ok?r.text():""}).then(function(b){ if(b&&mark) mark.src="data:image/jpeg;base64,"+b.trim(); }).catch(function(){});
 
   function gateScript(){
-    return "(function(){var ready=false;var gate=document.getElementById('gfi-gate');var btn=document.getElementById('gfiEnter');var wrap=document.getElementById('gfiLogoWrap');var ring=document.getElementById('gfiLogoRing');var st=document.getElementById('gfiStatus');var mark=document.getElementById('gfiLogoMark');if(mark&&!mark.getAttribute('src')){fetch('gfi-brand/gate-logo.b64',{cache:'force-cache'}).then(function(r){return r.ok?r.text():''}).then(function(b){if(b)mark.src='data:image/jpeg;base64,'+b.trim();});}function arm(){if(ready)return;ready=true;if(wrap)wrap.classList.add('is-ready');if(ring)ring.classList.add('is-ready');if(btn){btn.disabled=false;btn.classList.add('is-on');}if(st)st.textContent='Ready.';document.documentElement.style.overflow='hidden';document.body.style.overflow='hidden';}function unlock(){if(!ready)return;gate.classList.add('is-out');document.documentElement.style.overflow='';document.body.style.overflow='';}function waitImgs(){var imgs=[].slice.call(document.images||[]).filter(function(i){return !i.complete});if(!imgs.length){arm();return;}var left=imgs.length;function done(){left--;if(left<=0)arm();}imgs.forEach(function(i){i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true});});setTimeout(arm,8000);}if(btn)btn.addEventListener('click',unlock);if(document.readyState==='complete')waitImgs();else window.addEventListener('load',waitImgs);})();";
+    return "(function(){var ready=false;var gate=document.getElementById('gfi-gate');var btn=document.getElementById('gfiEnter');var wrap=document.getElementById('gfiLogoWrap');var ring=document.getElementById('gfiLogoRing');var st=document.getElementById('gfiStatus');var mark=document.getElementById('gfiLogoMark');if(mark&&!mark.getAttribute('src')){fetch('gfi-brand/gate-logo.b64',{cache:'force-cache'}).then(function(r){return r.ok?r.text():''}).then(function(b){if(b)mark.src='data:image/jpeg;base64,'+b.trim();});}function freeze(){document.documentElement.classList.add('gfi-gated');document.body.classList.add('gfi-gated');}function release(){document.documentElement.classList.remove('gfi-gated');document.body.classList.remove('gfi-gated');document.documentElement.style.overflow='';document.documentElement.style.height='';document.body.style.overflow='';document.body.style.height='';document.body.style.position='';document.body.style.width='';window.dispatchEvent(new Event('resize'));window.dispatchEvent(new Event('scroll'));}function arm(){if(ready)return;ready=true;if(wrap)wrap.classList.add('is-ready');if(ring)ring.classList.add('is-ready');if(btn){btn.disabled=false;btn.classList.add('is-on');}if(st)st.textContent='Ready.';freeze();}function unlock(){if(!ready)return;if(gate){gate.classList.add('is-out');setTimeout(function(){if(gate&&gate.parentNode)gate.parentNode.removeChild(gate);},800);}release();}function waitImgs(){var imgs=[].slice.call(document.images||[]).filter(function(i){return !i.complete&&i.id!=='gfiLogoMark';});if(!imgs.length){arm();return;}var left=imgs.length;function done(){left--;if(left<=0)arm();}imgs.forEach(function(i){i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true});});setTimeout(arm,8000);}if(btn)btn.addEventListener('click',unlock);document.addEventListener('keydown',function(e){if(ready&&(e.key==='Enter'||e.key===' ')){e.preventDefault();unlock();}});if(document.readyState==='complete')waitImgs();else window.addEventListener('load',waitImgs);})();";
   }
 
   function injectGate(html){
     var gate = document.getElementById("gfi-gate");
-    var styles = document.querySelectorAll("style");
-    var css = "";
-    styles.forEach(function(s){ css += s.outerHTML; });
+    var gateCss = document.getElementById("gfi-gate-css");
+    var css = gateCss ? gateCss.outerHTML : "";
+    css += "<style id=\"gfi-gate-lock\">html.gfi-gated,body.gfi-gated{overflow:hidden!important;overscroll-behavior:none}html:not(.gfi-gated),body:not(.gfi-gated){overflow:visible!important;height:auto!important}</style>";
     var gateHtml = gate ? gate.outerHTML : "";
     var boot = "<script>" + gateScript() + "<\\/script>";
     if (/id=[\"']gfi-gate[\"']/.test(html)) return html;
