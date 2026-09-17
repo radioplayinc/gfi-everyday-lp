@@ -1,1 +1,34 @@
-@/workspace/gfi-chunks2k/parts/c15.txt
+1px;
+  }
+  .lead-honeypot {
+    position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;
+  }
+  .lead-note { font-size: 0.78rem; color: #6a655c; margin-top: 0.35rem; }
+  .lead-success {
+    display: none; margin-top: 0.85rem; padding: 0.85rem 1rem;
+    background: #eef5f0; border-radius: 10px; color: #2a4a35; font-size: 0.9rem;
+  }
+  .lead-success.is-on { display: block; }
+  .demo-banner {
+    background: #fff6e8; border: 1px solid rgba(180,120,40,.35);
+    color: #5a3d12; border-radius: 10px; padding: 0.75rem 0.9rem;
+    font-size: 0.85rem; margin-bottom: 0.85rem;
+  }
+  #lead .qualify { color: var(--ink); }
+  #lead {
+    background: var(--paper-soft); color: var(--ink);
+    min-height: auto; padding-top: 4rem; padding-bottom: 4rem;
+  }
+  #lead .eyebrow { color: var(--muted-dark); }
+  .lead-shell {
+    max-width: 520px; margin-top: 1rem;
+    background: var(--paper); border: 1px solid rgba(5,11,22,.14);
+    border-radius: 14px; padding: 1.35rem 1.25rem 1.5rem;
+  }
+
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#scatter">
+      <img class="brand-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAYAAAA5ZDbSAAAZ9UlEQVR42u1deXQUVbr/3arq7qwmEJIgAYIZHiYECAQQE/ZFEVG24zxFZDzD4HP0yAuO45NxPAojm0fJoIM6jiioMBJGYZTNEQKYIEtICCRRA4RFCBAQIqET0ktVfe+PqrrpSodApJEk1ndOHUItt27f3/2++623GACCRa2WBGsILIAtsgC2qMUBzK67aXbDO2/18dqetpQsS0RbZAFskQWwRRbAFlkAW2QBbJEFsAWwRRbAFlkAW2QBbJEFsEUWwBY1TFJr/nGMMQiCNocVRWnwvKqqIGq9AbVWGS40APQFtTESRbHVAt3qABYEAaqqAgAiIyMxcsQIjBw1Cn369EHbNm2hkopz586hoKAAW7duxfbt21FdXe33bGsiai2HKIoEgEJDQ2nWrFl05MhRuhqVlpbS008/TcHBwaY2WtHRusDt378/FRQUcAAVRSFZlkmRFVKUukP2yqQoCr9v9+7dlJKS0hpBbj3g3jf2PqqqqiIiIq/XawKwYVJJURTyer1ERHT+/HkaPnx4awO5Zf8AQRAIAI0YMZwuX75MRESyLFNTyevVnvmxspJSU1O1tkXBAvhmg8vAKL5LFzp9+vRPBtcg49nvvvuO2rZtq7XPBAvgm3EwMB0ARp9//rmJC6+HDHG95M0l+iQSLYBv5ro7ceLE6+Zc06qsauuy2+2m1L6prWE9bpncyxgjm81GeXl5pKqBA9h3sqxcudK0zlsA/8zce/fdd3NTSFUDhi+pqkqqqtKlS05KSEho0SC36GDDQw89pHlqVAILYBUKYwyqqiI8PAzjx4/nXi4
