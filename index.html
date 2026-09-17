@@ -1,1 +1,106 @@
-SEE_FILE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gurilla Finance</title>
+<style>
+  html,body{height:100%;margin:0;background:#050506;color:#f7f7f5;font-family:Inter,system-ui,sans-serif;overflow:hidden}
+</style>
+</head>
+<body>
+<div id="gfi-gate" class="gfi-gate">
+  <div class="gfi-gate-card">
+    <div class="gfi-logo-wrap" id="gfiLogoWrap">
+      <div class="gfi-logo-ring" id="gfiLogoRing"></div>
+      <img class="gfi-logo-mark" id="gfiLogoMark" alt="Gurilla Finance" />
+    </div>
+    <p class="gfi-kicker">Gurilla Finance</p>
+    <h1 class="gfi-title">Enter the site</h1>
+    <p class="gfi-status" id="gfiStatus">Opening the floor…</p>
+    <button id="gfiEnter" type="button" disabled>Enter</button>
+  </div>
+</div>
+<style>
+  .gfi-gate{position:fixed;inset:0;z-index:2147483646;display:grid;place-items:center;background:#050506;transition:opacity .7s ease,visibility .7s ease}
+  .gfi-gate.is-out{opacity:0;visibility:hidden;pointer-events:none}
+  .gfi-gate-card{width:min(440px,calc(100vw - 2rem));text-align:center;padding:1rem 1rem 1.35rem}
+  .gfi-logo-wrap{position:relative;width:min(280px,72vw);height:min(280px,72vw);margin:0 auto 1.1rem}
+  .gfi-logo-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(200,200,200,.14);pointer-events:none}
+  .gfi-logo-ring:before{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid transparent;border-top-color:#cfcfd2;border-right-color:rgba(168,168,172,.7);animation:gfiSpin 1.2s linear infinite}
+  .gfi-logo-ring.is-ready:before{animation:none;border-color:#8d8d90}
+  .gfi-logo-mark{position:absolute;inset:8%;width:84%;height:84%;object-fit:contain;border-radius:50%;animation:gfiPulse 2.4s ease-in-out infinite;filter:drop-shadow(0 10px 28px rgba(0,0,0,.55));background:#050506}
+  .gfi-logo-wrap.is-ready .gfi-logo-mark{animation:gfiSettle .7s ease forwards}
+  @keyframes gfiSpin{to{transform:rotate(360deg)}}
+  @keyframes gfiPulse{0%,100%{transform:scale(.97);opacity:.92}50%{transform:scale(1.03);opacity:1}}
+  @keyframes gfiSettle{from{transform:scale(.97);opacity:.92}to{transform:scale(1);opacity:1}}
+  .gfi-kicker{margin:0 0 .4rem;font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#8a8a86}
+  .gfi-title{margin:0 0 .75rem;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:1.3rem;font-weight:800;letter-spacing:-.02em}
+  .gfi-status{min-height:1.2em;margin:0 0 1.2rem;font-size:.78rem;color:#8a8a86}
+  #gfiEnter{appearance:none;border:1px solid rgba(247,247,245,.16);background:#141416;color:rgba(247,247,245,.38);font:600 .78rem Inter,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;padding:.95rem 2.4rem;border-radius:999px;cursor:not-allowed;transition:background .2s,color .2s,border-color .2s,box-shadow .2s,transform .2s}
+  #gfiEnter.is-on{cursor:pointer;background:#fff;color:#000;border-color:#fff;box-shadow:0 0 0 1px #fff,0 12px 40px rgba(247,247,245,.16)}
+  #gfiEnter.is-on:hover{transform:translateY(-1px)}
+  @media (prefers-reduced-motion:reduce){.gfi-logo-ring:before,.gfi-logo-mark{animation:none}}
+</style>
+<script>
+(function(){
+  const PART_MAX = 200;
+  const status = document.getElementById("gfiStatus");
+  const mark = document.getElementById("gfiLogoMark");
+  function setStatus(t){ if(status) status.textContent = t; }
+  fetch("gfi-brand/gate-logo.b64",{cache:"force-cache"}).then(function(r){return r.ok?r.text():""}).then(function(b){ if(b&&mark) mark.src="data:image/jpeg;base64,"+b.trim(); }).catch(function(){});
+
+  function gateScript(){
+    return "(function(){var ready=false;var gate=document.getElementById('gfi-gate');var btn=document.getElementById('gfiEnter');var wrap=document.getElementById('gfiLogoWrap');var ring=document.getElementById('gfiLogoRing');var st=document.getElementById('gfiStatus');var mark=document.getElementById('gfiLogoMark');if(mark&&!mark.getAttribute('src')){fetch('gfi-brand/gate-logo.b64',{cache:'force-cache'}).then(function(r){return r.ok?r.text():''}).then(function(b){if(b)mark.src='data:image/jpeg;base64,'+b.trim();});}function arm(){if(ready)return;ready=true;if(wrap)wrap.classList.add('is-ready');if(ring)ring.classList.add('is-ready');if(btn){btn.disabled=false;btn.classList.add('is-on');}if(st)st.textContent='Ready.';document.documentElement.style.overflow='hidden';document.body.style.overflow='hidden';}function unlock(){if(!ready)return;gate.classList.add('is-out');document.documentElement.style.overflow='';document.body.style.overflow='';}function waitImgs(){var imgs=[].slice.call(document.images||[]).filter(function(i){return !i.complete});if(!imgs.length){arm();return;}var left=imgs.length;function done(){left--;if(left<=0)arm();}imgs.forEach(function(i){i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true});});setTimeout(arm,8000);}if(btn)btn.addEventListener('click',unlock);if(document.readyState==='complete')waitImgs();else window.addEventListener('load',waitImgs);})();";
+  }
+
+  function injectGate(html){
+    var gate = document.getElementById("gfi-gate");
+    var styles = document.querySelectorAll("style");
+    var css = "";
+    styles.forEach(function(s){ css += s.outerHTML; });
+    var gateHtml = gate ? gate.outerHTML : "";
+    var boot = "<script>" + gateScript() + "<\\/script>";
+    if (/id=[\"']gfi-gate[\"']/.test(html)) return html;
+    if (/<body[^>]*>/i.test(html)) {
+      return html.replace(/<body([^>]*)>/i, function(m, attrs){
+        return "<body" + attrs + ">" + css + gateHtml + boot;
+      });
+    }
+    return css + gateHtml + boot + html;
+  }
+
+  async function assemble(){
+    var chunks = [];
+    var misses = 0;
+    for (var i = 0; i < PART_MAX; i++){
+      try {
+        var res = await fetch("parts/c" + i + ".txt", { cache: "no-store" });
+        if (!res.ok){
+          misses++;
+          if (misses >= 8 && chunks.length) break;
+          continue;
+        }
+        misses = 0;
+        chunks.push(await res.text());
+        if (i % 12 === 0) setStatus("Loading the floor… " + Math.min(99, Math.round((i / 120) * 100)) + "%");
+      } catch (e) {
+        misses++;
+        if (misses >= 8 && chunks.length) break;
+      }
+    }
+    if (!chunks.length){
+      setStatus("Could not load the site.");
+      return;
+    }
+    setStatus("Rendering…");
+    var html = injectGate(chunks.join(""));
+    document.open();
+    document.write(html);
+    document.close();
+  }
+  assemble();
+})();
+</script>
+</body>
+</html>
