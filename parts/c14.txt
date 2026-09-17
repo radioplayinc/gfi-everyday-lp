@@ -1,0 +1,54 @@
+00% - 1.5rem);
+      max-width: 420px;
+      justify-content: center;
+    }
+    .sticky-cta .btn { flex: 1; justify-content: center; }
+    .panel { padding: 1.25rem 1.1rem 1.4rem; border-radius: 18px 18px 12px 12px; }
+    .beat { padding: 4.25rem 1rem 2.75rem; }
+    .quote-card { border-radius: 16px; }
+    .lead-form input, .lead-form select { font-size: 16px; /* iOS zoom guard */ }
+  }
+
+  /* —— Sticky CTA (post-hero) —— */
+  .sticky-cta {
+    position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%);
+    z-index: 70;
+    display: none;
+    gap: 0.5rem;
+    padding: 0.35rem;
+    border-radius: 999px;
+    background: rgba(0,0,0,.85);
+    border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 40px rgba(0,0,0,.45);
+  }
+  .sticky-cta.is-on { display: flex; }
+  .sticky-cta.is-tucked { display: none !important; }
+  .sticky-cta .btn { padding: 0.7rem 1.15rem; font-size: 0.85rem; }
+  /* Keep Path A scrub + quote card clear of the floating CTA */
+  #path-a, #quote, #quiz { scroll-margin-bottom: 5.5rem; }
+  #quote { padding-bottom: 5.5rem; }
+  #path-a .scrub-track { padding-bottom: 1.25rem; }
+
+  /* Light-section ghost buttons */
+  #quote .btn-ghost { color: var(--ink); border-color: rgba(5,11,22,.2); }
+  #quote .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); border: 0;
+  }
+
+  /* —— Lead form —— */
+  .lead-form { display: grid; gap: 0.75rem; margin-top: 1rem; }
+  .lead-form label {
+    display: grid; gap: 0.35rem;
+    font-size: 0.78rem; font-weight: 600; color: #3a3a38;
+  }
+  .lead-form input, .lead-form select {
+    width: 100%; padding: 0.75rem 0.9rem;
+    border-radius: 10px; border: 1px solid rgba(5,11,22,.16);
+    background: var(--paper); color: var(--ink);
+  }
+  .lead-form input:focus, .lead-form select:focus {
+    outline: 2px solid rgba(5,11,22,.35); outline-offset: 
