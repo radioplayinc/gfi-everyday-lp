@@ -1,0 +1,5 @@
+sistTalk.addEventListener("click", openTalk);
+})();
+</script>
+</body>
+</html>
