@@ -1,0 +1,85 @@
+dth: 40rem; margin-left: auto; margin-right: auto; }
+
+
+
+  /* —— Lead form (v1 ship) —— */
+  .lead-form {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .lead-form label {
+    display: grid;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #3a3630;
+  }
+  .lead-form .field-hint {
+    font-weight: 400;
+    color: #8a8578;
+    font-size: 0.72rem;
+  }
+  .lead-form input,
+  .lead-form select {
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    border-radius: 12px;
+    border: 1px solid rgba(5,11,22,.18);
+    background: #fff;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  .lead-form input:focus,
+  .lead-form select:focus {
+    outline: 2px solid var(--ink);
+    outline-offset: 1px;
+  }
+  .lead-form .consent-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #5a554c;
+    line-height: 1.4;
+  }
+  .lead-form .consent-row input {
+    width: auto;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+  }
+  .lead-form .form-error {
+    color: var(--danger);
+    font-size: 0.8rem;
+    display: none;
+  }
+  .lead-form .form-error.is-on { display: block; }
+  .lead-thankyou { display: none; }
+  .lead-thankyou.is-on { display: block; }
+  .lead-thankyou h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .lead-thankyou p { font-size: 0.92rem; color: #5a554c; margin-bottom: 0.65rem; }
+  .panel.panel--wide { width: min(520px, 100%); }
+  .path-chip {
+    display: inline-flex;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(5,11,22,.06);
+    color: #5a554c;
+    margin-bottom: 0.75rem;
+  }
+  @media (max-width: 640px) {
+    .sticky-cta {
+      bottom: max(0.65rem, env(safe-area-inset-bottom));
+      width: calc(1

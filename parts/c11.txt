@@ -1,0 +1,68 @@
+ar(--font-label); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--muted-dark); margin-bottom: 0.3rem;
+  }
+  .quote-value { font-size: 0.98rem; font-weight: 600; }
+  .quote-why { font-size: 0.88rem; color: #5a554c; margin-top: 0.25rem; }
+  .quote-promo {
+    background: var(--black);
+    color: var(--paper);
+    border: 1px solid rgba(5,11,22,.2);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin: 0.85rem 0;
+  }
+  .quote-promo strong { display: block; margin-bottom: 0.2rem; }
+  .quote-promo span { font-size: 0.8rem; color: rgba(255,255,255,.55); }
+  .preloops {
+    margin: 1rem 0 0.25rem;
+    padding: 0.85rem 1rem;
+    background: var(--paper-soft);
+    border-radius: 12px;
+    font-size: 0.8rem; color: #3a3a38;
+  }
+  .preloops li { margin-left: 1rem; margin-top: 0.3rem; }
+  .quote-id {
+    font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted);
+    margin-top: 1rem;
+  }
+  .quote-placeholder {
+    max-width: 560px;
+    padding: 2rem 1.25rem;
+    border: 1px dashed rgba(10,10,11,.25);
+    border-radius: 16px;
+    color: #6a655c;
+    text-align: center;
+  }
+
+  /* Soft fail */
+  .soft-fail .quote-hero { display: none; }
+  .soft-fail .quote-title { color: var(--danger); }
+
+  /* —— Bridge / modal —— */
+  .overlay {
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(10,10,11,.72);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+  }
+  @media (min-width: 640px) {
+    .overlay { align-items: center; }
+  }
+  .overlay.is-open { display: flex; }
+  .panel {
+    width: min(480px, 100%);
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 20px;
+    padding: 1.5rem 1.35rem 1.6rem;
+    max-height: min(90svh, 720px);
+    overflow: auto;
+    box-shadow: 0 30px 60px rgba(0,0,0,.4);
+  }
+  .panel h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.55rem; margin-bot
