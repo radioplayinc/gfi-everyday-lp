@@ -21,7 +21,7 @@ python3 -m http.server 8080 --directory .
 
 ## Leads
 
-Form posts via FormSubmit → `financegurilla@gmail.com`.
+Form posts via FormSubmit → `financegurilla@gmail.com`.  
 Confirm the FormSubmit activation email in that inbox before paid traffic.
 
 ## Stack
