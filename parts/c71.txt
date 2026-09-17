@@ -1,0 +1,26 @@
+4nshtV5k6qkib0/QumSBUzo+4mHoDyPN9S41EyQTfLOk8BKZLUmJ/STy1IScAIBiDdsh8kjviLh6U3Ku3jcUZyTiP50fWE7dc9x4oLZZHwShPMi5+WixXT2CqzcbD0TjAt2EBHTpc4TbSsHXC4dz1HiRfSEPNZDW6nH59wcPU5fOvXXGDY3ErnHDfn+EWmz91rtl5ih7mN3Utprz6IQ0JCPnsPUzo3aNf8fj9wWlGjAZ3UrhERwQPGs6g0fhAZEwcT7dFcHWtri8ZyVeDkZtvh9Z9mA0sfOl8j+uPd3JjZukoPM7iTiaCeRaLrwfTakZuvknd5z6Ry+qveUQUUscP/+tKDMLikWu+TeBuIl8Jpq36hufs2V/MruyJXnG3sNvoDb3uM3U+++DLvuFfsJxbSL4WjNJP3YN3qHqG62+6+us87uDyNWCGj+wZPJeo+2vwO2PvcLn80ksjl/cnMbnBhdx3/bVobPvK8/J++mn+ExQ6/erejvAel0v1ex/7/MNrcffqb0j/ejQz+/ajSrt7lfvHxf2p65FrH8fRrz8FzMgT0ea31+IfX2Pv7Ot/VNlULRrpQT7zO9c3AQWv/wf7josEA3PJbwAAAABJRU5ErkJggg==" alt="Payanywhere Smart Flex — Everyday path" width="640" height="800" />
+          <p class="pain-caption"><strong>Everyday counter.</strong> Free Smart Flex if you qualify. Tools watch the back door.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+    </div><!-- /.scatter-overlap -->
+  </section><!-- /#scatter -->
+
+  <!-- 2 Path A scrub -->
+  <section id="path-a" aria-label="Path A — Everyday Smart Flex">
+    <div class="scrub-wrap" id="scrubWrap">
+      <div class="scrub-sticky">
+        <div class="scrub-meta">
+          <div>
+            <p class="eyebrow">Path A · Everyday · Tip / Retail</p>
+            <h2 class="headline" style="font-size:clamp(1.5rem,3.5vw,2.25rem)">Free Smart Flex — <em class="qualify">if you qualify</em>.</h2>
+            <p class="device-name">Gurilla Everyday · Payanywhere Smart Flex (PAX E600Mini)</p>
+            <p class="subline" style="margin-top:0.55rem;max-width:34rem">Everyday spearhead: free Smart Flex under program guidelines when you qualify. Not everyone gets a free machine. Mini (A77) stays as tip-first alt — same Path A family.</p>
+          </div>
+          <div class="offer-rail">
+            <span class="offer-pill">If you qualify</span>
+            <span class="offer-pill" id="decChipA">Dec 15 · 90 days free Inovio</span>
+          </div>
+        </div>
+        <div class="scrub-stage" id="scru
