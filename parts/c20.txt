@@ -1,0 +1,13 @@
+tsgC2yALYIgtgiyyALbIAtgC2yAK4adQSvm/f+vtoZXRYHGxRS6b/B8KGuDO+BrkoAAAAAElFTkSuQmCC" alt="Gurilla Finance" width="140" height="140" />
+      <span class="sr-brand">Gurilla Finance</span>
+    </a>
+    <a class="chip-dec" id="topDecChip" href="#quiz" title="See if you fit">See if you fit</a>
+  </header>
+
+  <!-- 0 Scatter hero -->
+  <section class="scatter-root" id="scatter" aria-label="Product collage hero">
+    <div class="scatter-pin">
+      <div class="scatter-stage">
+        <div class="hero-scale" id="heroScale">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAACTCAMAAABiUPYRAAAAwFBMVEX///////3//v3+///+/v/+/v79/v7+/vz+/f39/f79/f39/fv8/fz8/Pz8/Pr8+/v7+/v6+vr5+fj4+Pf3+Pb39/f49/X39/X39/T29/b29vX19fTz8/Py8fHx8fLx8fHx8fDw8fDw8PDv8O/v7/Dv7+/v7+7t7+7u7u3s7Ozo6Ojj5OPe3t7Y2djV1dXO0NDDxce7vcC1t7uztbmws7atr7Kpq6+mp6uho6abnqGTlZiDhIdydHZpa21XWFovLzHmH0liAAAZV0lEQVR42u2diXbbRrKGm8ngKhcKOFhCMekGhgocKNg3EsTG5f3faqq6sZGSLcmyZSrDjh1Hso9z8Kn+qr+quyGyvK4nF7kiuIK5grmCuYK5grmCuYK5grmCuYK5gGXAD90w4Bd6BTNZzGXU9R4skxn63buyuWwwhhf4nufjCn2qz40rGLFMH7jg8oMwCoLANFBXd1cwth+GIQDh/w7XZQK/eA8mW3R55ztmnssEYxgLiAvj3g+jKI7jJMSV1uskgY/iCDD5nm0x+HOGAPTH/wSYO93yfde6v/OzzTpLAQZySeoqTQQZTififHzBpw+gfzQYw4SUgvKBH1GSpFmeZxkyQSjJhE0HCKAhRxPrOjC6u/tngjGYG2Ba6VaYJhHySbNM4MFQieInFgbQn8y+N026/O3tAXRpYIx7VyPE+HOx8nnOTZu2bept1uPJYaG6Ojxj/GAoJT6HCcXddU1KGX1DBSOXFi7/UbxkXdaJx4ik/WH7fpRk2xrxNGWeQraJYuCzXudd+PRMYKWRP8Ya/DmQmMeMfwAY4+6Tq5OkrqttwmRFkSXClwzJuMfTNtVmUNd60/NBOmkSJiLnwO/lEGMBBI5nGh8eDCRdJmvEg+eDbBJTSYalKD2gW33lhwOeusiSuFPXBmtX2okKI2dTbgvOZcWY+5VkLgaMsXxw1EUYhb610PW/w0CWEIssn+KRNRPxFBXHw9UFIRILPBg/ACjbFgWILvAdE8D41PjIYAzLpYo/FJjANZkmIwlpoDPBI+kcz4bjweScoBNEcRVlVdV1mcPf4XsABkq/Tz8uGEi6K1WViOpgUzQYlMC3F6rE6TyJR2NeCMKpmhLqV9Qt5LOtsgi6rJVpPvh+4N19UDB3UKOprJK/klAikqLbSCcagsd3TV0hn8UD4nJ9jkXQAaKQncsq9U3LtLExDzzjQ4IxTNdSFJVETZvqykw28HGNlTehw4OHqvIZHYCJHwMfde0jnSCM4SfkXz1o203MmBhZBK7xEcHcuwY+qmSHPpFls9pVict4nVapMwYPhkQA1VfpM48iK8QPF4hLUhhCU+rCCaI4YEkihftdlQousO6NjwYGa7SiKlia8cnkX1
