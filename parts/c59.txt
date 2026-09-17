@@ -1,0 +1,23 @@
+tU6KnK8cidJJ/bGkWZvmpWtIw+xZcY8O20TXNhg91vAwaCZjnzoHR3hm+ShSe1e5x3q9y8/IcN+wBlFd1QuvwHgsHSfdOXbjB8nkFO0UzfnQopx4Ksu+p7AJDRwweR0VeAwdKtJ61INUUSPmhEfhQ1YnAjto1ARqKV/vptxo8BBkv37M+N6BKqHA3fJKt0jk9Cr4uTl6mMwtnvdPlPBgN6MmZBBXrCLJydZGExreEycuOATmR0efsj3wHMYIVBT3WZQhYez95xM6zgG3Yd1u8DpLwa0eU/Hwwv3WbWp5rTLIwmGM2LORypAxl9nGr0RjBcT2iFeaoBw+f0WRiPPaN5scXJVJxIFdYtWy7/V8D0VhhKN2bhGNvu/8cRsPQpwsmLa4vttAK3GT8elzdd5KLs1kg7PaHhY6qimUGcBKY1yKj6iDJ6Kxg84j9zsXTj+3O3Gb7aBVJtFPrQA3QyWlvzDxguy7ffomX6T2iFMdXUdV0WOf8mfIHPXzlQNBe6zfgOYETp5nrCy2SF+O6WHAvIKPiYMvomYPgU6168kq4qN/h998Q3jwUZmR9URt8IjCjdVXcHGu9/QNxk2+Ea1v8wGNTTbdyIw9nQKRSboi6DGf3AXL7Z+2MovaFghfsbMlVy94Fl9C3BiClWLr4d6jpmN0u6vIIZSvds6QeBR29v7z52uHxjMJBqlvp8ri8pXS6vYM5zzT+ByvICv3X8FcwVzBXMFcwVzBXMdV3BXMFcwVzBXMFcwVzu+i/DcyswIe7hwAAAAABJRU5ErkJggg=="
+              alt="Smart Flex — insert card"
+              width="400" height="533"
+            />
+          </div>
+          <div class="scatter-copy hero-up" id="scatterCopy">
+            <p class="eyebrow" style="color:rgba(255,255,255,.55);margin-bottom:0.55rem">Gurilla Finance · Everyday</p>
+            <h1 class="headline">Free Smart Flex. If you qualify.</h1>
+            <p class="sub-micro">Everyday POS for tip / retail — or Embedded Checkout + Inovio for online. Board by Dec 15, 2026 → 90 days free Inovio <span class="qualify">if you qualify</span>.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#quiz">See if you fit</a>
+              <button type="button" class="btn btn-ghost" id="heroTalk">Talk to us</button>
+            </div>
+            <p class="sub-micro" style="margin-top:0.85rem;opacity:.75;font-size:0.8rem">Indicative only · no MDR · no Peak. Soft fit first.</p>
+          </div>
+        </div>
+        <div class="scatter-overlay" id="scatterOverlay" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="scatter-runway" aria-hidden="true"></div>
+    <div class="scatter-overlap">
+  <!-- 1 Pain → dream -->
+  <section class="b
