@@ -1,0 +1,18 @@
+rimary" href="#quiz">Start my free equipment check</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- prefers-reduced-motion fallback -->
+    <div class="scrub-static" id="scrubStatic">
+      <p class="eyebrow">Path A · Everyday · Tip / Retail</p>
+      <h2 class="headline" style="font-size:clamp(1.5rem,3.5vw,2.25rem)">Free Smart Flex — <em class="qualify">if you qualify</em>.</h2>
+      <p class="device-name">Gurilla Everyday · Payanywhere Smart Flex (PAX E600Mini)</p>
+      <p class="subline" style="margin-top:0.55rem">Everyday default: Smart Flex free if you qualify. Insert → cart → checkout.</p>
+      <div class="offer-rail" style="margin-top:0.85rem">
+        <span class="offer-pill">If you qualify</span>
+        <span class="offer-pill">Dec 15 · 90 days free Inovio</span>
+      </div>
+      <div class="scrub-static-grid">
+        <figure>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAACTCAMAAABiUPYRAAAAwFBMVEX///////7//v7+/v78/Pz5+fn49/f39/f39/b49/X39/X39/T19/X29vX29vT29vP29fX19vf19fT19fP19PT09fT09PT09PPz9PT09PLz8/Lz8/Hz8/Dz8vLy8vDy8fHx8fLx8fHx8e/w8fHw8O/v7+7u7u3r6+rq6unq6ujq6ufo6unp6efo6Ofn6Ojn5+bm5uXl5ubl5eTk5OPj4+Lg4ODe3t3Z2dnS09LCw8W2uLuvsbWmqKuWmJt1d3lJSkyiEKK+AAAexElEQVR42u2diYLaRrqFNdYC5o6IIzKQVgcSsFRS22Bk0L7Q7/9W969FUlWpxGJnsWdcM7Hb3SRGX5/zb1VSa7MfS7m0Hwh+gPkB5geYH2B+gPkB5geYH2B+gPkB5htY1tuZZVqWNZv93w8w/HpaTL3Ae3YXlvn2/+Y/wLD11tuHAQqDwyFII8c0/0bhfNtgFgAlQLCCU5rF8elpynz1PwuGmsZ2D2manKMT/Bqfk7LOk9MRec828DH/Yj7fJhiLumYTJhmsPE+SJE2KpsxhwSfSJDoGu82c8rH+Z8BY5iYIkeuaYVGVRQEoMJi8qYuckaErTU+H0Ns4s7+CzzcIxnpCYXQ6xwn8H9RSFGWJ8WAkeS6iyfDHaRofQn+zwnl9/tb6bwVjzdE5+XyOz58Px+PnKC7yNAE+HZ4WSMunZwUC2k23m/n83zPr6wX0rYGxNr6haeZ64gbHcxxDYMGrAj9hNxE8PZ9cXscojo9nyGSe9zSdObZl/peAsRbI1VFe1nXuTzTNsLbBIYM/EjpNXWL5pCAfNZ4iO8Qx0IS8HsUpjtEHtLD+C8BYU883tRwIVLmj67rGlm66H9O8rHo8WYen5YO55CkNOeRr8KI4hApoZX33YN6ukK0bWgDXV0BinmiYTM8H8IRJXlRMPtRdLPgAn7zlA4TKuqqAywF5juM/Wd83GGvmecYkSeNwZZqmn8Yat/Sej+EEDM/l0ruL4aHZq6gqwJaeAn8NYELH+p7BWC7IJcjgu46/8cnRd2yj00qPpyVl/iL
