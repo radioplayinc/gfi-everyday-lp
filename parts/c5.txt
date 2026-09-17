@@ -1,0 +1,83 @@
+r-color: rgba(255,255,255,.4);
+  }
+  .scatter-copy .btn-ghost:hover {
+    border-color: var(--paper);
+    color: var(--paper);
+  }
+  .scatter-overlay {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 6;
+  }
+  .scatter-runway {
+    height: 100svh;
+    pointer-events: none;
+  }
+  .scatter-overlap {
+    position: relative;
+    z-index: 2;
+  }
+  .scatter-overlap #pain {
+    margin: 0;
+  }
+  @media (max-width: 640px) {
+    .collage-grid {
+      max-height: min(48svh, 420px);
+      gap: 0.35rem;
+    }
+    .tile-wide { aspect-ratio: auto; }
+    .brand-reveal { font-size: clamp(1.8rem, 12vw, 3rem); }
+  }
+
+  /* —— 1 Pain → dream —— */
+  #pain {
+    background: var(--charcoal-2);
+  }
+  .pain-grid {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+  }
+  @media (min-width: 720px) {
+    .pain-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  }
+  .pain-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #111;
+    position: relative;
+  }
+  .pain-card img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+  }
+  .pain-card.fail img {
+    filter: grayscale(0.85) contrast(0.9) brightness(0.65);
+  }
+  .pain-badge {
+    position: absolute; left: 0.85rem; top: 0.85rem;
+    font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em;
+    padding: 0.3rem 0.55rem; border-radius: 6px;
+    background: rgba(10,10,11,.75); backdrop-filter: blur(6px);
+  }
+  .pain-badge.bad { color: #f0a090; border: 1px solid rgba(196,92,74,.5); }
+  .pain-badge.good { color: var(--paper); border: 1px solid rgba(255,255,255,.35); }
+  .pain-caption {
+    padding: 1rem 1.1rem 1.15rem;
+    font-size: 0.9rem; color: var(--muted);
+  }
+  .pain-caption strong { color: var(--paper); font-weight: 600; }
+
+  /* —— 2 Path A scrub —— */
+  #path-a {
+    padding: 0;
+    min-height: auto;
+  }
+  .scrub-wrap {
+    position: relative;
+    height: 320v

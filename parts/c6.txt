@@ -1,0 +1,64 @@
+h; /* scroll runway */
+  }
+  .scrub-sticky {
+    position: sticky; top: 0;
+    height: 100svh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 1.25rem 2.5rem;
+    background: var(--black);
+    overflow: hidden;
+  }
+  .scrub-meta {
+    width: min(1100px, 100%); margin: 0 auto 1rem;
+    display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem;
+  }
+  .scrub-stage {
+    position: relative;
+    width: min(520px, 88vw);
+    margin: 0 auto;
+    aspect-ratio: 3/4;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #0e0e10;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 30px 60px rgba(0,0,0,.5);
+  }
+  .scrub-stage img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+  }
+  .scrub-stage img.is-on { opacity: 1; }
+  .scrub-progress {
+    width: min(520px, 88vw);
+    margin: 1.15rem auto 0;
+    display: flex; gap: 0.4rem;
+  }
+  .scrub-dot {
+    flex: 1; height: 3px; border-radius: 2px;
+    background: rgba(255,255,255,.15);
+    transition: background .2s;
+  }
+  .scrub-dot.is-on { background: var(--paper); }
+  .scrub-labels {
+    width: min(520px, 88vw);
+    margin: 0.65rem auto 0;
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.06em;
+    color: var(--muted); text-transform: uppercase;
+  }
+  .offer-rail {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;
+  }
+  .offer-pill {
+    font-family: var(--font-label); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.7rem; border-radius: 999px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.2);
+    color: rgba(255,255,255,.85);
+  }
+  .device-name {
+    font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted);
+    letter-spacing: 0.04em; margin-top: 0.35re

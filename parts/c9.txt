@@ -1,0 +1,76 @@
+
+    background: var(--black);
+  }
+  .cal-board {
+    margin-top: 1.75rem;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background: var(--charcoal-2);
+    padding: 1.25rem 1.25rem 1.5rem;
+    max-width: 520px;
+  }
+  .cal-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 1rem;
+  }
+  .cal-head strong { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; }
+  .cal-head span { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.35rem;
+  }
+  .cal-dow {
+    font-family: var(--font-mono); font-size: 0.55rem; letter-spacing: 0.06em;
+    color: var(--muted); text-align: center; padding-bottom: 0.25rem;
+  }
+  .cal-day {
+    aspect-ratio: 1;
+    display: grid; place-items: center;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    color: var(--muted);
+  }
+  .cal-day.in-window {
+    background: rgba(255,255,255,.08);
+    color: var(--paper);
+    border: 1px solid rgba(255,255,255,.2);
+  }
+  .cal-day.anchor {
+    background: var(--paper);
+    color: var(--black);
+    font-weight: 700;
+    border: none;
+  }
+  .cal-note {
+    margin-top: 1rem;
+    font-size: 0.85rem; color: var(--muted);
+  }
+  .cal-note strong { color: var(--paper); font-weight: 600; }
+
+  /* —— 6 Quiz —— */
+  #quiz {
+    background: var(--charcoal-2);
+  }
+  .quiz-card {
+    margin-top: 1.5rem;
+    max-width: 560px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background: #101012;
+    padding: 1.35rem 1.25rem 1.5rem;
+  }
+  .quiz-step { display: none; }
+  .quiz-step.is-active { display: block; }
+  .quiz-q {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.35rem; margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .quiz-opts { display: grid; gap: 0.6rem; }
+  .quiz-opt {
+    text-align: left;
+    padding: 0.95rem 1.1rem;
+    border-radius: 12px;
+    border: 1px solid var(--l

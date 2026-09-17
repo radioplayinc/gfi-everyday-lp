@@ -1,0 +1,63 @@
+72); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+  a:hover { color: var(--paper); }
+
+  /* —— Chrome —— */
+  .topbar {
+    position: fixed; inset: 0 0 auto 0; z-index: 80;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.45rem 1.25rem;
+    background: rgba(0,0,0,.94);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    pointer-events: none;
+  }
+  .topbar * { pointer-events: auto; }
+  .brand {
+    display: flex; align-items: center; gap: 0.65rem;
+    text-decoration: none; color: var(--paper);
+  }
+  .brand-logo {
+    height: 64px; width: auto;
+    display: block;
+    mix-blend-mode: screen; /* dark PNG: black square drops out, white mark stays */
+  }
+  .brand-logo--footer {
+    height: 80px; margin: 0 auto 1rem;
+    mix-blend-mode: screen;
+  }
+  .sr-brand {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); border: 0;
+  }
+  .chip-dec {
+    font-family: var(--font-label);
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 0.55rem 1rem;
+    border: none;
+    border-radius: 999px;
+    color: var(--black);
+    background: var(--paper);
+    text-decoration: none;
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+  }
+  .chip-dec:hover { background: var(--ink-gray); color: var(--paper); }
+
+  /* —— Shared —— */
+  .beat {
+    position: relative;
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 1.25rem 3.5rem;
+  }
+  .beat-inner { width: min(1100px, 100%); margin: 0 auto; }
+  .eyebrow {
+    font-family: var(--font-label);
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,.5); margin-bottom: 0.75rem;
+  }
+  .headline {
+    font-family: var(--font-display);
+    fon

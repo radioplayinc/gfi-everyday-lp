@@ -1,0 +1,69 @@
+m;
+  }
+
+  /* reduced-motion: static 4-up */
+  .scrub-static {
+    display: none;
+    width: min(1100px, 100%); margin: 0 auto;
+    padding: 5rem 1.25rem 3rem;
+  }
+  .scrub-static-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+  @media (min-width: 800px) {
+    .scrub-static-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .scrub-static-grid figure {
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--line); background: #111;
+  }
+  .scrub-static-grid img {
+    width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  }
+  .scrub-static-grid figcaption {
+    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--muted);
+    padding: 0.5rem 0.65rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scrub-wrap { display: none; }
+    .scrub-static { display: block; }
+    .scatter-root.is-reduced .collage-grid {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+    .scatter-root.is-reduced .hero-scale {
+      transform: none !important;
+      z-index: 2;
+    }
+    .scatter-root.is-reduced .brand-reveal .hero-letter {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .scatter-root.is-reduced .scatter-copy {
+      position: absolute;
+      left: 0; right: 0; bottom: 1.5rem;
+      z-index: 5;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    }
+    .scatter-root.is-reduced .scatter-copy .headline {
+      color: var(--paper);
+      text-shadow: 0 2px 24px rgba(0,0,0,.85);
+    }
+    .scatter-root.is-reduced .scatter-chip {
+      border-color: rgba(255,255,255,.4);
+      color: var(--paper);
+      background: rgba(0,0,0,.4);
+    }
+    .scatter-root.is-reduced .scatter-copy .btn-ghost {
+      color: var(--paper);
+      border-color: rgba(255,255,255,.4);
+    }
+    .scatter-root.is-reduced
