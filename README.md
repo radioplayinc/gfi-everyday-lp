@@ -1,32 +1,38 @@
-# Gurilla Finance — Everyday landing page
+# GFI Everyday — motion landing page
 
-Static site for GFI Everyday (free Smart Flex path if you qualify).
+Static site for Gurilla Finance Everyday (Smart Flex spearhead).
 
-## Cloudflare Pages setup
+## Cloudflare Pages
 
-1. In Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
-2. Select this repo
-3. Settings:
+1. Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
+2. Select repo **`radioplayinc/gfi-everyday-lp`**
+3. Build settings:
    - **Framework preset:** None
-   - **Build command:** *(empty)*
-   - **Build output directory:** `/` (leave as root)
-4. Save and deploy
-
-Custom domain: Pages → your project → Custom domains.
-
-## Leads
-
-`index.html` posts to [FormSubmit](https://formsubmit.co) → `financegurilla@gmail.com`.
-**First production submit:** check that inbox and confirm the FormSubmit activation email.
+   - **Build command:** *(leave empty)*
+   - **Build output directory:** `/` (repo root)
+4. Deploy. Add a custom domain under the project’s **Custom domains** tab.
 
 ## Local preview
 
 ```bash
 python3 -m http.server 8080 --directory .
+# open http://localhost:8080
 ```
+
+## Leads
+
+Form posts via FormSubmit → `financegurilla@gmail.com`.
+Confirm the FormSubmit activation email in that inbox before paid traffic.
 
 ## Stack
 
-- Static HTML / CSS / JS
-- GSAP ScrollTrigger (CDN)
-- No build step
+HTML / CSS / JS · GSAP CDN · no build step
+
+## Layout
+
+```
+index.html
+gfi-brand/logo-dark.png
+gfi-brand/scatter-cutouts/…
+gfi-partner-hub/product-photos/…
+```
