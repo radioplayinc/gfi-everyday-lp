@@ -1,1 +1,210 @@
-<placeholder>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gurilla Finance — Free POS systems</title>
+<meta name="description" content="Free Payanywhere placement if you qualify. Smart Terminal Mini (A77), Smart Terminal (A920 Pro), Smart Flex (E600 Mini), Smart POS+ (E700)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#070708;--card:#111113;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow:visible;min-height:100%}
+  img{display:block;max-width:100%;height:auto;background:transparent}
+  a{color:inherit}
+  .wrap{width:min(1080px,calc(100% - 2rem));margin:0 auto}
+  header{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+  header img{height:42px;width:auto}
+  header nav{display:flex;gap:1.1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  header nav a{text-decoration:none}
+  .hero-stage{height:200vh;position:relative}
+  .hero-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .scatter{position:relative;width:min(1100px,100%);height:100%;margin:0 auto}
+  .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform;transform:translate(-50%,-50%);transform-origin:center center}
+  .scatter .logo{width:min(240px,38vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
+  .scatter .p{width:min(260px,36vw);z-index:2;filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
+  .p3,.p4{width:min(300px,42vw)}
+  .intro{text-align:center;padding:4.2rem 0 1.2rem}
+  .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+  h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
+  .sub{margin:.85rem auto 1.4rem;max-width:38rem;color:#bdbdb8}
+  .cta{display:inline-block;background:#fff;color:#000;text-decoration:none;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:.95rem 1.5rem;border-radius:999px}
+  .hint{margin-top:1.15rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  section.block{padding:2.6rem 0}
+  .sec-title{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:1.45rem;margin-bottom:1rem}
+  .acc{border-top:1px solid var(--line)}
+  details{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 0;font-weight:600}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";color:var(--muted);font-weight:500}
+  details[open] summary:after{content:"–"}
+  .acc-body{padding:0 0 1.15rem;color:#c7c7c2;max-width:42rem}
+  .acc-body ul{margin:.6rem 0 0 1.1rem}
+  .tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+  form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.25rem}
+  .grid{display:grid;gap:.75rem}
+  @media(min-width:720px){.grid-2{grid-template-columns:1fr 1fr}}
+  label{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+  input,select,textarea{width:100%;background:#0b0b0c;border:1px solid var(--line);color:var(--paper);border-radius:10px;padding:.75rem .8rem;outline:none}
+  textarea{min-height:90px;resize:vertical}
+  button[type=submit]{width:100%;border:0;background:#fff;color:#000;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:1rem;border-radius:999px;cursor:pointer}
+  .fine{margin-top:.7rem;font-size:.72rem;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;color:var(--muted);font-size:.78rem}
+  footer a{color:var(--muted);text-decoration:none}
+  @media(max-width:700px){header nav{display:none}.hero-stage{height:180vh}.scatter .p{width:min(220px,46vw)}.p3,.p4{width:min(250px,52vw)}}
+  @media(prefers-reduced-motion:reduce){.hero-stage{height:100vh;height:100dvh}.hero-sticky{position:relative}}
+</style>
+</head>
+<body>
+  <div class="hero-stage" id="heroStage">
+    <div class="hero-sticky">
+      <div class="wrap" style="position:absolute;top:0;left:0;right:0;width:min(1080px,calc(100% - 2rem));margin:0 auto">
+        <header>
+          <a href="/"><img data-asset="logo" alt="Gurilla Finance" /></a>
+          <nav>
+            <a href="#intro">Offer</a>
+            <a href="#systems">Systems</a>
+            <a href="#apply">Apply</a>
+          </nav>
+        </header>
+      </div>
+      <div class="scatter" id="scatter">
+        <img class="p p1" data-asset="mini" alt="Smart Terminal Mini — PAX A77" />
+        <img class="p p2" data-asset="terminal" alt="Smart Terminal — PAX A920 Pro" />
+        <img class="logo" data-asset="logo" alt="Gurilla Finance" />
+        <img class="p p3" data-asset="flex" alt="Smart Flex — PAX E600 Mini" />
+        <img class="p p4" data-asset="core" alt="Smart POS+ — PAX E700" />
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <section class="intro" id="intro">
+      <p class="kicker">Gurilla Finance</p>
+      <h1>Free POS systems<br/>if you qualify.</h1>
+      <p class="sub">Official Payanywhere hardware through North. Chip, tap, swipe. Wi‑Fi + 4G. Payments Hub for inventory, tickets, and reports. No upfront equipment cost on qualified free placement.</p>
+      <a class="cta" href="#apply">Check eligibility</a>
+      <p class="hint">Scroll</p>
+    </section>
+    <section class="block" id="systems">
+      <h2 class="sec-title">Free POS systems</h2>
+      <div class="acc">
+        <details open>
+          <summary><span><span class="tag">Handheld · PAX A77</span><br/>Smart Terminal Mini</span></summary>
+          <div class="acc-body">Compact wireless terminal from the North QSG. Touchscreen, built-in barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB‑C, speakers, Wi‑Fi + 4G backup.
+            <ul>
+              <li>Best for salons, tableside, delivery, pop-ups</li>
+              <li>Email or SMS receipts (no onboard printer)</li>
+              <li>Terminal theme or Retail theme (inventory + open tickets)</li>
+              <li>Purchase $150.95 · software typically $19.95/mo · no setup fee on this model</li>
+              <li>Free placement available if the location qualifies (one unit per physical location)</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary><span><span class="tag">Counter + printer · PAX A920 Pro</span><br/>Smart Terminal</span></summary>
+          <div class="acc-body">The upgrade from a traditional terminal. Built-in receipt printer (2¼" paper), rear camera, scanner, NFC / EMV / magstripe, Wi‑Fi + 4G.
+            <ul>
+              <li>Best for restaurants and retail counters</li>
+              <li>Print, email, or SMS receipts · tips and signatures on screen</li>
+              <li>Terminal theme or Retail theme with open tickets</li>
+              <li>Purchase $349.95 · software typically $19.95/mo · no setup fee</li>
+              <li>Free placement available if the location qualifies</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary><span><span class="tag">Hybrid POS · PAX E600 Mini</span><br/>Smart Flex</span></summary>
+          <div class="acc-body">Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer, camera, EMV / NFC / magstripe, dock + accessory hub, Wi‑Fi + 4G.
+            <ul>
+              <li>Best for cafes and growing retail that want counter or on-the-go</li>
+              <li>Print, email, or SMS receipts · inventory and open tickets in Retail theme</li>
+              <li>Purchase $375.95 · software typically $29.95/mo · $49.95 setup fee may apply</li>
+              <li>Free placement still available if volume qualifies</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary><span><span class="tag">Full counter POS · PAX E700</span><br/>Smart POS+</span></summary>
+          <div class="acc-body">Large countertop POS with integrated printer and scanner head. Bigger ticket screen for high-volume checkout. Same Payments Hub inventory, employees, and virtual terminal.
+            <ul>
+              <li>Best for busy stores that want a real register</li>
+              <li>Purchase $949.95 · software typically $49.95/mo · $99.95 setup fee may apply</li>
+              <li>Free placement still available if volume qualifies · one unit per physical location</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="block" id="apply">
+      <h2 class="sec-title">Check eligibility</h2>
+      <form action="https://formsubmit.co/financegurilla@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Gurilla Finance — POS lead" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="grid grid-2">
+          <div><label for="name">Full name</label><input id="name" name="name" required /></div>
+          <div><label for="business">Business name</label><input id="business" name="business" required /></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
+          <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required /></div>
+          <div>
+            <label for="device">Preferred system</label>
+            <select id="device" name="device">
+              <option>Not sure — recommend one</option>
+              <option>Smart Terminal Mini (A77)</option>
+              <option>Smart Terminal (A920 Pro)</option>
+              <option>Smart Flex (E600 Mini)</option>
+              <option>Smart POS+ (E700)</option>
+            </select>
+          </div>
+          <div>
+            <label for="volume">Est. monthly card volume</label>
+            <select id="volume" name="volume">
+              <option>Under $5k</option>
+              <option>$5k–$15k</option>
+              <option>$15k–$50k</option>
+              <option>$50k+</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-top:.75rem">
+          <label for="notes">Anything we should know</label>
+          <textarea id="notes" name="notes" placeholder="Industry, locations, current processor…"></textarea>
+        </div>
+        <div style="margin-top:1rem"><button type="submit">Submit application</button></div>
+        <p class="fine">Hardware and software fees follow the current North / Payanywhere equipment list. Free placement is not guaranteed and is limited to qualified merchants (typically one unit per physical location). Funding review is optional and subject to lender approval. Applying does not create an obligation.</p>
+      </form>
+    </section>
+    <footer>
+      <div>© 2026 Gurilla Finance</div>
+      <div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+    </footer>
+  </div>
+<script>
+(function(){
+  var map={logo:'gfi-brand/logo-mark.b64?v=7',mini:'gfi-brand/pos-mini.b64?v=7',terminal:'gfi-brand/pos-terminal.b64?v=7',flex:'gfi-brand/pos-flex.b64?v=7',core:'gfi-brand/pos-core.b64?v=7'};
+  Object.keys(map).forEach(function(key){
+    fetch(map[key],{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(b){
+      if(!b || b.length<80 || b.indexOf('/9j/')!==0) return;
+      var src='data:image/jpeg;base64,'+b.trim();
+      document.querySelectorAll('[data-asset="'+key+'"]').forEach(function(img){img.src=src});
+    }).catch(function(){});
+  });
+  var stage=document.getElementById('heroStage');
+  var logo=document.querySelector('.scatter .logo');
+  var items=[{el:document.querySelector('.p1'), x:-132, y:-96, r:-16},{el:document.querySelector('.p2'), x:132, y:-90, r:14},{el:document.querySelector('.p3'), x:-138, y:88, r:9},{el:document.querySelector('.p4'), x:136, y:92, r:-11}];
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ticking=false;
+  function progress(){if(!stage) return 0;var rect=stage.getBoundingClientRect();var total=Math.max(1, stage.offsetHeight - window.innerHeight);return Math.min(1, Math.max(0, -rect.top / total));}
+  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+  function apply(){ticking=false;var p=reduce?1:ease(progress());items.forEach(function(item){if(!item.el) return;var x=-50+item.x*p, y=-50+item.y*p, r=item.r*p, s=0.78+0.22*p;item.el.style.transform='translate('+x+'%, '+y+'%) rotate('+r+'deg) scale('+s+')';});if(logo){logo.style.transform='translate(-50%,-50%) scale('+(0.92+0.12*p)+') rotate('+(-4+8*p)+'deg)';}}
+  function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(apply); }
+  apply();
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+})();
+</script>
+</body>
+</html>
