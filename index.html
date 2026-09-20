@@ -3,99 +3,164 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gurilla Finance</title>
-<style id="gfi-boot-css">
-  html,body{height:100%;margin:0;background:#050506;color:#f7f7f5;font-family:Inter,system-ui,sans-serif;overflow:hidden}
+<title>Gurilla Finance — Free POS systems</title>
+<meta name="description" content="Get a free Payanywhere POS if you qualify. Smart Mini, Smart Terminal, Smart Flex, or Core." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#070708;--card:#111113;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86;--white:#fff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow:auto}
+  img{display:block;max-width:100%;height:auto;background:transparent}
+  a{color:inherit}
+  .wrap{width:min(1080px,calc(100% - 2rem));margin:0 auto}
+  header{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+  header img{height:42px;width:auto}
+  header nav{display:flex;gap:1.1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  header nav a{text-decoration:none}
+  .hero{padding:1.5rem 0 3.5rem;text-align:center}
+  .scatter{position:relative;height:min(62vh,560px);margin:0 auto 1.6rem;max-width:920px}
+  .scatter .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(220px,38vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
+  .scatter .p{position:absolute;width:min(210px,34vw);filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
+  .p1{left:2%;top:4%;transform:rotate(-14deg)}
+  .p2{right:2%;top:2%;transform:rotate(12deg)}
+  .p3{left:8%;bottom:0;transform:rotate(8deg);width:min(250px,40vw)}
+  .p4{right:4%;bottom:2%;transform:rotate(-8deg);width:min(250px,40vw)}
+  .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+  h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
+  .sub{margin:.85rem auto 1.4rem;max-width:36rem;color:#bdbdb8}
+  .cta{display:inline-block;background:#fff;color:#000;text-decoration:none;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:.95rem 1.5rem;border-radius:999px}
+  section{padding:2.6rem 0}
+  .sec-title{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:1.45rem;margin-bottom:1rem}
+  .acc{border-top:1px solid var(--line)}
+  details{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 0;font-weight:600}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";color:var(--muted);font-weight:500}
+  details[open] summary:after{content:"–"}
+  .acc-body{padding:0 0 1.15rem;color:#c7c7c2;max-width:40rem}
+  .acc-body ul{margin:.6rem 0 0 1.1rem}
+  .tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+  form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.25rem}
+  .grid{display:grid;gap:.75rem}
+  @media(min-width:720px){.grid-2{grid-template-columns:1fr 1fr}}
+  label{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+  input,select,textarea{width:100%;background:#0b0b0c;border:1px solid var(--line);color:var(--paper);border-radius:10px;padding:.75rem .8rem;outline:none}
+  textarea{min-height:90px;resize:vertical}
+  button[type=submit]{width:100%;border:0;background:#fff;color:#000;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:1rem;border-radius:999px;cursor:pointer}
+  .fine{margin-top:.7rem;font-size:.72rem;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;color:var(--muted);font-size:.78rem}
+  footer a{color:var(--muted);text-decoration:none}
+  @media(max-width:700px){.scatter{height:420px}header nav{display:none}}
 </style>
 </head>
 <body>
-<div id="gfi-gate" class="gfi-gate">
-  <div class="gfi-gate-card">
-    <div class="gfi-logo-wrap" id="gfiLogoWrap">
-      <div class="gfi-logo-ring" id="gfiLogoRing"></div>
-      <img class="gfi-logo-mark" id="gfiLogoMark" alt="Gurilla Finance" />
-    </div>
-    <p class="gfi-status" id="gfiStatus">Opening the floor…</p>
-    <button id="gfiEnter" type="button" disabled>Enter</button>
+  <div class="wrap">
+    <header>
+      <a href="/"><img data-asset="logo" alt="Gurilla Finance" /></a>
+      <nav>
+        <a href="#systems">Systems</a>
+        <a href="#apply">Apply</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="scatter">
+        <img class="p p1" data-asset="mini" alt="Smart Mini" />
+        <img class="p p2" data-asset="terminal" alt="Smart Terminal" />
+        <img class="logo" data-asset="logo" alt="Gurilla Finance" />
+        <img class="p p3" data-asset="flex" alt="Smart Flex" />
+        <img class="p p4" data-asset="core" alt="Core POS" />
+      </div>
+      <p class="kicker">Gurilla Finance</p>
+      <h1>Free POS systems<br/>if you qualify.</h1>
+      <p class="sub">Four Payanywhere devices. No upfront equipment cost for approved merchants. Tap, chip, swipe. Optional funding review. No pressure.</p>
+      <a class="cta" href="#apply">Check eligibility</a>
+    </section>
+    <section id="systems">
+      <h2 class="sec-title">Free POS systems</h2>
+      <div class="acc">
+        <details open>
+          <summary><span><span class="tag">Handheld</span><br/>Smart Mini</span></summary>
+          <div class="acc-body">Compact wireless terminal for counter, table, or on the go. 5.5" touchscreen, EMV / tap / swipe, Wi‑Fi + 4G, built-in scanner.
+            <ul><li>Best for salons, food trucks, delivery, pop-ups</li><li>Free placement or purchase path if you qualify</li><li>Software typically $19.95/mo per device after placement</li></ul>
+          </div>
+        </details>
+        <details>
+          <summary><span><span class="tag">Counter + printer</span><br/>Smart Terminal</span></summary>
+          <div class="acc-body">The upgrade from a traditional terminal. Built-in receipt printer, 5.5" screen, chip / tap / swipe, tips and signatures on screen.
+            <ul><li>Best for restaurants and retail counters</li><li>Print, email, or text receipts</li><li>Software typically $19.95/mo per device</li></ul>
+          </div>
+        </details>
+        <details>
+          <summary><span><span class="tag">Hybrid POS</span><br/>Smart Flex</span></summary>
+          <div class="acc-body">Part terminal, part point of sale. 7" display on a stand, inventory-friendly checkout, customer-facing flow, chip / tap.
+            <ul><li>Best for cafes and growing retail</li><li>One-time setup fee may apply on this model</li><li>Software typically $29.95/mo per device</li></ul>
+          </div>
+        </details>
+        <details>
+          <summary><span><span class="tag">Full counter POS</span><br/>Core</span></summary>
+          <div class="acc-body">Large 11" POS for high-volume counters. Bigger ticket screen, attached reader, retail layout.
+            <ul><li>Best for busy stores that want a real register</li><li>Highest software fee of the four — typically $49.95/mo</li><li>Free placement still available if volume qualifies</li></ul>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section id="apply">
+      <h2 class="sec-title">Check eligibility</h2>
+      <form action="https://formsubmit.co/financegurilla@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Gurilla Finance — POS lead" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="grid grid-2">
+          <div><label for="name">Full name</label><input id="name" name="name" required /></div>
+          <div><label for="business">Business name</label><input id="business" name="business" required /></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
+          <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required /></div>
+          <div>
+            <label for="device">Preferred system</label>
+            <select id="device" name="device">
+              <option>Not sure — recommend one</option>
+              <option>Smart Mini</option>
+              <option>Smart Terminal</option>
+              <option>Smart Flex</option>
+              <option>Core</option>
+            </select>
+          </div>
+          <div>
+            <label for="volume">Est. monthly card volume</label>
+            <select id="volume" name="volume">
+              <option>Under $5k</option>
+              <option>$5k–$15k</option>
+              <option>$15k–$50k</option>
+              <option>$50k+</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-top:.75rem">
+          <label for="notes">Anything we should know</label>
+          <textarea id="notes" name="notes" placeholder="Industry, locations, current processor…"></textarea>
+        </div>
+        <div style="margin-top:1rem"><button type="submit">Submit application</button></div>
+        <p class="fine">Equipment through approved processing partners. Placement is not guaranteed. Funding review is optional and subject to lender approval. Applying does not create an obligation.</p>
+      </form>
+    </section>
+    <footer>
+      <div>© 2026 Gurilla Finance</div>
+      <div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+    </footer>
   </div>
-</div>
-<style id="gfi-gate-css">
-  .gfi-gate{position:fixed;inset:0;z-index:2147483646;display:grid;place-items:center;background:#050506;transition:opacity .7s ease,visibility .7s ease}
-  .gfi-gate.is-out{opacity:0;visibility:hidden;pointer-events:none}
-  .gfi-gate-card{width:min(520px,calc(100vw - 1.5rem));text-align:center;padding:.6rem .6rem 1.2rem}
-  .gfi-logo-wrap{position:relative;width:min(420px,86vw);aspect-ratio:1;margin:0 auto .85rem;border-radius:28px;overflow:hidden;background:#0a0a0b;box-shadow:0 24px 80px rgba(0,0,0,.55)}
-  .gfi-logo-ring{position:absolute;inset:10px;border-radius:22px;border:1px solid rgba(200,200,200,.12);pointer-events:none;z-index:2}
-  .gfi-logo-ring:before{content:"";position:absolute;inset:-3px;border-radius:24px;border:2px solid transparent;border-top-color:#d4d4d6;border-right-color:rgba(180,180,184,.55);animation:gfiSpin 1.15s linear infinite}
-  .gfi-logo-ring.is-ready:before{animation:none;border-color:rgba(160,160,164,.35)}
-  .gfi-logo-mark{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:gfiPulse 2.6s ease-in-out infinite;filter:drop-shadow(0 12px 28px rgba(0,0,0,.45))}
-  .gfi-logo-wrap.is-ready .gfi-logo-mark{animation:gfiSettle .7s ease forwards}
-  @keyframes gfiSpin{to{transform:rotate(360deg)}}
-  @keyframes gfiPulse{0%,100%{transform:scale(1);opacity:.96}50%{transform:scale(1.015);opacity:1}}
-  @keyframes gfiSettle{from{transform:scale(1.01);opacity:.96}to{transform:scale(1);opacity:1}}
-  .gfi-status{min-height:1.2em;margin:0 0 1.1rem;font-size:.78rem;letter-spacing:.08em;color:#8a8a86}
-  #gfiEnter{appearance:none;border:1px solid rgba(247,247,245,.16);background:#141416;color:rgba(247,247,245,.38);font:600 .78rem Inter,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;padding:.95rem 2.4rem;border-radius:999px;cursor:not-allowed;transition:background .2s,color .2s,border-color .2s,box-shadow .2s,transform .2s}
-  #gfiEnter.is-on{cursor:pointer;background:#fff;color:#000;border-color:#fff;box-shadow:0 0 0 1px #fff,0 12px 40px rgba(247,247,245,.16)}
-  #gfiEnter.is-on:hover{transform:translateY(-1px)}
-  @media (prefers-reduced-motion:reduce){.gfi-logo-ring:before,.gfi-logo-mark{animation:none}}
-</style>
 <script>
 (function(){
-  const PART_MAX = 200;
-  const status = document.getElementById("gfiStatus");
-  const mark = document.getElementById("gfiLogoMark");
-  function setStatus(t){ if(status) status.textContent = t; }
-  fetch("gfi-brand/gate-logo.b64",{cache:"force-cache"}).then(function(r){return r.ok?r.text():""}).then(function(b){ if(b&&mark) mark.src="data:image/jpeg;base64,"+b.trim(); }).catch(function(){});
-
-  function gateScript(){
-    return "(function(){var ready=false;var gate=document.getElementById('gfi-gate');var btn=document.getElementById('gfiEnter');var wrap=document.getElementById('gfiLogoWrap');var ring=document.getElementById('gfiLogoRing');var st=document.getElementById('gfiStatus');var mark=document.getElementById('gfiLogoMark');if(mark&&!mark.getAttribute('src')){fetch('gfi-brand/gate-logo.b64',{cache:'force-cache'}).then(function(r){return r.ok?r.text():''}).then(function(b){if(b)mark.src='data:image/jpeg;base64,'+b.trim();});}function freeze(){document.documentElement.classList.add('gfi-gated');document.body.classList.add('gfi-gated');}function release(){document.documentElement.classList.remove('gfi-gated');document.body.classList.remove('gfi-gated');document.documentElement.style.overflow='';document.documentElement.style.height='';document.body.style.overflow='';document.body.style.height='';document.body.style.position='';document.body.style.width='';window.dispatchEvent(new Event('resize'));window.dispatchEvent(new Event('scroll'));}function arm(){if(ready)return;ready=true;if(wrap)wrap.classList.add('is-ready');if(ring)ring.classList.add('is-ready');if(btn){btn.disabled=false;btn.classList.add('is-on');}if(st)st.textContent='Ready.';freeze();}function unlock(){if(!ready)return;if(gate){gate.classList.add('is-out');setTimeout(function(){if(gate&&gate.parentNode)gate.parentNode.removeChild(gate);},800);}release();}function waitImgs(){var imgs=[].slice.call(document.images||[]).filter(function(i){return !i.complete&&i.id!=='gfiLogoMark';});if(!imgs.length){arm();return;}var left=imgs.length;function done(){left--;if(left<=0)arm();}imgs.forEach(function(i){i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true});});setTimeout(arm,8000);}if(btn)btn.addEventListener('click',unlock);document.addEventListener('keydown',function(e){if(ready&&(e.key==='Enter'||e.key===' ')){e.preventDefault();unlock();}});if(document.readyState==='complete')waitImgs();else window.addEventListener('load',waitImgs);})();";
-  }
-
-  function injectGate(html){
-    var gate = document.getElementById("gfi-gate");
-    var gateCss = document.getElementById("gfi-gate-css");
-    var css = gateCss ? gateCss.outerHTML : "";
-    css += "<style id=\"gfi-gate-lock\">html.gfi-gated,body.gfi-gated{overflow:hidden!important;overscroll-behavior:none}html:not(.gfi-gated),body:not(.gfi-gated){overflow:visible!important;height:auto!important}</style>";
-    var gateHtml = gate ? gate.outerHTML : "";
-    var boot = "<script>" + gateScript() + "<\\/script>";
-    if (/id=[\"']gfi-gate[\"']/.test(html)) return html;
-    if (/<body[^>]*>/i.test(html)) {
-      return html.replace(/<body([^>]*)>/i, function(m, attrs){
-        return "<body" + attrs + ">" + css + gateHtml + boot;
-      });
-    }
-    return css + gateHtml + boot + html;
-  }
-
-  async function assemble(){
-    var chunks = [];
-    var misses = 0;
-    for (var i = 0; i < PART_MAX; i++){
-      try {
-        var res = await fetch("parts/c" + i + ".txt", { cache: "no-store" });
-        if (!res.ok){
-          misses++;
-          if (misses >= 8 && chunks.length) break;
-          continue;
-        }
-        misses = 0;
-        chunks.push(await res.text());
-        if (i % 12 === 0) setStatus("Loading the floor… " + Math.min(99, Math.round((i / 120) * 100)) + "%");
-      } catch (e) {
-        misses++;
-        if (misses >= 8 && chunks.length) break;
-      }
-    }
-    if (!chunks.length){
-      setStatus("Could not load the site.");
-      return;
-    }
-    setStatus("Rendering…");
-    var html = injectGate(chunks.join(""));
-    document.open();
-    document.write(html);
-    document.close();
-  }
-  assemble();
+  var map={logo:'gfi-brand/logo-mark.b64',mini:'gfi-brand/pos-mini.b64',terminal:'gfi-brand/pos-terminal.b64',flex:'gfi-brand/pos-flex.b64',core:'gfi-brand/pos-core.b64'};
+  var mime={logo:'image/png',mini:'image/jpeg',terminal:'image/jpeg',flex:'image/jpeg',core:'image/jpeg'};
+  Object.keys(map).forEach(function(key){
+    fetch(map[key],{cache:'force-cache'}).then(function(r){return r.ok?r.text():''}).then(function(b){
+      if(!b) return;
+      var src='data:'+mime[key]+';base64,'+b.trim();
+      document.querySelectorAll('[data-asset="'+key+'"]').forEach(function(img){img.src=src});
+    }).catch(function(){});
+  });
 })();
 </script>
 </body>
