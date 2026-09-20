@@ -30,7 +30,7 @@
   .intro{text-align:center;padding:4.2rem 0 1.2rem}
   .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
   h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
-  .sub{margin:.85rem auto 1.4rem;max-width:38rem;color:#bdbdb8}
+  .sub{margin:.85rem auto 1.4rem;max-width:40rem;color:#bdbdb8}
   .cta{display:inline-block;background:#fff;color:#000;text-decoration:none;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:.95rem 1.5rem;border-radius:999px}
   .hint{margin-top:1.15rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   section.block{padding:2.6rem 0}
@@ -41,8 +41,11 @@
   summary::-webkit-details-marker{display:none}
   summary:after{content:"+";color:var(--muted);font-weight:500}
   details[open] summary:after{content:"–"}
-  .acc-body{padding:0 0 1.15rem;color:#c7c7c2;max-width:42rem}
-  .acc-body ul{margin:.6rem 0 0 1.1rem}
+  .acc-body{padding:0 0 1.3rem;color:#c7c7c2}
+  .acc-grid{display:grid;gap:1.1rem;align-items:start}
+  @media(min-width:720px){.acc-grid{grid-template-columns:160px 1fr}}
+  .acc-pic{width:100%;max-width:180px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
+  .acc-body ul{margin:.55rem 0 0 1.1rem}
   .tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
   form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.25rem}
   .grid{display:grid;gap:.75rem}
@@ -84,56 +87,91 @@
     <section class="intro" id="intro">
       <p class="kicker">Gurilla Finance</p>
       <h1>Free POS systems<br/>if you qualify.</h1>
-      <p class="sub">Official Payanywhere hardware through North. Chip, tap, swipe. Wi‑Fi + 4G. Payments Hub for inventory, tickets, and reports. No upfront equipment cost on qualified free placement.</p>
+      <p class="sub">Official Payanywhere hardware through North. Chip, tap, swipe. Terminal theme or Retail theme (inventory + open tickets). Payments Hub for activity, employees, inventory, virtual terminal, and invoices. No upfront equipment cost on qualified free placement.</p>
       <a class="cta" href="#apply">Check eligibility</a>
       <p class="hint">Scroll</p>
     </section>
     <section class="block" id="systems">
-      <h2 class="sec-title">Free POS systems</h2>
+      <h2 class="sec-title">Four official systems</h2>
       <div class="acc">
         <details open>
           <summary><span><span class="tag">Handheld · PAX A77</span><br/>Smart Terminal Mini</span></summary>
-          <div class="acc-body">Compact wireless terminal from the North QSG. Touchscreen, built-in barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB‑C, speakers, Wi‑Fi + 4G backup.
-            <ul>
-              <li>Best for salons, tableside, delivery, pop-ups</li>
-              <li>Email or SMS receipts (no onboard printer)</li>
-              <li>Terminal theme or Retail theme (inventory + open tickets)</li>
-              <li>Purchase $150.95 · software typically $19.95/mo · no setup fee on this model</li>
-              <li>Free placement available if the location qualifies (one unit per physical location)</li>
-            </ul>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <img class="acc-pic" data-asset="mini" alt="Smart Terminal Mini" />
+              <div>
+                Compact wireless terminal from the North QSG. 5.5" Android touchscreen, built-in laser barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB‑C, speakers, Wi‑Fi with 4G backup. No onboard printer.
+                <ul>
+                  <li>Best for salons, tableside, delivery, pop-ups — counter, table, or on the go</li>
+                  <li>Accepts EMV, contactless (Apple Pay / Samsung Pay), magstripe, PIN debit, EBT / SNAP</li>
+                  <li>Email or SMS receipts only (no built-in printer)</li>
+                  <li>Terminal theme or Retail theme (inventory + open tickets)</li>
+                  <li>Included: terminal, power adapter, charging cord</li>
+                  <li>Purchase $150.95 · software $19.95/mo/device · no setup fee on this model</li>
+                  <li>Free placement available if the location qualifies (typically one unit per physical location)</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </details>
         <details>
           <summary><span><span class="tag">Counter + printer · PAX A920 Pro</span><br/>Smart Terminal</span></summary>
-          <div class="acc-body">The upgrade from a traditional terminal. Built-in receipt printer (2¼" paper), rear camera, scanner, NFC / EMV / magstripe, Wi‑Fi + 4G.
-            <ul>
-              <li>Best for restaurants and retail counters</li>
-              <li>Print, email, or SMS receipts · tips and signatures on screen</li>
-              <li>Terminal theme or Retail theme with open tickets</li>
-              <li>Purchase $349.95 · software typically $19.95/mo · no setup fee</li>
-              <li>Free placement available if the location qualifies</li>
-            </ul>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <img class="acc-pic" data-asset="terminal" alt="Smart Terminal" />
+              <div>
+                The upgrade from a traditional terminal. Built-in receipt printer (2¼" paper), rear camera + scanner, NFC / EMV / magstripe, Wi‑Fi + 4G. Optional dock adds Ethernet.
+                <ul>
+                  <li>Best for restaurants and retail counters that still need mobility</li>
+                  <li>Accepts EMV, contactless, magstripe, PIN debit, EBT / SNAP</li>
+                  <li>Print, email, or SMS receipts · tips and signatures on screen</li>
+                  <li>Terminal theme or Retail theme with open tickets</li>
+                  <li>Included: terminal, power adapter, charging cord</li>
+                  <li>Purchase $349.95 · software $19.95/mo/device · no setup fee</li>
+                  <li>Free placement available if the location qualifies</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </details>
         <details>
           <summary><span><span class="tag">Hybrid POS · PAX E600 Mini</span><br/>Smart Flex</span></summary>
-          <div class="acc-body">Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer, camera, EMV / NFC / magstripe, dock + accessory hub, Wi‑Fi + 4G.
-            <ul>
-              <li>Best for cafes and growing retail that want counter or on-the-go</li>
-              <li>Print, email, or SMS receipts · inventory and open tickets in Retail theme</li>
-              <li>Purchase $375.95 · software typically $29.95/mo · $49.95 setup fee may apply</li>
-              <li>Free placement still available if volume qualifies</li>
-            </ul>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <img class="acc-pic" data-asset="flex" alt="Smart Flex" />
+              <div>
+                Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer (2¼" paper), camera, EMV / NFC / magstripe, charging dock + accessory hub, Wi‑Fi + 4G.
+                <ul>
+                  <li>Best for cafes and growing retail that want counter or on-the-go</li>
+                  <li>Accepts EMV, contactless, magstripe, PIN debit, EBT / SNAP</li>
+                  <li>Print, email, or SMS receipts · inventory and open tickets in Retail theme</li>
+                  <li>Dock + accessory hub for a countertop setup (cash drawer is not compatible with the E600 Mini hub)</li>
+                  <li>Included: Smart Flex, power adapter, charging cord</li>
+                  <li>Current public list: purchase $549.95 · $49.95 one-time setup · software $29.95/mo/device</li>
+                  <li>Free placement still available if volume qualifies</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </details>
         <details>
           <summary><span><span class="tag">Full counter POS · PAX E700</span><br/>Smart POS+</span></summary>
-          <div class="acc-body">Large countertop POS with integrated printer and scanner head. Bigger ticket screen for high-volume checkout. Same Payments Hub inventory, employees, and virtual terminal.
-            <ul>
-              <li>Best for busy stores that want a real register</li>
-              <li>Purchase $949.95 · software typically $49.95/mo · $99.95 setup fee may apply</li>
-              <li>Free placement still available if volume qualifies · one unit per physical location</li>
-            </ul>
+          <div class="acc-body">
+            <div class="acc-grid">
+              <img class="acc-pic" data-asset="core" alt="Smart POS+" />
+              <div>
+                Large countertop POS. North QSG lists this SKU as non-cellular — Wi‑Fi plus LAN. 12.5" merchant screen + 4.3" customer-facing display, integrated printer (3⅛" paper), front + rear cameras, fingerprint reader, cash-drawer port. Must stay plugged in to print.
+                <ul>
+                  <li>Best for busy retail, QSR, automotive, and healthcare counters</li>
+                  <li>Accepts EMV, contactless, magstripe, PIN debit, EBT / SNAP</li>
+                  <li>Print, email, or SMS receipts · Payments Hub inventory, employees, virtual terminal, invoices</li>
+                  <li>Ethernet + cash drawer port on the back of the unit</li>
+                  <li>Included: Smart POS+, power adapter, charging cord</li>
+                  <li>Purchase $949.95 · $99.95 one-time setup · software $49.95/mo/device</li>
+                  <li>Free placement still available if volume qualifies · typically one unit per physical location</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </details>
       </div>
@@ -174,7 +212,7 @@
           <textarea id="notes" name="notes" placeholder="Industry, locations, current processor…"></textarea>
         </div>
         <div style="margin-top:1rem"><button type="submit">Submit application</button></div>
-        <p class="fine">Hardware and software fees follow the current North / Payanywhere equipment list. Free placement is not guaranteed and is limited to qualified merchants (typically one unit per physical location). Funding review is optional and subject to lender approval. Applying does not create an obligation.</p>
+        <p class="fine">Hardware and software fees follow current Payanywhere / North published lists. Smart Flex public purchase is $549.95 (older North partner list showed $375.95 on the prior E600). Free placement is not guaranteed and is typically limited to one unit per physical location. Funding review is optional and subject to lender approval. Applying does not create an obligation.</p>
       </form>
     </section>
     <footer>
@@ -184,7 +222,7 @@
   </div>
 <script>
 (function(){
-  var map={logo:'gfi-brand/logo-mark.b64?v=7',mini:'gfi-brand/pos-mini.b64?v=7',terminal:'gfi-brand/pos-terminal.b64?v=7',flex:'gfi-brand/pos-flex.b64?v=7',core:'gfi-brand/pos-core.b64?v=7'};
+  var map={logo:'gfi-brand/logo-mark.b64?v=8',mini:'gfi-brand/pos-mini.b64?v=8',terminal:'gfi-brand/pos-terminal.b64?v=8',flex:'gfi-brand/pos-flex.b64?v=8',core:'gfi-brand/pos-core.b64?v=8'};
   Object.keys(map).forEach(function(key){
     fetch(map[key],{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(b){
       if(!b || b.length<80 || b.indexOf('/9j/')!==0) return;
