@@ -12,7 +12,7 @@
   :root{--bg:#070708;--card:#111113;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden;overflow-y:auto;height:auto;min-height:100%}
+  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow:visible;min-height:100%}
   img{display:block;max-width:100%;height:auto;background:transparent}
   a{color:inherit}
   .wrap{width:min(1080px,calc(100% - 2rem));margin:0 auto}
@@ -20,17 +20,14 @@
   header img{height:42px;width:auto}
   header nav{display:flex;gap:1.1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   header nav a{text-decoration:none}
-  .hero-stage{height:220vh;position:relative}
-  .hero-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+  .hero-stage{height:200vh;position:relative}
+  .hero-sticky{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
   .hero{text-align:center;padding:0 0 1.2rem}
-  .scatter{position:relative;height:min(58vh,520px);margin:0 auto 1.2rem;max-width:920px}
-  .scatter .logo,.scatter .p{position:absolute;will-change:transform;transform-origin:center center}
-  .scatter .logo{left:50%;top:50%;width:min(220px,38vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
-  .scatter .p{width:min(200px,32vw);filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
-  .p1{left:8%;top:10%}
-  .p2{right:8%;top:8%}
-  .p3{left:10%;bottom:2%;width:min(240px,38vw)}
-  .p4{right:8%;bottom:4%;width:min(240px,38vw)}
+  .scatter{position:relative;height:min(56vh,500px);margin:0 auto 1.1rem;max-width:920px}
+  .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform;transform:translate(-50%,-50%);transform-origin:center center}
+  .scatter .logo{width:min(210px,36vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
+  .scatter .p{width:min(190px,30vw);z-index:2;filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
+  .p3,.p4{width:min(220px,34vw)}
   .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
   h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
   .sub{margin:.85rem auto 1.4rem;max-width:36rem;color:#bdbdb8}
@@ -57,15 +54,8 @@
   .fine{margin-top:.7rem;font-size:.72rem;color:var(--muted)}
   footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;color:var(--muted);font-size:.78rem}
   footer a{color:var(--muted);text-decoration:none}
-  @media(max-width:700px){
-    header nav{display:none}
-    .hero-stage{height:180vh}
-    .scatter{height:46vh}
-  }
-  @media(prefers-reduced-motion:reduce){
-    .hero-stage{height:auto}
-    .hero-sticky{position:relative;height:auto}
-  }
+  @media(max-width:700px){header nav{display:none}.hero-stage{height:170vh}.scatter{height:42vh}}
+  @media(prefers-reduced-motion:reduce){.hero-stage{height:auto}.hero-sticky{position:relative;min-height:auto}}
 </style>
 </head>
 <body>
@@ -187,40 +177,33 @@
   var stage=document.getElementById('heroStage');
   var logo=document.querySelector('.scatter .logo');
   var items=[
-    {el:document.querySelector('.p1'), x:-46, y:-28, r:-18},
-    {el:document.querySelector('.p2'), x:48, y:-30, r:16},
-    {el:document.querySelector('.p3'), x:-42, y:34, r:10},
-    {el:document.querySelector('.p4'), x:46, y:32, r:-12}
+    {el:document.querySelector('.p1'), x:-118, y:-86, r:-16},
+    {el:document.querySelector('.p2'), x:118, y:-80, r:14},
+    {el:document.querySelector('.p3'), x:-124, y:78, r:9},
+    {el:document.querySelector('.p4'), x:120, y:82, r:-11}
   ];
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var ticking=false;
-
   function progress(){
     if(!stage) return 0;
     var rect=stage.getBoundingClientRect();
     var total=Math.max(1, stage.offsetHeight - window.innerHeight);
     return Math.min(1, Math.max(0, -rect.top / total));
   }
-  function ease(t){return t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
   function apply(){
     ticking=false;
-    if(reduce) return;
-    var p=ease(progress());
+    var p=reduce?1:ease(progress());
     items.forEach(function(item){
       if(!item.el) return;
-      var x=item.x*p, y=item.y*p, r=item.r*p, s=0.72+0.28*p;
+      var x=-50+item.x*p, y=-50+item.y*p, r=item.r*p, s=0.78+0.22*p;
       item.el.style.transform='translate('+x+'%, '+y+'%) rotate('+r+'deg) scale('+s+')';
     });
     if(logo){
-      var ls=0.86+0.18*p;
-      logo.style.transform='translate(-50%,-50%) scale('+ls+') rotate('+(-6+12*p)+'deg)';
+      logo.style.transform='translate(-50%,-50%) scale('+(0.9+0.12*p)+') rotate('+(-4+8*p)+'deg)';
     }
   }
-  function onScroll(){
-    if(ticking) return;
-    ticking=true;
-    requestAnimationFrame(apply);
-  }
+  function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(apply); }
   apply();
   window.addEventListener('scroll', onScroll, {passive:true});
   window.addEventListener('resize', onScroll);
