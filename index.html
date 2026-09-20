@@ -152,10 +152,10 @@
   </div>
 <script>
 (function(){
-  var map={logo:'gfi-brand/logo-mark.b64',mini:'gfi-brand/pos-mini.b64',terminal:'gfi-brand/pos-terminal.b64',flex:'gfi-brand/pos-flex.b64',core:'gfi-brand/pos-core.b64'};
-  var mime={logo:'image/png',mini:'image/jpeg',terminal:'image/jpeg',flex:'image/jpeg',core:'image/jpeg'};
+  var map={logo:'gfi-brand/logo-mark.b64?v=4',mini:'gfi-brand/pos-mini.b64?v=4',terminal:'gfi-brand/pos-terminal.b64?v=4',flex:'gfi-brand/pos-flex.b64?v=4',core:'gfi-brand/pos-core.b64?v=4'};
+  var mime={logo:'image/jpeg',mini:'image/jpeg',terminal:'image/jpeg',flex:'image/jpeg',core:'image/jpeg'};
   Object.keys(map).forEach(function(key){
-    fetch(map[key],{cache:'force-cache'}).then(function(r){return r.ok?r.text():''}).then(function(b){
+    fetch(map[key],{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(b){
       if(!b) return;
       var src='data:'+mime[key]+';base64,'+b.trim();
       document.querySelectorAll('[data-asset="'+key+'"]').forEach(function(img){img.src=src});
