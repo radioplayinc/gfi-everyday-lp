@@ -75,11 +75,11 @@
         </header>
       </div>
       <div class="scatter" id="scatter">
-        <img class="p p1" data-asset="mini" alt="Smart Terminal Mini — PAX A77" />
-        <img class="p p2" data-asset="terminal" alt="Smart Terminal — PAX A920 Pro" />
+        <img class="p p1" src="PAX_A77_RightTilt_Retail_Shadow.png?v=11" alt="Smart Terminal Mini — PAX A77" />
+        <img class="p p2" src="A920Pro.Right_Retail.png?v=11" alt="Smart Terminal — PAX A920 Pro" />
         <img class="logo" data-asset="logo" alt="Gurilla Finance" />
-        <img class="p p3" data-asset="flex" alt="Smart Flex — PAX E600 Mini" />
-        <img class="p p4" data-asset="core" alt="Smart POS+ — PAX E700" />
+        <img class="p p3" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=11" alt="Smart Flex — PAX E600 Mini" />
+        <img class="p p4" src="E700-W-1.png?v=11" alt="Smart POS+ — PAX E700" />
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
           <summary><span><span class="tag">Handheld · PAX A77</span><br/>Smart Terminal Mini</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" data-asset="mini" alt="Smart Terminal Mini" />
+              <img class="acc-pic" src="PAX_A77_RightTilt_Retail_Shadow.png?v=11" alt="Smart Terminal Mini" />
               <div>
                 Compact wireless terminal from the North QSG. 5.5" Android touchscreen, built-in laser barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB‑C, speakers, Wi‑Fi with 4G backup. No onboard printer.
                 <ul>
@@ -118,7 +118,7 @@
           <summary><span><span class="tag">Counter + printer · PAX A920 Pro</span><br/>Smart Terminal</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" data-asset="terminal" alt="Smart Terminal" />
+              <img class="acc-pic" src="A920Pro.Right_Retail.png?v=11" alt="Smart Terminal" />
               <div>
                 The upgrade from a traditional terminal. Built-in receipt printer (2¼" paper), rear camera + scanner, NFC / EMV / magstripe, Wi‑Fi + 4G. Optional dock adds Ethernet.
                 <ul>
@@ -138,7 +138,7 @@
           <summary><span><span class="tag">Hybrid POS · PAX E600 Mini</span><br/>Smart Flex</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" data-asset="flex" alt="Smart Flex" />
+              <img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=11" alt="Smart Flex" />
               <div>
                 Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer (2¼" paper), camera, EMV / NFC / magstripe, charging dock + accessory hub, Wi‑Fi + 4G.
                 <ul>
@@ -158,7 +158,7 @@
           <summary><span><span class="tag">Full counter POS · PAX E700</span><br/>Smart POS+</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" data-asset="core" alt="Smart POS+" />
+              <img class="acc-pic" src="E700-W-1.png?v=11" alt="Smart POS+" />
               <div>
                 Large countertop POS. North QSG lists this SKU as non-cellular — Wi‑Fi plus LAN. 12.5" merchant screen + 4.3" customer-facing display, integrated printer (3⅛" paper), front + rear cameras, fingerprint reader, cash-drawer port. Must stay plugged in to print.
                 <ul>
@@ -222,17 +222,7 @@
   </div>
 <script>
 (function(){
-  ['mini','terminal','flex','core'].forEach(function(key){
-    var s=document.createElement('script');
-    s.src='gfi-brand/pos-'+key+'.js?v=9';
-    s.onload=function(){
-      if(window.GFI_IMG && GFI_IMG[key]){
-        document.querySelectorAll('[data-asset="'+key+'"]').forEach(function(img){img.src=GFI_IMG[key];});
-      }
-    };
-    document.head.appendChild(s);
-  });
-  fetch('gfi-brand/logo-mark.b64?v=9',{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(b){
+  fetch('gfi-brand/logo-mark.b64?v=11',{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(b){
     if(!b || b.length<80 || b.indexOf('/9j/')!==0) return;
     var src='data:image/jpeg;base64,'+b.trim();
     document.querySelectorAll('[data-asset="logo"]').forEach(function(img){img.src=src});
