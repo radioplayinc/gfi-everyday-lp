@@ -9,29 +9,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#070708;--card:#111113;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86;--white:#fff}
+  :root{--bg:#070708;--card:#111113;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86}
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow:auto}
+  html{scroll-behavior:smooth}
+  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden;overflow-y:auto;height:auto;min-height:100%}
   img{display:block;max-width:100%;height:auto;background:transparent}
   a{color:inherit}
   .wrap{width:min(1080px,calc(100% - 2rem));margin:0 auto}
-  header{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+  header{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;position:relative;z-index:8}
   header img{height:42px;width:auto}
   header nav{display:flex;gap:1.1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   header nav a{text-decoration:none}
-  .hero{padding:1.5rem 0 3.5rem;text-align:center}
-  .scatter{position:relative;height:min(62vh,560px);margin:0 auto 1.6rem;max-width:920px}
-  .scatter .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(220px,38vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
-  .scatter .p{position:absolute;width:min(210px,34vw);filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
-  .p1{left:2%;top:4%;transform:rotate(-14deg)}
-  .p2{right:2%;top:2%;transform:rotate(12deg)}
-  .p3{left:8%;bottom:0;transform:rotate(8deg);width:min(250px,40vw)}
-  .p4{right:4%;bottom:2%;transform:rotate(-8deg);width:min(250px,40vw)}
+  .hero-stage{height:220vh;position:relative}
+  .hero-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+  .hero{text-align:center;padding:0 0 1.2rem}
+  .scatter{position:relative;height:min(58vh,520px);margin:0 auto 1.2rem;max-width:920px}
+  .scatter .logo,.scatter .p{position:absolute;will-change:transform;transform-origin:center center}
+  .scatter .logo{left:50%;top:50%;width:min(220px,38vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
+  .scatter .p{width:min(200px,32vw);filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
+  .p1{left:8%;top:10%}
+  .p2{right:8%;top:8%}
+  .p3{left:10%;bottom:2%;width:min(240px,38vw)}
+  .p4{right:8%;bottom:4%;width:min(240px,38vw)}
   .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
   h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
   .sub{margin:.85rem auto 1.4rem;max-width:36rem;color:#bdbdb8}
   .cta{display:inline-block;background:#fff;color:#000;text-decoration:none;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:.95rem 1.5rem;border-radius:999px}
-  section{padding:2.6rem 0}
+  .hint{margin-top:.9rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  section.block{padding:2.6rem 0}
   .sec-title{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:1.45rem;margin-bottom:1rem}
   .acc{border-top:1px solid var(--line)}
   details{border-bottom:1px solid var(--line)}
@@ -52,7 +57,15 @@
   .fine{margin-top:.7rem;font-size:.72rem;color:var(--muted)}
   footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;color:var(--muted);font-size:.78rem}
   footer a{color:var(--muted);text-decoration:none}
-  @media(max-width:700px){.scatter{height:420px}header nav{display:none}}
+  @media(max-width:700px){
+    header nav{display:none}
+    .hero-stage{height:180vh}
+    .scatter{height:46vh}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-stage{height:auto}
+    .hero-sticky{position:relative;height:auto}
+  }
 </style>
 </head>
 <body>
@@ -64,20 +77,29 @@
         <a href="#apply">Apply</a>
       </nav>
     </header>
-    <section class="hero">
-      <div class="scatter">
-        <img class="p p1" data-asset="mini" alt="Smart Mini" />
-        <img class="p p2" data-asset="terminal" alt="Smart Terminal" />
-        <img class="logo" data-asset="logo" alt="Gurilla Finance" />
-        <img class="p p3" data-asset="flex" alt="Smart Flex" />
-        <img class="p p4" data-asset="core" alt="Core POS" />
+  </div>
+
+  <div class="hero-stage" id="heroStage">
+    <div class="hero-sticky">
+      <div class="wrap hero">
+        <div class="scatter" id="scatter">
+          <img class="p p1" data-asset="mini" alt="Smart Mini" />
+          <img class="p p2" data-asset="terminal" alt="Smart Terminal" />
+          <img class="logo" data-asset="logo" alt="Gurilla Finance" />
+          <img class="p p3" data-asset="flex" alt="Smart Flex" />
+          <img class="p p4" data-asset="core" alt="Core POS" />
+        </div>
+        <p class="kicker">Gurilla Finance</p>
+        <h1>Free POS systems<br/>if you qualify.</h1>
+        <p class="sub">Four Payanywhere devices. No upfront equipment cost for approved merchants. Tap, chip, swipe. Optional funding review. No pressure.</p>
+        <a class="cta" href="#apply">Check eligibility</a>
+        <p class="hint">Scroll</p>
       </div>
-      <p class="kicker">Gurilla Finance</p>
-      <h1>Free POS systems<br/>if you qualify.</h1>
-      <p class="sub">Four Payanywhere devices. No upfront equipment cost for approved merchants. Tap, chip, swipe. Optional funding review. No pressure.</p>
-      <a class="cta" href="#apply">Check eligibility</a>
-    </section>
-    <section id="systems">
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="block" id="systems">
       <h2 class="sec-title">Free POS systems</h2>
       <div class="acc">
         <details open>
@@ -106,7 +128,7 @@
         </details>
       </div>
     </section>
-    <section id="apply">
+    <section class="block" id="apply">
       <h2 class="sec-title">Check eligibility</h2>
       <form action="https://formsubmit.co/financegurilla@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Gurilla Finance — POS lead" />
@@ -161,6 +183,47 @@
       document.querySelectorAll('[data-asset="'+key+'"]').forEach(function(img){img.src=src});
     }).catch(function(){});
   });
+
+  var stage=document.getElementById('heroStage');
+  var logo=document.querySelector('.scatter .logo');
+  var items=[
+    {el:document.querySelector('.p1'), x:-46, y:-28, r:-18},
+    {el:document.querySelector('.p2'), x:48, y:-30, r:16},
+    {el:document.querySelector('.p3'), x:-42, y:34, r:10},
+    {el:document.querySelector('.p4'), x:46, y:32, r:-12}
+  ];
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ticking=false;
+
+  function progress(){
+    if(!stage) return 0;
+    var rect=stage.getBoundingClientRect();
+    var total=Math.max(1, stage.offsetHeight - window.innerHeight);
+    return Math.min(1, Math.max(0, -rect.top / total));
+  }
+  function ease(t){return t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+  function apply(){
+    ticking=false;
+    if(reduce) return;
+    var p=ease(progress());
+    items.forEach(function(item){
+      if(!item.el) return;
+      var x=item.x*p, y=item.y*p, r=item.r*p, s=0.72+0.28*p;
+      item.el.style.transform='translate('+x+'%, '+y+'%) rotate('+r+'deg) scale('+s+')';
+    });
+    if(logo){
+      var ls=0.86+0.18*p;
+      logo.style.transform='translate(-50%,-50%) scale('+ls+') rotate('+(-6+12*p)+'deg)';
+    }
+  }
+  function onScroll(){
+    if(ticking) return;
+    ticking=true;
+    requestAnimationFrame(apply);
+  }
+  apply();
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
 })();
 </script>
 </body>
