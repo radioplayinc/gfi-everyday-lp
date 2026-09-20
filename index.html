@@ -26,8 +26,8 @@
   .scatter{position:relative;height:min(56vh,500px);margin:0 auto 1.1rem;max-width:920px}
   .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform;transform:translate(-50%,-50%);transform-origin:center center}
   .scatter .logo{width:min(210px,36vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
-  .scatter .p{width:min(190px,30vw);z-index:2;filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
-  .p3,.p4{width:min(220px,34vw)}
+  .scatter .p{width:min(200px,32vw);z-index:2;filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
+  .p3,.p4{width:min(230px,36vw)}
   .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
   h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
   .sub{margin:.85rem auto 1.4rem;max-width:36rem;color:#bdbdb8}
@@ -73,11 +73,11 @@
     <div class="hero-sticky">
       <div class="wrap hero">
         <div class="scatter" id="scatter">
-          <img class="p p1" data-asset="mini" alt="Smart Mini" />
-          <img class="p p2" data-asset="terminal" alt="Smart Terminal" />
+          <img class="p p1" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/a77-terminal-mini.png" alt="Smart Mini" />
+          <img class="p p2" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/CompareHardwardDevices_TERMINAL.png" alt="Smart Terminal" />
           <img class="logo" data-asset="logo" alt="Gurilla Finance" />
-          <img class="p p3" data-asset="flex" alt="Smart Flex" />
-          <img class="p p4" data-asset="core" alt="Core POS" />
+          <img class="p p3" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/CompareHardwardDevices_FLEX.png" alt="Smart Flex" />
+          <img class="p p4" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/CompareHardwardDevices_CORE.png" alt="Core POS" />
         </div>
         <p class="kicker">Gurilla Finance</p>
         <h1>Free POS systems<br/>if you qualify.</h1>
@@ -164,15 +164,11 @@
   </div>
 <script>
 (function(){
-  var map={logo:'gfi-brand/logo-mark.b64?v=4',mini:'gfi-brand/pos-mini.b64?v=4',terminal:'gfi-brand/pos-terminal.b64?v=4',flex:'gfi-brand/pos-flex.b64?v=4',core:'gfi-brand/pos-core.b64?v=4'};
-  var mime={logo:'image/jpeg',mini:'image/jpeg',terminal:'image/jpeg',flex:'image/jpeg',core:'image/jpeg'};
-  Object.keys(map).forEach(function(key){
-    fetch(map[key],{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(b){
-      if(!b) return;
-      var src='data:'+mime[key]+';base64,'+b.trim();
-      document.querySelectorAll('[data-asset="'+key+'"]').forEach(function(img){img.src=src});
-    }).catch(function(){});
-  });
+  fetch('gfi-brand/logo-mark.b64?v=5',{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(b){
+    if(!b || b.length < 80) return;
+    var src='data:image/jpeg;base64,'+b.trim();
+    document.querySelectorAll('[data-asset="logo"]').forEach(function(img){img.src=src});
+  }).catch(function(){});
 
   var stage=document.getElementById('heroStage');
   var logo=document.querySelector('.scatter .logo');
