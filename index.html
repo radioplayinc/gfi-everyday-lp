@@ -16,23 +16,23 @@
   img{display:block;max-width:100%;height:auto;background:transparent}
   a{color:inherit}
   .wrap{width:min(1080px,calc(100% - 2rem));margin:0 auto}
-  header{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;position:relative;z-index:8}
+  header{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
   header img{height:42px;width:auto}
   header nav{display:flex;gap:1.1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   header nav a{text-decoration:none}
   .hero-stage{height:200vh;position:relative}
-  .hero-sticky{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
-  .hero{text-align:center;padding:0 0 1.2rem}
-  .scatter{position:relative;height:min(56vh,500px);margin:0 auto 1.1rem;max-width:920px}
+  .hero-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .scatter{position:relative;width:min(1100px,100%);height:100%;margin:0 auto}
   .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform;transform:translate(-50%,-50%);transform-origin:center center}
-  .scatter .logo{width:min(210px,36vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
-  .scatter .p{width:min(200px,32vw);z-index:2;filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
-  .p3,.p4{width:min(230px,36vw)}
+  .scatter .logo{width:min(240px,38vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
+  .scatter .p{width:min(240px,34vw);z-index:2;filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
+  .p3,.p4{width:min(270px,40vw)}
+  .intro{text-align:center;padding:4.2rem 0 1.2rem}
   .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
   h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
   .sub{margin:.85rem auto 1.4rem;max-width:36rem;color:#bdbdb8}
   .cta{display:inline-block;background:#fff;color:#000;text-decoration:none;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:.95rem 1.5rem;border-radius:999px}
-  .hint{margin-top:.9rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .hint{margin-top:1.15rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   section.block{padding:2.6rem 0}
   .sec-title{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:1.45rem;margin-bottom:1rem}
   .acc{border-top:1px solid var(--line)}
@@ -54,41 +54,41 @@
   .fine{margin-top:.7rem;font-size:.72rem;color:var(--muted)}
   footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;color:var(--muted);font-size:.78rem}
   footer a{color:var(--muted);text-decoration:none}
-  @media(max-width:700px){header nav{display:none}.hero-stage{height:170vh}.scatter{height:42vh}}
-  @media(prefers-reduced-motion:reduce){.hero-stage{height:auto}.hero-sticky{position:relative;min-height:auto}}
+  @media(max-width:700px){header nav{display:none}.hero-stage{height:180vh}.scatter .p{width:min(210px,42vw)}.p3,.p4{width:min(230px,48vw)}}
+  @media(prefers-reduced-motion:reduce){.hero-stage{height:100vh;height:100dvh}.hero-sticky{position:relative}}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a href="/"><img data-asset="logo" alt="Gurilla Finance" /></a>
-      <nav>
-        <a href="#systems">Systems</a>
-        <a href="#apply">Apply</a>
-      </nav>
-    </header>
-  </div>
-
   <div class="hero-stage" id="heroStage">
     <div class="hero-sticky">
-      <div class="wrap hero">
-        <div class="scatter" id="scatter">
-          <img class="p p1" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/a77-terminal-mini.png" alt="Smart Mini" />
-          <img class="p p2" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/CompareHardwardDevices_TERMINAL.png" alt="Smart Terminal" />
-          <img class="logo" data-asset="logo" alt="Gurilla Finance" />
-          <img class="p p3" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/CompareHardwardDevices_FLEX.png" alt="Smart Flex" />
-          <img class="p p4" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/CompareHardwardDevices_CORE.png" alt="Core POS" />
-        </div>
-        <p class="kicker">Gurilla Finance</p>
-        <h1>Free POS systems<br/>if you qualify.</h1>
-        <p class="sub">Four Payanywhere devices. No upfront equipment cost for approved merchants. Tap, chip, swipe. Optional funding review. No pressure.</p>
-        <a class="cta" href="#apply">Check eligibility</a>
-        <p class="hint">Scroll</p>
+      <div class="wrap" style="position:absolute;top:0;left:0;right:0;width:min(1080px,calc(100% - 2rem));margin:0 auto">
+        <header>
+          <a href="/"><img data-asset="logo" alt="Gurilla Finance" /></a>
+          <nav>
+            <a href="#intro">Offer</a>
+            <a href="#systems">Systems</a>
+            <a href="#apply">Apply</a>
+          </nav>
+        </header>
+      </div>
+      <div class="scatter" id="scatter">
+        <img class="p p1" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/a77-terminal-mini.png" alt="Smart Mini" />
+        <img class="p p2" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/CompareHardwardDevices_TERMINAL.png" alt="Smart Terminal" />
+        <img class="logo" data-asset="logo" alt="Gurilla Finance" />
+        <img class="p p3" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/CompareHardwardDevices_FLEX.png" alt="Smart Flex" />
+        <img class="p p4" src="https://www.payanywhere.com/app/payanywhere/files/pa_cdn/cdn_images/CompareHardwardDevices_CORE.png" alt="Core POS" />
       </div>
     </div>
   </div>
 
   <div class="wrap">
+    <section class="intro" id="intro">
+      <p class="kicker">Gurilla Finance</p>
+      <h1>Free POS systems<br/>if you qualify.</h1>
+      <p class="sub">Four Payanywhere devices. No upfront equipment cost for approved merchants. Tap, chip, swipe. Optional funding review. No pressure.</p>
+      <a class="cta" href="#apply">Check eligibility</a>
+      <p class="hint">Scroll</p>
+    </section>
     <section class="block" id="systems">
       <h2 class="sec-title">Free POS systems</h2>
       <div class="acc">
@@ -164,7 +164,7 @@
   </div>
 <script>
 (function(){
-  fetch('gfi-brand/logo-mark.b64?v=5',{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(b){
+  fetch('gfi-brand/logo-mark.b64?v=6',{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(b){
     if(!b || b.length < 80) return;
     var src='data:image/jpeg;base64,'+b.trim();
     document.querySelectorAll('[data-asset="logo"]').forEach(function(img){img.src=src});
@@ -173,10 +173,10 @@
   var stage=document.getElementById('heroStage');
   var logo=document.querySelector('.scatter .logo');
   var items=[
-    {el:document.querySelector('.p1'), x:-118, y:-86, r:-16},
-    {el:document.querySelector('.p2'), x:118, y:-80, r:14},
-    {el:document.querySelector('.p3'), x:-124, y:78, r:9},
-    {el:document.querySelector('.p4'), x:120, y:82, r:-11}
+    {el:document.querySelector('.p1'), x:-132, y:-96, r:-16},
+    {el:document.querySelector('.p2'), x:132, y:-90, r:14},
+    {el:document.querySelector('.p3'), x:-138, y:88, r:9},
+    {el:document.querySelector('.p4'), x:136, y:92, r:-11}
   ];
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var ticking=false;
@@ -196,7 +196,7 @@
       item.el.style.transform='translate('+x+'%, '+y+'%) rotate('+r+'deg) scale('+s+')';
     });
     if(logo){
-      logo.style.transform='translate(-50%,-50%) scale('+(0.9+0.12*p)+') rotate('+(-4+8*p)+'deg)';
+      logo.style.transform='translate(-50%,-50%) scale('+(0.92+0.12*p)+') rotate('+(-4+8*p)+'deg)';
     }
   }
   function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(apply); }
