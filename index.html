@@ -82,8 +82,10 @@
   textarea{min-height:90px;resize:vertical}
   button[type=submit]{width:100%;border:0;background:#fff;color:#000;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:1rem;border-radius:999px;cursor:pointer}
   .fine{margin-top:.7rem;font-size:.72rem;color:var(--muted)}
-  footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;color:var(--muted);font-size:.78rem}
+  footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;align-items:center;color:var(--muted);font-size:.78rem}
   footer a{color:var(--muted);text-decoration:none}
+  footer a.fund{font-size:.72rem;letter-spacing:.04em}
+  footer a.fund:hover{color:var(--paper);text-decoration:underline}
   @media(max-width:760px){
     header{padding:.85rem 0}
     header img{height:116px;max-width:min(420px,86vw)}
@@ -262,7 +264,10 @@
     </section>
     <footer>
       <div>© 2026 Gurilla Finance</div>
-      <div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+      <div>
+        <a class="fund" href="https://7figurescredit.com/?a_aid=Gurillafinance" target="_blank" rel="noopener sponsored">Need funding? See if you qualify</a>
+        · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+      </div>
     </footer>
   </div>
 <script>
