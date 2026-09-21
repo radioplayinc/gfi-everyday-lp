@@ -12,21 +12,36 @@
   :root{--bg:#070708;--card:#111113;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow:visible;min-height:100%}
+  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden;min-height:100%}
   img{display:block;max-width:100%;height:auto;background:transparent}
   a{color:inherit}
-  .wrap{width:min(1080px,calc(100% - 2rem));margin:0 auto}
-  header{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-  header img{height:48px;width:auto}
+  .wrap{width:min(1120px,calc(100% - 2rem));margin:0 auto}
+  header{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;justify-content:space-between;padding:1.15rem 0}
+  header img{height:72px;width:auto;max-width:min(280px,58vw)}
   header nav{display:flex;gap:1.1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   header nav a{text-decoration:none}
-  .hero-stage{height:200vh;position:relative}
+  .hero-stage{height:210vh;position:relative}
   .hero-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .scatter{position:relative;width:min(1100px,100%);height:100%;margin:0 auto}
-  .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform;transform:translate(-50%,-50%);transform-origin:center center}
-  .scatter .logo{width:min(280px,46vw);z-index:5;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55));background:#fff;border-radius:18px;padding:10px}
-  .scatter .p{width:min(260px,36vw);z-index:2;filter:drop-shadow(0 16px 28px rgba(0,0,0,.5))}
-  .p3,.p4{width:min(300px,42vw)}
+  .scatter{position:relative;width:min(1180px,100%);height:100%;margin:0 auto}
+  .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform;transform:translate(-50%,-50%);transform-origin:center center;z-index:2}
+  .scatter .logo{width:min(300px,48vw);z-index:5}
+  .scatter .logo img,.scatter .p img,.acc-pic{
+    background:transparent;
+    mix-blend-mode:multiply;
+    filter:drop-shadow(0 10px 8px rgba(0,0,0,.18)) drop-shadow(0 22px 28px rgba(0,0,0,.28));
+    transition:transform .45s cubic-bezier(.22,.61,.36,1), filter .45s ease;
+  }
+  .scatter .logo img{mix-blend-mode:multiply}
+  .scatter .p{width:min(230px,28vw)}
+  .p3,.p4{width:min(390px,44vw)}
+  .scatter .p:hover{z-index:6}
+  .scatter .p:hover img,.scatter .logo:hover img,.acc-pic:hover{
+    transform:translateY(-10px) scale(1.045);
+    filter:drop-shadow(0 16px 12px rgba(0,0,0,.2)) drop-shadow(0 32px 36px rgba(0,0,0,.34));
+  }
+  @media (hover:none){
+    .scatter .p:hover img,.scatter .logo:hover img,.acc-pic:hover{transform:none}
+  }
   .intro{text-align:center;padding:4.2rem 0 1.2rem}
   .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
   h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
@@ -43,30 +58,48 @@
   details[open] summary:after{content:"\2013"}
   .acc-body{padding:0 0 1.3rem;color:#c7c7c2}
   .acc-grid{display:grid;gap:1.1rem;align-items:start}
-  @media(min-width:720px){.acc-grid{grid-template-columns:160px 1fr}}
-  .acc-pic{width:100%;max-width:180px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
+  @media(min-width:720px){.acc-grid{grid-template-columns:200px 1fr}}
+  .acc-pic{width:100%;max-width:220px;cursor:pointer}
   .acc-body ul{margin:.55rem 0 0 1.1rem}
   .tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
   form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.25rem}
   .grid{display:grid;gap:.75rem}
   @media(min-width:720px){.grid-2{grid-template-columns:1fr 1fr}}
   label{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
-  input,select,textarea{width:100%;background:#0b0b0c;border:1px solid var(--line);color:var(--paper);border-radius:10px;padding:.75rem .8rem;outline:none}
+  input,select,textarea{width:100%;background:#0b0b0c;border:1px solid var(--line);color:var(--paper);border-radius:10px;padding:.75rem .8rem;outline:none;font-size:16px}
   textarea{min-height:90px;resize:vertical}
   button[type=submit]{width:100%;border:0;background:#fff;color:#000;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:1rem;border-radius:999px;cursor:pointer}
   .fine{margin-top:.7rem;font-size:.72rem;color:var(--muted)}
   footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;color:var(--muted);font-size:.78rem}
   footer a{color:var(--muted);text-decoration:none}
-  @media(max-width:700px){header nav{display:none}.hero-stage{height:180vh}.scatter .p{width:min(220px,46vw)}.p3,.p4{width:min(250px,52vw)}}
-  @media(prefers-reduced-motion:reduce){.hero-stage{height:100vh;height:100dvh}.hero-sticky{position:relative}}
+  @media(max-width:760px){
+    header{padding:.85rem 0}
+    header img{height:58px;max-width:min(240px,70vw)}
+    header nav{display:none}
+    .hero-stage{height:165vh}
+    .scatter .logo{width:min(200px,46vw)}
+    .scatter .p{width:min(150px,32vw)}
+    .p3,.p4{width:min(210px,46vw)}
+    .intro{padding:2.4rem 0 1rem}
+    h1{font-size:clamp(1.7rem,8vw,2.3rem)}
+    .sub{font-size:.95rem}
+    section.block{padding:1.8rem 0}
+    .acc-pic{max-width:160px;margin:0 auto}
+    form{padding:1rem}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-stage{height:100vh;height:100dvh}
+    .hero-sticky{position:relative}
+    .scatter .p img,.scatter .logo img,.acc-pic{transition:none}
+  }
 </style>
 </head>
 <body>
   <div class="hero-stage" id="heroStage">
     <div class="hero-sticky">
-      <div class="wrap" style="position:absolute;top:0;left:0;right:0;width:min(1080px,calc(100% - 2rem));margin:0 auto">
+      <div class="wrap" style="position:absolute;top:0;left:0;right:0;width:min(1120px,calc(100% - 2rem));margin:0 auto">
         <header>
-          <a href="/"><img src="gurilla%20finance%20logo.png?v=14" alt="Gurilla Finance" /></a>
+          <a href="/"><img src="gurilla%20finance%20logo.png?v=15" alt="Gurilla Finance" /></a>
           <nav>
             <a href="#intro">Offer</a>
             <a href="#systems">Systems</a>
@@ -75,11 +108,11 @@
         </header>
       </div>
       <div class="scatter" id="scatter">
-        <img class="p p1" src="PAX_A77_RightTilt_Retail_Shadow.png?v=14" alt="Smart Terminal Mini — PAX A77" />
-        <img class="p p2" src="A920Pro.Right_Retail.png?v=14" alt="Smart Terminal — PAX A920 Pro" />
-        <img class="logo" src="IMG_9090.png?v=14" alt="Gurilla Finance" />
-        <img class="p p3" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=14" alt="Smart Flex — PAX E600 Mini" />
-        <img class="p p4" src="E700-W-1.png?v=14" alt="Smart POS+ — PAX E700" />
+        <div class="p p1"><img src="PAX_A77_RightTilt_Retail_Shadow.png?v=15" alt="Smart Terminal Mini — PAX A77" /></div>
+        <div class="p p2"><img src="A920Pro.Right_Retail.png?v=15" alt="Smart Terminal — PAX A920 Pro" /></div>
+        <div class="logo"><img src="IMG_9090.png?v=15" alt="Gurilla Finance" /></div>
+        <div class="p p3"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=15" alt="Smart Flex — PAX E600 Mini" /></div>
+        <div class="p p4"><img src="E700-W-1.png?v=15" alt="Smart POS+ — PAX E700" /></div>
       </div>
     </div>
   </div>
@@ -98,7 +131,7 @@
           <summary><span><span class="tag">Handheld · PAX A77</span><br/>Smart Terminal Mini</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="PAX_A77_RightTilt_Retail_Shadow.png?v=14" alt="Smart Terminal Mini" />
+              <img class="acc-pic" src="PAX_A77_RightTilt_Retail_Shadow.png?v=15" alt="Smart Terminal Mini" />
               <div>
                 Compact wireless terminal from the North QSG. 5.5" Android touchscreen, built-in laser barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB‑C, speakers, Wi‑Fi with 4G backup. No onboard printer.
                 <ul>
@@ -118,7 +151,7 @@
           <summary><span><span class="tag">Counter + printer · PAX A920 Pro</span><br/>Smart Terminal</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="A920Pro.Right_Retail.png?v=14" alt="Smart Terminal" />
+              <img class="acc-pic" src="A920Pro.Right_Retail.png?v=15" alt="Smart Terminal" />
               <div>
                 The upgrade from a traditional terminal. Built-in receipt printer (2¼" paper), rear camera + scanner, NFC / EMV / magstripe, Wi‑Fi + 4G. Optional dock adds Ethernet.
                 <ul>
@@ -138,7 +171,7 @@
           <summary><span><span class="tag">Hybrid POS · PAX E600 Mini</span><br/>Smart Flex</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=14" alt="Smart Flex" />
+              <img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=15" alt="Smart Flex" />
               <div>
                 Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer (2¼" paper), camera, EMV / NFC / magstripe, charging dock + accessory hub, Wi‑Fi + 4G.
                 <ul>
@@ -158,7 +191,7 @@
           <summary><span><span class="tag">Full counter POS · PAX E700</span><br/>Smart POS+</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="E700-W-1.png?v=14" alt="Smart POS+" />
+              <img class="acc-pic" src="E700-W-1.png?v=15" alt="Smart POS+" />
               <div>
                 Large countertop POS. North QSG lists this SKU as non-cellular — Wi‑Fi plus LAN. 12.5" merchant screen + 4.3" customer-facing display, integrated printer (3⅛" paper), front + rear cameras, fingerprint reader, cash-drawer port. Must stay plugged in to print.
                 <ul>
@@ -224,21 +257,27 @@
 (function(){
   var stage=document.getElementById('heroStage');
   var logo=document.querySelector('.scatter .logo');
-  var items=[
-    {el:document.querySelector('.p1'), x:-142, y:-92, r:0},
-    {el:document.querySelector('.p2'), x:-142, y:96, r:0},
-    {el:document.querySelector('.p3'), x:142, y:-92, r:0},
-    {el:document.querySelector('.p4'), x:142, y:96, r:0}
-  ];
+  var mobile=window.matchMedia('(max-width:760px)');
+  function layout(){
+    var m=mobile.matches;
+    return [
+      {el:document.querySelector('.p1'), x:m?-118:-150, y:m?-86:-96},
+      {el:document.querySelector('.p2'), x:m?-118:-150, y:m?88:100},
+      {el:document.querySelector('.p3'), x:m?118:150, y:m?-86:-96},
+      {el:document.querySelector('.p4'), x:m?118:150, y:m?88:100}
+    ];
+  }
+  var items=layout();
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var ticking=false;
   function progress(){if(!stage) return 0;var rect=stage.getBoundingClientRect();var total=Math.max(1, stage.offsetHeight - window.innerHeight);return Math.min(1, Math.max(0, -rect.top / total));}
   function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
-  function apply(){ticking=false;var p=reduce?1:ease(progress());items.forEach(function(item){if(!item.el) return;var x=-50+item.x*p, y=-50+item.y*p, s=0.82+0.18*p;item.el.style.transform='translate('+x+'%, '+y+'%) rotate(0deg) scale('+s+')';});if(logo){logo.style.transform='translate(-50%,-50%) scale('+(0.94+0.08*p)+') rotate(0deg)';}}
+  function apply(){ticking=false;var p=reduce?1:ease(progress());items.forEach(function(item){if(!item.el) return;var x=-50+item.x*p, y=-50+item.y*p, s=0.84+0.16*p;item.el.style.transform='translate('+x+'%, '+y+'%) rotate(0deg) scale('+s+')';});if(logo){logo.style.transform='translate(-50%,-50%) scale('+(0.94+0.08*p)+') rotate(0deg)';}}
   function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(apply); }
+  function onResize(){ items=layout(); apply(); }
   apply();
   window.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('resize', onScroll);
+  window.addEventListener('resize', onResize);
 })();
 </script>
 </body>
