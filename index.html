@@ -23,7 +23,7 @@
   .hero-stage{height:170vh;position:relative}
   .hero-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .scatter{position:relative;width:min(1180px,100%);height:100%;margin:0 auto}
-  .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform;transform:translate(-50%,-50%);transform-origin:center center}
+  .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform,opacity;transform:translate(-50%,-50%);transform-origin:center center}
   .scatter .p{z-index:2;width:min(280px,30vw)}
   .p3,.p4{width:min(460px,48vw)}
   .scatter .logo{
@@ -111,7 +111,7 @@
     <div class="hero-sticky">
       <div class="wrap" style="position:absolute;top:0;left:0;right:0;width:min(1120px,calc(100% - 2rem));margin:0 auto">
         <header>
-          <a href="/"><img src="gurilla%20finance%20logo.png?v=18" alt="Gurilla Finance" /></a>
+          <a href="/"><img src="gurilla%20finance%20logo.png?v=19" alt="Gurilla Finance" /></a>
           <nav>
             <a href="#intro">Offer</a>
             <a href="#systems">Systems</a>
@@ -120,11 +120,11 @@
         </header>
       </div>
       <div class="scatter" id="scatter">
-        <div class="p p1"><img src="PAX_A77_RightTilt_Retail_Shadow.png?v=18" alt="Smart Terminal Mini — PAX A77" /></div>
-        <div class="p p2"><img src="A920Pro.Right_Retail.png?v=18" alt="Smart Terminal — PAX A920 Pro" /></div>
-        <div class="logo"><img src="IMG_9090.png?v=18" alt="Gurilla Finance" /></div>
-        <div class="p p3"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=18" alt="Smart Flex — PAX E600 Mini" /></div>
-        <div class="p p4"><img src="E700-W-1.png?v=18" alt="Smart POS+ — PAX E700" /></div>
+        <div class="p p1"><img src="PAX_A77_RightTilt_Retail_Shadow.png?v=19" alt="Smart Terminal Mini — PAX A77" /></div>
+        <div class="p p2"><img src="A920Pro.Right_Retail.png?v=19" alt="Smart Terminal — PAX A920 Pro" /></div>
+        <div class="logo"><img src="IMG_9090.png?v=19" alt="Gurilla Finance" /></div>
+        <div class="p p3"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=19" alt="Smart Flex — PAX E600 Mini" /></div>
+        <div class="p p4"><img src="E700-W-1.png?v=19" alt="Smart POS+ — PAX E700" /></div>
       </div>
     </div>
   </div>
@@ -143,7 +143,7 @@
           <summary><span><span class="tag">Handheld · PAX A77</span><br/>Smart Terminal Mini</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="PAX_A77_RightTilt_Retail_Shadow.png?v=18" alt="Smart Terminal Mini" />
+              <img class="acc-pic" src="PAX_A77_RightTilt_Retail_Shadow.png?v=19" alt="Smart Terminal Mini" />
               <div>
                 Compact wireless terminal from the North QSG. 5.5" Android touchscreen, built-in laser barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB‑C, speakers, Wi‑Fi with 4G backup. No onboard printer.
                 <ul>
@@ -163,7 +163,7 @@
           <summary><span><span class="tag">Counter + printer · PAX A920 Pro</span><br/>Smart Terminal</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="A920Pro.Right_Retail.png?v=18" alt="Smart Terminal" />
+              <img class="acc-pic" src="A920Pro.Right_Retail.png?v=19" alt="Smart Terminal" />
               <div>
                 The upgrade from a traditional terminal. Built-in receipt printer (2¼" paper), rear camera + scanner, NFC / EMV / magstripe, Wi‑Fi + 4G. Optional dock adds Ethernet.
                 <ul>
@@ -183,7 +183,7 @@
           <summary><span><span class="tag">Hybrid POS · PAX E600 Mini</span><br/>Smart Flex</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=18" alt="Smart Flex" />
+              <img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=19" alt="Smart Flex" />
               <div>
                 Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer (2¼" paper), camera, EMV / NFC / magstripe, charging dock + accessory hub, Wi‑Fi + 4G.
                 <ul>
@@ -203,7 +203,7 @@
           <summary><span><span class="tag">Full counter POS · PAX E700</span><br/>Smart POS+</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="E700-W-1.png?v=18" alt="Smart POS+" />
+              <img class="acc-pic" src="E700-W-1.png?v=19" alt="Smart POS+" />
               <div>
                 Large countertop POS. North QSG lists this SKU as non-cellular — Wi‑Fi plus LAN. 12.5" merchant screen + 4.3" customer-facing display, integrated printer (3⅛" paper), front + rear cameras, fingerprint reader, cash-drawer port. Must stay plugged in to print.
                 <ul>
@@ -297,7 +297,12 @@
       var x=-50+item.x*p, y=-50+item.y*p, s=0.58+0.42*p;
       item.el.style.transform='translate('+x+'%, '+y+'%) rotate(0deg) scale('+s+')';
     });
-    if(logo) logo.style.transform='translate(-50%,-50%) scale('+(0.96+0.04*p)+') rotate(0deg)';
+    if(logo){
+      var fade = p < 0.08 ? 1 : Math.max(0, 1 - (p - 0.08) / 0.62);
+      logo.style.opacity = String(fade);
+      logo.style.transform = 'translate(-50%,-50%) scale('+(1 - 0.1*p)+') rotate(0deg)';
+      logo.style.pointerEvents = fade < 0.08 ? 'none' : 'auto';
+    }
   }
   function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(apply); }
   function onResize(){ items=layout(); apply(); }
