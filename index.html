@@ -12,7 +12,7 @@
   :root{--bg:#070708;--card:#111113;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden;min-height:100%}
+  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;min-height:100%}
   img{display:block;max-width:100%;height:auto;background:transparent}
   a{color:inherit}
   .wrap{width:min(1120px,calc(100% - 2rem));margin:0 auto}
@@ -20,20 +20,19 @@
   header img{height:72px;width:auto;max-width:min(280px,58vw)}
   header nav{display:flex;gap:1.1rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   header nav a{text-decoration:none}
-  .hero-stage{height:210vh;position:relative}
+  .hero-stage{height:155vh;position:relative}
   .hero-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .scatter{position:relative;width:min(1180px,100%);height:100%;margin:0 auto}
   .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform;transform:translate(-50%,-50%);transform-origin:center center;z-index:2}
-  .scatter .logo{width:min(300px,48vw);z-index:5}
+  .scatter .logo{width:min(260px,36vw);z-index:5}
   .scatter .logo img,.scatter .p img,.acc-pic{
     background:transparent;
     mix-blend-mode:multiply;
     filter:drop-shadow(0 10px 8px rgba(0,0,0,.18)) drop-shadow(0 22px 28px rgba(0,0,0,.28));
     transition:transform .45s cubic-bezier(.22,.61,.36,1), filter .45s ease;
   }
-  .scatter .logo img{mix-blend-mode:multiply}
-  .scatter .p{width:min(230px,28vw)}
-  .p3,.p4{width:min(390px,44vw)}
+  .scatter .p{width:min(280px,30vw)}
+  .p3,.p4{width:min(460px,48vw)}
   .scatter .p:hover{z-index:6}
   .scatter .p:hover img,.scatter .logo:hover img,.acc-pic:hover{
     transform:translateY(-10px) scale(1.045);
@@ -76,10 +75,10 @@
     header{padding:.85rem 0}
     header img{height:58px;max-width:min(240px,70vw)}
     header nav{display:none}
-    .hero-stage{height:165vh}
-    .scatter .logo{width:min(200px,46vw)}
-    .scatter .p{width:min(150px,32vw)}
-    .p3,.p4{width:min(210px,46vw)}
+    .hero-stage{height:145vh}
+    .scatter .logo{width:min(180px,40vw)}
+    .scatter .p{width:min(170px,34vw)}
+    .p3,.p4{width:min(230px,48vw)}
     .intro{padding:2.4rem 0 1rem}
     h1{font-size:clamp(1.7rem,8vw,2.3rem)}
     .sub{font-size:.95rem}
@@ -99,7 +98,7 @@
     <div class="hero-sticky">
       <div class="wrap" style="position:absolute;top:0;left:0;right:0;width:min(1120px,calc(100% - 2rem));margin:0 auto">
         <header>
-          <a href="/"><img src="gurilla%20finance%20logo.png?v=15" alt="Gurilla Finance" /></a>
+          <a href="/"><img src="gurilla%20finance%20logo.png?v=16" alt="Gurilla Finance" /></a>
           <nav>
             <a href="#intro">Offer</a>
             <a href="#systems">Systems</a>
@@ -108,11 +107,11 @@
         </header>
       </div>
       <div class="scatter" id="scatter">
-        <div class="p p1"><img src="PAX_A77_RightTilt_Retail_Shadow.png?v=15" alt="Smart Terminal Mini — PAX A77" /></div>
-        <div class="p p2"><img src="A920Pro.Right_Retail.png?v=15" alt="Smart Terminal — PAX A920 Pro" /></div>
-        <div class="logo"><img src="IMG_9090.png?v=15" alt="Gurilla Finance" /></div>
-        <div class="p p3"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=15" alt="Smart Flex — PAX E600 Mini" /></div>
-        <div class="p p4"><img src="E700-W-1.png?v=15" alt="Smart POS+ — PAX E700" /></div>
+        <div class="p p1"><img src="PAX_A77_RightTilt_Retail_Shadow.png?v=16" alt="Smart Terminal Mini — PAX A77" /></div>
+        <div class="p p2"><img src="A920Pro.Right_Retail.png?v=16" alt="Smart Terminal — PAX A920 Pro" /></div>
+        <div class="logo"><img src="IMG_9090.png?v=16" alt="Gurilla Finance" /></div>
+        <div class="p p3"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=16" alt="Smart Flex — PAX E600 Mini" /></div>
+        <div class="p p4"><img src="E700-W-1.png?v=16" alt="Smart POS+ — PAX E700" /></div>
       </div>
     </div>
   </div>
@@ -131,7 +130,7 @@
           <summary><span><span class="tag">Handheld · PAX A77</span><br/>Smart Terminal Mini</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="PAX_A77_RightTilt_Retail_Shadow.png?v=15" alt="Smart Terminal Mini" />
+              <img class="acc-pic" src="PAX_A77_RightTilt_Retail_Shadow.png?v=16" alt="Smart Terminal Mini" />
               <div>
                 Compact wireless terminal from the North QSG. 5.5" Android touchscreen, built-in laser barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB‑C, speakers, Wi‑Fi with 4G backup. No onboard printer.
                 <ul>
@@ -151,7 +150,7 @@
           <summary><span><span class="tag">Counter + printer · PAX A920 Pro</span><br/>Smart Terminal</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="A920Pro.Right_Retail.png?v=15" alt="Smart Terminal" />
+              <img class="acc-pic" src="A920Pro.Right_Retail.png?v=16" alt="Smart Terminal" />
               <div>
                 The upgrade from a traditional terminal. Built-in receipt printer (2¼" paper), rear camera + scanner, NFC / EMV / magstripe, Wi‑Fi + 4G. Optional dock adds Ethernet.
                 <ul>
@@ -171,7 +170,7 @@
           <summary><span><span class="tag">Hybrid POS · PAX E600 Mini</span><br/>Smart Flex</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=15" alt="Smart Flex" />
+              <img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=16" alt="Smart Flex" />
               <div>
                 Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer (2¼" paper), camera, EMV / NFC / magstripe, charging dock + accessory hub, Wi‑Fi + 4G.
                 <ul>
@@ -191,7 +190,7 @@
           <summary><span><span class="tag">Full counter POS · PAX E700</span><br/>Smart POS+</span></summary>
           <div class="acc-body">
             <div class="acc-grid">
-              <img class="acc-pic" src="E700-W-1.png?v=15" alt="Smart POS+" />
+              <img class="acc-pic" src="E700-W-1.png?v=16" alt="Smart POS+" />
               <div>
                 Large countertop POS. North QSG lists this SKU as non-cellular — Wi‑Fi plus LAN. 12.5" merchant screen + 4.3" customer-facing display, integrated printer (3⅛" paper), front + rear cameras, fingerprint reader, cash-drawer port. Must stay plugged in to print.
                 <ul>
@@ -261,18 +260,33 @@
   function layout(){
     var m=mobile.matches;
     return [
-      {el:document.querySelector('.p1'), x:m?-118:-150, y:m?-86:-96},
-      {el:document.querySelector('.p2'), x:m?-118:-150, y:m?88:100},
-      {el:document.querySelector('.p3'), x:m?118:150, y:m?-86:-96},
-      {el:document.querySelector('.p4'), x:m?118:150, y:m?88:100}
+      {el:document.querySelector('.p1'), x:m?-120:-148, y:m?-78:-88},
+      {el:document.querySelector('.p2'), x:m?-120:-148, y:m?82:94},
+      {el:document.querySelector('.p3'), x:m?122:152, y:m?-78:-88},
+      {el:document.querySelector('.p4'), x:m?122:152, y:m?82:94}
     ];
   }
   var items=layout();
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var ticking=false;
-  function progress(){if(!stage) return 0;var rect=stage.getBoundingClientRect();var total=Math.max(1, stage.offsetHeight - window.innerHeight);return Math.min(1, Math.max(0, -rect.top / total));}
+  function progress(){
+    if(!stage) return 0.7;
+    var rect=stage.getBoundingClientRect();
+    var total=Math.max(1, stage.offsetHeight - window.innerHeight);
+    var raw=Math.min(1, Math.max(0, -rect.top / total));
+    return 0.55 + raw*0.45;
+  }
   function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
-  function apply(){ticking=false;var p=reduce?1:ease(progress());items.forEach(function(item){if(!item.el) return;var x=-50+item.x*p, y=-50+item.y*p, s=0.84+0.16*p;item.el.style.transform='translate('+x+'%, '+y+'%) rotate(0deg) scale('+s+')';});if(logo){logo.style.transform='translate(-50%,-50%) scale('+(0.94+0.08*p)+') rotate(0deg)';}}
+  function apply(){
+    ticking=false;
+    var p=reduce?1:ease(progress());
+    items.forEach(function(item){
+      if(!item.el) return;
+      var x=-50+item.x*p, y=-50+item.y*p;
+      item.el.style.transform='translate('+x+'%, '+y+'%) rotate(0deg)';
+    });
+    if(logo) logo.style.transform='translate(-50%,-50%) rotate(0deg)';
+  }
   function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(apply); }
   function onResize(){ items=layout(); apply(); }
   apply();
