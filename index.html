@@ -20,7 +20,14 @@
   header img{height:88px;width:auto;max-width:min(280px,46vw);object-fit:contain}
   .hero-stage{height:165vh;position:relative}
   .hero-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .scatter{position:relative;width:min(1180px,100%);height:100%;margin:0 auto}
+  .bg-slides{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .bg-slides .slide{position:absolute;inset:-8%;background-repeat:no-repeat;background-position:center;background-size:min(78vw,900px) auto;opacity:0;filter:blur(12px) saturate(.8) brightness(.55);animation:bgSlide 28s ease-in-out infinite}
+  .bg-slides .slide:nth-child(1){background-image:url("pax%20a77.png?v=25");animation-delay:0s}
+  .bg-slides .slide:nth-child(2){background-image:url("A920Pro.Right_Retail.png?v=25");animation-delay:7s}
+  .bg-slides .slide:nth-child(3){background-image:url("PA_SmartFlexMini_FacingLeft_Retail.png?v=25");animation-delay:14s}
+  .bg-slides .slide:nth-child(4){background-image:url("E700-W-1-us-image.png?v=25");animation-delay:21s}
+  .bg-veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,rgba(7,7,8,.15) 0%,rgba(7,7,8,.82) 72%,#070708 100%)}
+  .scatter{position:relative;z-index:3;width:min(1180px,100%);height:100%;margin:0 auto}
   .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform,opacity,background,box-shadow;transform:translate(-50%,-50%);transform-origin:center center}
   .scatter .p{z-index:2;width:min(300px,26vw);cursor:pointer}
   .p3,.p4{width:min(340px,30vw)}
@@ -88,38 +95,46 @@
   @keyframes fadeDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
   @keyframes logoIn{from{opacity:0;transform:translate(-50%,-46%) scale(.94)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
   @keyframes softBounce{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(6px);opacity:1}}
-  @media(max-width:760px){header{padding:.75rem 0}header img{height:64px;max-width:min(200px,52vw)}.hero-stage{height:155vh}.scatter .logo{width:min(210px,52vw);padding:10px;border-radius:18px}.scatter .p{width:min(148px,34vw)}.p3,.p4{width:min(164px,38vw)}.pname{font-size:.52rem}.hero-dock{bottom:1.1rem}.intro{padding:2.4rem 0 1rem}h1{font-size:clamp(1.7rem,8vw,2.3rem)}.sub{font-size:.95rem}section.block{padding:1.8rem 0}.acc-pic{max-width:180px;margin:0 auto}form{padding:1rem}}
-  @media(prefers-reduced-motion:reduce){.hero-stage{height:100vh;height:100dvh}.hero-sticky{position:relative}.scatter .p > img,.acc-pic,.cta,button[type=submit],.reveal,.hero-dock .scrollcue,header,.scatter .logo{animation:none;transition:none;opacity:1;transform:none}}
+  @keyframes bgSlide{0%,23%{opacity:0;transform:scale(1.05)}7%,16%{opacity:.55;transform:scale(1.14)}26%,100%{opacity:0;transform:scale(1.2)}}
+  @media(max-width:760px){header{padding:.75rem 0}header img{height:64px;max-width:min(200px,52vw)}.hero-stage{height:155vh}.scatter .logo{width:min(210px,52vw);padding:10px;border-radius:18px}.scatter .p{width:min(148px,34vw)}.p3,.p4{width:min(164px,38vw)}.pname{font-size:.52rem}.hero-dock{bottom:1.1rem}.intro{padding:2.4rem 0 1rem}h1{font-size:clamp(1.7rem,8vw,2.3rem)}.sub{font-size:.95rem}section.block{padding:1.8rem 0}.acc-pic{max-width:180px;margin:0 auto}form{padding:1rem}.bg-slides .slide{filter:blur(14px) brightness(.45)}}
+  @media(prefers-reduced-motion:reduce){.hero-stage{height:100vh;height:100dvh}.hero-sticky{position:relative}.scatter .p > img,.acc-pic,.cta,button[type=submit],.reveal,.hero-dock .scrollcue,header,.scatter .logo,.bg-slides .slide{animation:none;transition:none;opacity:1;transform:none}.bg-slides .slide{opacity:.12}}
 </style>
 </head>
 <body>
   <div class="hero-stage" id="heroStage">
     <div class="hero-sticky">
-      <div class="wrap" style="position:absolute;top:0;left:0;right:0;width:min(1120px,calc(100% - 2rem));margin:0 auto">
+      <div class="bg-slides" aria-hidden="true">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+      </div>
+      <div class="bg-veil"></div>
+      <div class="wrap" style="position:absolute;top:0;left:0;right:0;z-index:8;width:min(1120px,calc(100% - 2rem));margin:0 auto">
         <header>
-          <a href="/"><img src="gurilla%20finance%20logo.png?v=24" alt="Gurilla Finance" /></a>
+          <a href="/"><img src="gurilla%20finance%20logo.png?v=25" alt="Gurilla Finance" /></a>
         </header>
       </div>
       <div class="scatter" id="scatter">
         <div class="p p1" data-target="sys-mini">
-          <div class="tip"><img src="pax%20a77.png?v=24" alt="" /><b>Smart Terminal Mini</b><span>PAX A77</span><ul><li>5.5" Android touchscreen</li><li>Built-in barcode scanner</li><li>Wi-Fi + 4G backup</li></ul></div>
-          <img src="pax%20a77.png?v=24" alt="Smart Terminal Mini" />
+          <div class="tip"><img src="pax%20a77.png?v=25" alt="" /><b>Smart Terminal Mini</b><span>PAX A77</span><ul><li>5.5" Android touchscreen</li><li>Built-in barcode scanner</li><li>Wi-Fi + 4G backup</li></ul></div>
+          <img src="pax%20a77.png?v=25" alt="Smart Terminal Mini" />
           <div class="pname">Mini</div>
         </div>
         <div class="p p2" data-target="sys-term">
-          <div class="tip"><img src="A920Pro.Right_Retail.png?v=24" alt="" /><b>Smart Terminal</b><span>PAX A920 Pro</span><ul><li>Built-in receipt printer</li><li>Rear camera + scanner</li><li>Wi-Fi + 4G</li></ul></div>
-          <img src="A920Pro.Right_Retail.png?v=24" alt="Smart Terminal" />
+          <div class="tip"><img src="A920Pro.Right_Retail.png?v=25" alt="" /><b>Smart Terminal</b><span>PAX A920 Pro</span><ul><li>Built-in receipt printer</li><li>Rear camera + scanner</li><li>Wi-Fi + 4G</li></ul></div>
+          <img src="A920Pro.Right_Retail.png?v=25" alt="Smart Terminal" />
           <div class="pname">Terminal</div>
         </div>
-        <div class="logo"><img src="IMG_9090.png?v=24" alt="Gurilla Finance" /></div>
+        <div class="logo"><img src="IMG_9090.png?v=25" alt="Gurilla Finance" /></div>
         <div class="p p3" data-target="sys-flex">
-          <div class="tip"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=24" alt="" /><b>Smart Flex</b><span>PAX E600 Mini</span><ul><li>Merchant + customer screens</li><li>Printer + charging dock</li><li>Wi-Fi + 4G</li></ul></div>
-          <img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=24" alt="Smart Flex" />
+          <div class="tip"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=25" alt="" /><b>Smart Flex</b><span>PAX E600 Mini</span><ul><li>Merchant + customer screens</li><li>Printer + charging dock</li><li>Wi-Fi + 4G</li></ul></div>
+          <img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=25" alt="Smart Flex" />
           <div class="pname">Flex</div>
         </div>
         <div class="p p4" data-target="sys-pos">
-          <div class="tip"><img src="E700-W-1-us-image.png?v=24" alt="" /><b>Smart POS+</b><span>PAX E700</span><ul><li>12.5" + 4.3" dual screens</li><li>Integrated printer</li><li>Wi-Fi + LAN</li></ul></div>
-          <img src="E700-W-1-us-image.png?v=24" alt="Smart POS+" />
+          <div class="tip"><img src="E700-W-1-us-image.png?v=25" alt="" /><b>Smart POS+</b><span>PAX E700</span><ul><li>12.5" + 4.3" dual screens</li><li>Integrated printer</li><li>Wi-Fi + LAN</li></ul></div>
+          <img src="E700-W-1-us-image.png?v=25" alt="Smart POS+" />
           <div class="pname">POS+</div>
         </div>
       </div>
@@ -142,19 +157,19 @@
       <div class="acc">
         <details id="sys-mini" open>
           <summary><span><span class="tag">Handheld · PAX A77</span><br/>Smart Terminal Mini</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="pax%20a77.png?v=24" alt="Smart Terminal Mini" /><div>Built for tableside, salons, delivery, and pop-ups.<ul><li>5.5" Android screen + barcode scanner</li><li>Chip, tap, swipe, PIN debit, EBT / SNAP</li><li>Wi-Fi with 4G backup · email or SMS receipts</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="pax%20a77.png?v=25" alt="Smart Terminal Mini" /><div>Built for tableside, salons, delivery, and pop-ups.<ul><li>5.5" Android screen + barcode scanner</li><li>Chip, tap, swipe, PIN debit, EBT / SNAP</li><li>Wi-Fi with 4G backup · email or SMS receipts</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
         </details>
         <details id="sys-term">
           <summary><span><span class="tag">Counter + printer · PAX A920 Pro</span><br/>Smart Terminal</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="A920Pro.Right_Retail.png?v=24" alt="Smart Terminal" /><div>The counter terminal with a printer already in it.<ul><li>Built-in receipt printer</li><li>Rear camera + scanner · Wi-Fi + 4G</li><li>Print, email, or SMS receipts</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="A920Pro.Right_Retail.png?v=25" alt="Smart Terminal" /><div>The counter terminal with a printer already in it.<ul><li>Built-in receipt printer</li><li>Rear camera + scanner · Wi-Fi + 4G</li><li>Print, email, or SMS receipts</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
         </details>
         <details id="sys-flex">
           <summary><span><span class="tag">Hybrid POS · PAX E600 Mini</span><br/>Smart Flex</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=24" alt="Smart Flex" /><div>Part terminal, part point of sale for cafes and growing retail.<ul><li>Merchant screen + customer display</li><li>Printer, charging dock, accessory hub</li><li>Wi-Fi + 4G</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=25" alt="Smart Flex" /><div>Part terminal, part point of sale for cafes and growing retail.<ul><li>Merchant screen + customer display</li><li>Printer, charging dock, accessory hub</li><li>Wi-Fi + 4G</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
         </details>
         <details id="sys-pos">
           <summary><span><span class="tag">Full counter POS · PAX E700</span><br/>Smart POS+</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="E700-W-1-us-image.png?v=24" alt="Smart POS+" /><div>The full counter system for busy floors.<ul><li>12.5" merchant screen + 4.3" customer display</li><li>Integrated printer + cash-drawer port</li><li>Wi-Fi + LAN</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="E700-W-1-us-image.png?v=25" alt="Smart POS+" /><div>The full counter system for busy floors.<ul><li>12.5" merchant screen + 4.3" customer display</li><li>Integrated printer + cash-drawer port</li><li>Wi-Fi + LAN</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
         </details>
       </div>
     </section>
