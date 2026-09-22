@@ -4,74 +4,92 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Gurilla Finance — Free POS systems</title>
-<meta name="description" content="Free Payanywhere placement if you qualify. Smart Terminal Mini (A77), Smart Terminal (A920 Pro), Smart Flex (E600 Mini), Smart POS+ (E700)." />
+<meta name="description" content="Free Payanywhere POS if you qualify. Chip, tap, swipe. Four official systems. No upfront equipment cost on approved placement." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#070708;--card:#111113;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86}
+  :root{--bg:#070708;--card:#141416;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86;--accent:#ff6a1a}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;min-height:100%}
   img{display:block;max-width:100%;height:auto;background:transparent}
   a{color:inherit}
   .wrap{width:min(1120px,calc(100% - 2rem));margin:0 auto}
-  header{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;padding:1.15rem 0}
-  header img{height:144px;width:auto;max-width:min(520px,72vw)}
-  .hero-stage{height:170vh;position:relative}
+  header{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;padding:1.05rem 0;animation:fadeDown .8s ease both}
+  header img{height:88px;width:auto;max-width:min(280px,46vw);object-fit:contain}
+  .hero-stage{height:165vh;position:relative}
   .hero-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .scatter{position:relative;width:min(1180px,100%);height:100%;margin:0 auto}
   .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;will-change:transform,opacity,background,box-shadow;transform:translate(-50%,-50%);transform-origin:center center}
-  .scatter .p{z-index:2;width:min(300px,26vw)}
+  .scatter .p{z-index:2;width:min(300px,26vw);cursor:pointer}
   .p3,.p4{width:min(340px,30vw)}
-  .scatter .logo{width:min(280px,42vw);z-index:8;background:#fff;border-radius:22px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.4)}
-  .scatter .p > img,.acc-pic{background:transparent;mix-blend-mode:normal;filter:none;box-shadow:none;object-fit:contain;transition:transform .45s cubic-bezier(.22,.61,.36,1)}
-  .scatter .logo img{background:transparent;mix-blend-mode:normal;filter:none}
+  .scatter .logo{width:min(280px,42vw);z-index:8;background:#fff;border-radius:22px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.4);animation:logoIn .9s cubic-bezier(.22,.61,.36,1) both}
+  .scatter .p > img,.acc-pic{background:transparent;object-fit:contain;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+  .scatter .logo img{background:transparent}
   .scatter .p:hover{z-index:12}
-  .scatter .p:hover > img,.acc-pic:hover{transform:translateY(-10px) scale(1.045);filter:none}
-  .tip{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%);width:200px;background:#111113;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:.65rem .7rem .75rem;opacity:0;pointer-events:none;transition:opacity .2s ease;box-shadow:0 14px 32px rgba(0,0,0,.5);z-index:20}
-  .tip img{width:72px;height:auto;margin:0 auto .45rem;object-fit:contain;background:transparent}
-  .tip b{display:block;font-size:.72rem;letter-spacing:.02em;text-align:center}
+  .scatter .p:hover > img,.acc-pic:hover{transform:translateY(-8px) scale(1.04)}
+  .pname{position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#cfcfc8;white-space:nowrap;opacity:0;transition:opacity .35s ease;pointer-events:none}
+  .tip{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%) translateY(6px);width:210px;background:rgba(17,17,19,.94);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:.65rem .7rem .75rem;opacity:0;pointer-events:none;transition:opacity .28s ease, transform .28s ease;box-shadow:0 14px 32px rgba(0,0,0,.5);z-index:20;backdrop-filter:blur(10px)}
+  .tip img{width:72px;height:auto;margin:0 auto .45rem;object-fit:contain}
+  .tip b{display:block;font-size:.72rem;text-align:center}
   .tip span{display:block;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:.1rem 0 .4rem;text-align:center}
-  .tip ul{list-style:none;margin:0;padding:0}
+  .tip ul{list-style:none}
   .tip li{font-size:.62rem;line-height:1.35;color:#d0d0cb;padding:.18rem 0;border-top:1px solid rgba(255,255,255,.06)}
   .tip li:first-child{border-top:0}
-  .p:hover .tip,.p:focus-within .tip{opacity:1}
+  .p:hover .tip,.p:focus-within .tip{opacity:1;transform:translateX(-50%) translateY(0)}
+  .hero-dock{position:absolute;left:0;right:0;bottom:1.6rem;z-index:9;text-align:center;animation:fadeUp .9s .25s ease both}
+  .hero-dock .offer{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#cfcfc8}
+  .hero-dock .scrollcue{margin-top:.55rem;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);animation:softBounce 2.4s ease-in-out infinite}
   @media (hover:none){.scatter .p:hover > img,.acc-pic:hover{transform:none}.tip{display:none}}
-  .intro{text-align:center;padding:4.2rem 0 1.2rem}
+  .intro{text-align:center;padding:4.4rem 0 1.4rem}
   .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
   h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
-  .sub{margin:.85rem auto 1.4rem;max-width:40rem;color:#bdbdb8}
-  .cta{display:inline-block;background:#fff;color:#000;text-decoration:none;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:.95rem 1.5rem;border-radius:999px}
-  .hint{margin-top:1.15rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-  section.block{padding:2.6rem 0}
+  .sub{margin:.85rem auto 1.5rem;max-width:36rem;color:#bdbdb8}
+  .trust{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;margin:0 0 1.5rem}
+  .trust i{font-style:normal;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#c7c7c2;border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem}
+  .cta{display:inline-block;background:#fff;color:#000;text-decoration:none;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:.95rem 1.5rem;border-radius:999px;transition:transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,255,255,.12)}
+  .cta-sm{padding:.7rem 1.1rem;font-size:.68rem}
+  section.block{padding:2.4rem 0}
   .sec-title{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:1.45rem;margin-bottom:1rem}
   .acc{border-top:1px solid var(--line)}
   details{border-bottom:1px solid var(--line)}
-  summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.05rem 0;font-weight:600}
+  summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;font-weight:600}
   summary::-webkit-details-marker{display:none}
   summary:after{content:"+";color:var(--muted);font-weight:500}
   details[open] summary:after{content:"\2013"}
-  .acc-body{padding:0 0 1.3rem;color:#c7c7c2}
-  .acc-grid{display:grid;gap:1.1rem;align-items:center}
+  .acc-body{padding:0 0 1.4rem;color:#c7c7c2;animation:fadeUp .45s ease both}
+  .acc-grid{display:grid;gap:1.2rem;align-items:center}
   @media(min-width:720px){.acc-grid{grid-template-columns:220px 1fr}}
-  .acc-pic{width:100%;max-width:240px;cursor:pointer;background:transparent}
-  .acc-body ul{margin:.55rem 0 0 1.1rem}
+  .acc-pic{width:100%;max-width:240px;cursor:pointer}
+  .acc-body ul{margin:.7rem 0 1rem;list-style:none}
+  .acc-body li{padding:.28rem 0 .28rem 1rem;position:relative}
+  .acc-body li:before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
-  form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.25rem}
+  form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.35rem;transition:border-color .3s ease, box-shadow .3s ease}
+  form:focus-within{border-color:rgba(255,255,255,.22);box-shadow:0 0 0 1px rgba(255,255,255,.06)}
   .grid{display:grid;gap:.75rem}
   @media(min-width:720px){.grid-2{grid-template-columns:1fr 1fr}}
   label{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
-  input,select,textarea{width:100%;background:#0b0b0c;border:1px solid var(--line);color:var(--paper);border-radius:10px;padding:.75rem .8rem;outline:none;font-size:16px}
+  input,select,textarea{width:100%;background:#0b0b0c;border:1px solid var(--line);color:var(--paper);border-radius:10px;padding:.75rem .8rem;outline:none;font-size:16px;transition:border-color .25s ease}
+  input:focus,select:focus,textarea:focus{border-color:rgba(255,255,255,.28)}
   textarea{min-height:90px;resize:vertical}
-  button[type=submit]{width:100%;border:0;background:#fff;color:#000;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:1rem;border-radius:999px;cursor:pointer}
+  button[type=submit]{width:100%;border:0;background:#fff;color:#000;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:1rem;border-radius:999px;cursor:pointer;transition:transform .3s ease}
+  button[type=submit]:hover{transform:translateY(-1px)}
   .fine{margin-top:.7rem;font-size:.72rem;color:var(--muted)}
-  .fund-cta{display:block;text-align:center;margin:1.25rem 0 0;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;text-decoration:none;color:var(--paper);line-height:1.45}
-  .fund-cta:hover{text-decoration:underline}
+  .fund-cta{display:block;text-align:center;margin:1.25rem 0 0;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;text-decoration:none;color:var(--paper);line-height:1.45;transition:opacity .25s ease}
+  .fund-cta:hover{opacity:.72}
   footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;align-items:center;color:var(--muted);font-size:.78rem}
   footer a{color:var(--muted);text-decoration:none}
-  @media(max-width:760px){header{padding:.85rem 0}header img{height:116px;max-width:min(420px,86vw)}.hero-stage{height:160vh}.scatter .logo{width:min(210px,52vw);padding:10px;border-radius:18px}.scatter .p{width:min(148px,34vw)}.p3,.p4{width:min(164px,38vw)}.intro{padding:2.4rem 0 1rem}h1{font-size:clamp(1.7rem,8vw,2.3rem)}.sub{font-size:.95rem}section.block{padding:1.8rem 0}.acc-pic{max-width:180px;margin:0 auto}form{padding:1rem}}
-  @media(prefers-reduced-motion:reduce){.hero-stage{height:100vh;height:100dvh}.hero-sticky{position:relative}.scatter .p > img,.acc-pic{transition:none}}
+  .reveal{opacity:0;transform:translateY(18px);animation:fadeUp .7s ease forwards}
+  .d2{animation-delay:.12s}.d3{animation-delay:.2s}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+  @keyframes logoIn{from{opacity:0;transform:translate(-50%,-46%) scale(.94)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+  @keyframes softBounce{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(6px);opacity:1}}
+  @media(max-width:760px){header{padding:.75rem 0}header img{height:64px;max-width:min(200px,52vw)}.hero-stage{height:155vh}.scatter .logo{width:min(210px,52vw);padding:10px;border-radius:18px}.scatter .p{width:min(148px,34vw)}.p3,.p4{width:min(164px,38vw)}.pname{font-size:.52rem}.hero-dock{bottom:1.1rem}.intro{padding:2.4rem 0 1rem}h1{font-size:clamp(1.7rem,8vw,2.3rem)}.sub{font-size:.95rem}section.block{padding:1.8rem 0}.acc-pic{max-width:180px;margin:0 auto}form{padding:1rem}}
+  @media(prefers-reduced-motion:reduce){.hero-stage{height:100vh;height:100dvh}.hero-sticky{position:relative}.scatter .p > img,.acc-pic,.cta,button[type=submit],.reveal,.hero-dock .scrollcue,header,.scatter .logo{animation:none;transition:none;opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -79,96 +97,68 @@
     <div class="hero-sticky">
       <div class="wrap" style="position:absolute;top:0;left:0;right:0;width:min(1120px,calc(100% - 2rem));margin:0 auto">
         <header>
-          <a href="/"><img src="gurilla%20finance%20logo.png?v=23" alt="Gurilla Finance" /></a>
+          <a href="/"><img src="gurilla%20finance%20logo.png?v=24" alt="Gurilla Finance" /></a>
         </header>
       </div>
       <div class="scatter" id="scatter">
-        <div class="p p1">
-          <div class="tip">
-            <img src="pax%20a77.png?v=23" alt="" />
-            <b>Smart Terminal Mini</b>
-            <span>PAX A77</span>
-            <ul>
-              <li>5.5" Android touchscreen</li>
-              <li>Built-in barcode scanner</li>
-              <li>Wi-Fi + 4G backup</li>
-            </ul>
-          </div>
-          <img src="pax%20a77.png?v=23" alt="Smart Terminal Mini — PAX A77" />
+        <div class="p p1" data-target="sys-mini">
+          <div class="tip"><img src="pax%20a77.png?v=24" alt="" /><b>Smart Terminal Mini</b><span>PAX A77</span><ul><li>5.5" Android touchscreen</li><li>Built-in barcode scanner</li><li>Wi-Fi + 4G backup</li></ul></div>
+          <img src="pax%20a77.png?v=24" alt="Smart Terminal Mini" />
+          <div class="pname">Mini</div>
         </div>
-        <div class="p p2">
-          <div class="tip">
-            <img src="A920Pro.Right_Retail.png?v=23" alt="" />
-            <b>Smart Terminal</b>
-            <span>PAX A920 Pro</span>
-            <ul>
-              <li>Built-in receipt printer</li>
-              <li>Rear camera + scanner</li>
-              <li>Wi-Fi + 4G</li>
-            </ul>
-          </div>
-          <img src="A920Pro.Right_Retail.png?v=23" alt="Smart Terminal — PAX A920 Pro" />
+        <div class="p p2" data-target="sys-term">
+          <div class="tip"><img src="A920Pro.Right_Retail.png?v=24" alt="" /><b>Smart Terminal</b><span>PAX A920 Pro</span><ul><li>Built-in receipt printer</li><li>Rear camera + scanner</li><li>Wi-Fi + 4G</li></ul></div>
+          <img src="A920Pro.Right_Retail.png?v=24" alt="Smart Terminal" />
+          <div class="pname">Terminal</div>
         </div>
-        <div class="logo"><img src="IMG_9090.png?v=23" alt="Gurilla Finance" /></div>
-        <div class="p p3">
-          <div class="tip">
-            <img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=23" alt="" />
-            <b>Smart Flex</b>
-            <span>PAX E600 Mini</span>
-            <ul>
-              <li>Merchant + customer screens</li>
-              <li>Printer + charging dock</li>
-              <li>Wi-Fi + 4G</li>
-            </ul>
-          </div>
-          <img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=23" alt="Smart Flex — PAX E600 Mini" />
+        <div class="logo"><img src="IMG_9090.png?v=24" alt="Gurilla Finance" /></div>
+        <div class="p p3" data-target="sys-flex">
+          <div class="tip"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=24" alt="" /><b>Smart Flex</b><span>PAX E600 Mini</span><ul><li>Merchant + customer screens</li><li>Printer + charging dock</li><li>Wi-Fi + 4G</li></ul></div>
+          <img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=24" alt="Smart Flex" />
+          <div class="pname">Flex</div>
         </div>
-        <div class="p p4">
-          <div class="tip">
-            <img src="E700-W-1-us-image.png?v=23" alt="" />
-            <b>Smart POS+</b>
-            <span>PAX E700</span>
-            <ul>
-              <li>12.5" + 4.3" dual screens</li>
-              <li>Integrated printer</li>
-              <li>Wi-Fi + LAN</li>
-            </ul>
-          </div>
-          <img src="E700-W-1-us-image.png?v=23" alt="Smart POS+ — PAX E700" />
+        <div class="p p4" data-target="sys-pos">
+          <div class="tip"><img src="E700-W-1-us-image.png?v=24" alt="" /><b>Smart POS+</b><span>PAX E700</span><ul><li>12.5" + 4.3" dual screens</li><li>Integrated printer</li><li>Wi-Fi + LAN</li></ul></div>
+          <img src="E700-W-1-us-image.png?v=24" alt="Smart POS+" />
+          <div class="pname">POS+</div>
         </div>
+      </div>
+      <div class="hero-dock">
+        <div class="offer">Free POS if you qualify · Official Payanywhere</div>
+        <div class="scrollcue">Scroll</div>
       </div>
     </div>
   </div>
   <div class="wrap">
-    <section class="intro" id="intro">
+    <section class="intro reveal" id="intro">
       <p class="kicker">Gurilla Finance</p>
       <h1>Free POS systems<br/>if you qualify.</h1>
-      <p class="sub">Official Payanywhere hardware through North. Chip, tap, swipe. Terminal theme or Retail theme (inventory + open tickets). Payments Hub for activity, employees, inventory, virtual terminal, and invoices. No upfront equipment cost on qualified free placement.</p>
+      <p class="sub">Take chip, tap, and swipe with official Payanywhere hardware. No upfront equipment cost when the location is approved. We place the right unit, then you run the counter.</p>
+      <div class="trust"><i>Chip · tap · swipe</i><i>Free if approved</i><i>One unit per location</i></div>
       <a class="cta" href="#apply">Check eligibility</a>
-      <p class="hint">Scroll</p>
     </section>
-    <section class="block" id="systems">
+    <section class="block reveal d2" id="systems">
       <h2 class="sec-title">Four official systems</h2>
       <div class="acc">
-        <details open>
+        <details id="sys-mini" open>
           <summary><span><span class="tag">Handheld · PAX A77</span><br/>Smart Terminal Mini</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="pax%20a77.png?v=23" alt="Smart Terminal Mini" /><div>Compact wireless terminal from the North QSG. 5.5" Android touchscreen, built-in laser barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB-C, speakers, Wi-Fi with 4G backup. No onboard printer.<ul><li>Best for salons, tableside, delivery, pop-ups</li><li>Accepts EMV, contactless, magstripe, PIN debit, EBT / SNAP</li><li>Email or SMS receipts only</li><li>Purchase $150.95 · software $19.95/mo/device</li><li>Free placement available if the location qualifies</li></ul></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="pax%20a77.png?v=24" alt="Smart Terminal Mini" /><div>Built for tableside, salons, delivery, and pop-ups.<ul><li>5.5" Android screen + barcode scanner</li><li>Chip, tap, swipe, PIN debit, EBT / SNAP</li><li>Wi-Fi with 4G backup · email or SMS receipts</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
         </details>
-        <details>
+        <details id="sys-term">
           <summary><span><span class="tag">Counter + printer · PAX A920 Pro</span><br/>Smart Terminal</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="A920Pro.Right_Retail.png?v=23" alt="Smart Terminal" /><div>The upgrade from a traditional terminal. Built-in receipt printer, rear camera + scanner, NFC / EMV / magstripe, Wi-Fi + 4G.<ul><li>Best for restaurants and retail counters</li><li>Print, email, or SMS receipts</li><li>Purchase $349.95 · software $19.95/mo/device</li><li>Free placement available if the location qualifies</li></ul></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="A920Pro.Right_Retail.png?v=24" alt="Smart Terminal" /><div>The counter terminal with a printer already in it.<ul><li>Built-in receipt printer</li><li>Rear camera + scanner · Wi-Fi + 4G</li><li>Print, email, or SMS receipts</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
         </details>
-        <details>
+        <details id="sys-flex">
           <summary><span><span class="tag">Hybrid POS · PAX E600 Mini</span><br/>Smart Flex</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=23" alt="Smart Flex" /><div>Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer, charging dock + accessory hub, Wi-Fi + 4G.<ul><li>Best for cafes and growing retail</li><li>Purchase $549.95 · $49.95 setup · software $29.95/mo/device</li><li>Free placement still available if volume qualifies</li></ul></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=24" alt="Smart Flex" /><div>Part terminal, part point of sale for cafes and growing retail.<ul><li>Merchant screen + customer display</li><li>Printer, charging dock, accessory hub</li><li>Wi-Fi + 4G</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
         </details>
-        <details>
+        <details id="sys-pos">
           <summary><span><span class="tag">Full counter POS · PAX E700</span><br/>Smart POS+</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="E700-W-1-us-image.png?v=23" alt="Smart POS+" /><div>Large countertop POS. Wi-Fi plus LAN. 12.5" merchant screen + 4.3" customer display, integrated printer, cash-drawer port.<ul><li>Best for busy retail, QSR, automotive, and healthcare counters</li><li>Purchase $949.95 · $99.95 setup · software $49.95/mo/device</li><li>Free placement still available if volume qualifies</li></ul></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="E700-W-1-us-image.png?v=24" alt="Smart POS+" /><div>The full counter system for busy floors.<ul><li>12.5" merchant screen + 4.3" customer display</li><li>Integrated printer + cash-drawer port</li><li>Wi-Fi + LAN</li></ul><a class="cta cta-sm" href="#apply">Check eligibility</a></div></div></div>
         </details>
       </div>
     </section>
-    <section class="block" id="apply">
+    <section class="block reveal d3" id="apply">
       <h2 class="sec-title">Check eligibility</h2>
       <form action="https://formsubmit.co/financegurilla@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Gurilla Finance — POS lead" />
@@ -197,6 +187,7 @@
 (function(){
   var stage=document.getElementById('heroStage');
   var logo=document.querySelector('.scatter .logo');
+  var names=document.querySelectorAll('.pname');
   var mobile=window.matchMedia('(max-width:760px)');
   function layout(){
     var m=mobile.matches;
@@ -216,6 +207,7 @@
     ticking=false;
     var p=reduce?1:ease(progress());
     items.forEach(function(item){if(!item.el) return;var x=-50+item.x*p, y=-50+item.y*p, s=0.58+0.42*p;item.el.style.transform='translate('+x+'%, '+y+'%) rotate(0deg) scale('+s+')';});
+    names.forEach(function(n){n.style.opacity = p > 0.55 ? Math.min(1,(p-0.55)/0.25) : 0;});
     if(logo){var fade = p < 0.08 ? 1 : Math.max(0, 1 - (p - 0.08) / 0.62);logo.style.opacity='1';logo.style.background='rgba(255,255,255,'+fade+')';logo.style.boxShadow=fade>0.02?'0 16px 40px rgba(0,0,0,'+(0.4*fade)+')':'none';logo.style.padding=(14*fade)+'px';logo.style.transform='translate(-50%,-50%) rotate(0deg)';}
   }
   function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(apply); }
@@ -223,6 +215,16 @@
   apply();
   window.addEventListener('scroll', onScroll, {passive:true});
   window.addEventListener('resize', onResize);
+  document.querySelectorAll('.p').forEach(function(el){
+    el.addEventListener('click', function(){
+      var id=el.getAttribute('data-target');
+      var row=document.getElementById(id);
+      if(!row) return;
+      document.querySelectorAll('#systems details').forEach(function(d){ if(d!==row) d.open=false; });
+      row.open=true;
+      row.scrollIntoView({behavior:reduce?'auto':'smooth', block:'center'});
+    });
+  });
 })();
 </script>
 </body>
