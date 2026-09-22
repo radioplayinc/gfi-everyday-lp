@@ -25,16 +25,19 @@
   .scatter .p{z-index:2;width:min(300px,26vw)}
   .p3,.p4{width:min(340px,30vw)}
   .scatter .logo{width:min(280px,42vw);z-index:8;background:#fff;border-radius:22px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.4)}
-  .scatter .p img,.acc-pic{background:transparent;mix-blend-mode:normal;filter:none;box-shadow:none;object-fit:contain;transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+  .scatter .p > img,.acc-pic{background:transparent;mix-blend-mode:normal;filter:none;box-shadow:none;object-fit:contain;transition:transform .45s cubic-bezier(.22,.61,.36,1)}
   .scatter .logo img{background:transparent;mix-blend-mode:normal;filter:none}
   .scatter .p:hover{z-index:12}
-  .scatter .p:hover img,.acc-pic:hover{transform:translateY(-10px) scale(1.045);filter:none}
-  .tip{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);min-width:168px;background:#111113;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.55rem .7rem;opacity:0;pointer-events:none;transition:opacity .2s ease;box-shadow:0 12px 28px rgba(0,0,0,.45);z-index:20}
-  .tip b{display:block;font-size:.72rem;letter-spacing:.02em}
-  .tip span{display:block;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:.12rem 0 .28rem}
-  .tip em{font-style:normal;font-size:.68rem;color:#d8d8d3}
+  .scatter .p:hover > img,.acc-pic:hover{transform:translateY(-10px) scale(1.045);filter:none}
+  .tip{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%);width:200px;background:#111113;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:.65rem .7rem .75rem;opacity:0;pointer-events:none;transition:opacity .2s ease;box-shadow:0 14px 32px rgba(0,0,0,.5);z-index:20}
+  .tip img{width:72px;height:auto;margin:0 auto .45rem;object-fit:contain;background:transparent}
+  .tip b{display:block;font-size:.72rem;letter-spacing:.02em;text-align:center}
+  .tip span{display:block;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:.1rem 0 .4rem;text-align:center}
+  .tip ul{list-style:none;margin:0;padding:0}
+  .tip li{font-size:.62rem;line-height:1.35;color:#d0d0cb;padding:.18rem 0;border-top:1px solid rgba(255,255,255,.06)}
+  .tip li:first-child{border-top:0}
   .p:hover .tip,.p:focus-within .tip{opacity:1}
-  @media (hover:none){.scatter .p:hover img,.acc-pic:hover{transform:none}.tip{display:none}}
+  @media (hover:none){.scatter .p:hover > img,.acc-pic:hover{transform:none}.tip{display:none}}
   .intro{text-align:center;padding:4.2rem 0 1.2rem}
   .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
   h1{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.05;letter-spacing:-.03em}
@@ -68,7 +71,7 @@
   footer{border-top:1px solid var(--line);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;justify-content:space-between;align-items:center;color:var(--muted);font-size:.78rem}
   footer a{color:var(--muted);text-decoration:none}
   @media(max-width:760px){header{padding:.85rem 0}header img{height:116px;max-width:min(420px,86vw)}.hero-stage{height:160vh}.scatter .logo{width:min(210px,52vw);padding:10px;border-radius:18px}.scatter .p{width:min(148px,34vw)}.p3,.p4{width:min(164px,38vw)}.intro{padding:2.4rem 0 1rem}h1{font-size:clamp(1.7rem,8vw,2.3rem)}.sub{font-size:.95rem}section.block{padding:1.8rem 0}.acc-pic{max-width:180px;margin:0 auto}form{padding:1rem}}
-  @media(prefers-reduced-motion:reduce){.hero-stage{height:100vh;height:100dvh}.hero-sticky{position:relative}.scatter .p img,.acc-pic{transition:none}}
+  @media(prefers-reduced-motion:reduce){.hero-stage{height:100vh;height:100dvh}.hero-sticky{position:relative}.scatter .p > img,.acc-pic{transition:none}}
 </style>
 </head>
 <body>
@@ -76,26 +79,62 @@
     <div class="hero-sticky">
       <div class="wrap" style="position:absolute;top:0;left:0;right:0;width:min(1120px,calc(100% - 2rem));margin:0 auto">
         <header>
-          <a href="/"><img src="gurilla%20finance%20logo.png?v=22" alt="Gurilla Finance" /></a>
+          <a href="/"><img src="gurilla%20finance%20logo.png?v=23" alt="Gurilla Finance" /></a>
         </header>
       </div>
       <div class="scatter" id="scatter">
         <div class="p p1">
-          <div class="tip"><b>Smart Terminal Mini</b><span>PAX A77</span><em>$150.95 · $19.95/mo</em></div>
-          <img src="pax%20a77.png?v=22" alt="Smart Terminal Mini — PAX A77" />
+          <div class="tip">
+            <img src="pax%20a77.png?v=23" alt="" />
+            <b>Smart Terminal Mini</b>
+            <span>PAX A77</span>
+            <ul>
+              <li>5.5" Android touchscreen</li>
+              <li>Built-in barcode scanner</li>
+              <li>Wi-Fi + 4G backup</li>
+            </ul>
+          </div>
+          <img src="pax%20a77.png?v=23" alt="Smart Terminal Mini — PAX A77" />
         </div>
         <div class="p p2">
-          <div class="tip"><b>Smart Terminal</b><span>PAX A920 Pro</span><em>$349.95 · $19.95/mo</em></div>
-          <img src="A920Pro.Right_Retail.png?v=22" alt="Smart Terminal — PAX A920 Pro" />
+          <div class="tip">
+            <img src="A920Pro.Right_Retail.png?v=23" alt="" />
+            <b>Smart Terminal</b>
+            <span>PAX A920 Pro</span>
+            <ul>
+              <li>Built-in receipt printer</li>
+              <li>Rear camera + scanner</li>
+              <li>Wi-Fi + 4G</li>
+            </ul>
+          </div>
+          <img src="A920Pro.Right_Retail.png?v=23" alt="Smart Terminal — PAX A920 Pro" />
         </div>
-        <div class="logo"><img src="IMG_9090.png?v=22" alt="Gurilla Finance" /></div>
+        <div class="logo"><img src="IMG_9090.png?v=23" alt="Gurilla Finance" /></div>
         <div class="p p3">
-          <div class="tip"><b>Smart Flex</b><span>PAX E600 Mini</span><em>$549.95 · $29.95/mo</em></div>
-          <img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=22" alt="Smart Flex — PAX E600 Mini" />
+          <div class="tip">
+            <img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=23" alt="" />
+            <b>Smart Flex</b>
+            <span>PAX E600 Mini</span>
+            <ul>
+              <li>Merchant + customer screens</li>
+              <li>Printer + charging dock</li>
+              <li>Wi-Fi + 4G</li>
+            </ul>
+          </div>
+          <img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=23" alt="Smart Flex — PAX E600 Mini" />
         </div>
         <div class="p p4">
-          <div class="tip"><b>Smart POS+</b><span>PAX E700</span><em>$949.95 · $49.95/mo</em></div>
-          <img src="E700-W-1-us-image.png?v=22" alt="Smart POS+ — PAX E700" />
+          <div class="tip">
+            <img src="E700-W-1-us-image.png?v=23" alt="" />
+            <b>Smart POS+</b>
+            <span>PAX E700</span>
+            <ul>
+              <li>12.5" + 4.3" dual screens</li>
+              <li>Integrated printer</li>
+              <li>Wi-Fi + LAN</li>
+            </ul>
+          </div>
+          <img src="E700-W-1-us-image.png?v=23" alt="Smart POS+ — PAX E700" />
         </div>
       </div>
     </div>
@@ -113,19 +152,19 @@
       <div class="acc">
         <details open>
           <summary><span><span class="tag">Handheld · PAX A77</span><br/>Smart Terminal Mini</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="pax%20a77.png?v=22" alt="Smart Terminal Mini" /><div>Compact wireless terminal from the North QSG. 5.5" Android touchscreen, built-in laser barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB-C, speakers, Wi-Fi with 4G backup. No onboard printer.<ul><li>Best for salons, tableside, delivery, pop-ups</li><li>Accepts EMV, contactless, magstripe, PIN debit, EBT / SNAP</li><li>Email or SMS receipts only</li><li>Purchase $150.95 · software $19.95/mo/device</li><li>Free placement available if the location qualifies</li></ul></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="pax%20a77.png?v=23" alt="Smart Terminal Mini" /><div>Compact wireless terminal from the North QSG. 5.5" Android touchscreen, built-in laser barcode scanner, light sensor + camera, NFC / EMV / magstripe, USB-C, speakers, Wi-Fi with 4G backup. No onboard printer.<ul><li>Best for salons, tableside, delivery, pop-ups</li><li>Accepts EMV, contactless, magstripe, PIN debit, EBT / SNAP</li><li>Email or SMS receipts only</li><li>Purchase $150.95 · software $19.95/mo/device</li><li>Free placement available if the location qualifies</li></ul></div></div></div>
         </details>
         <details>
           <summary><span><span class="tag">Counter + printer · PAX A920 Pro</span><br/>Smart Terminal</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="A920Pro.Right_Retail.png?v=22" alt="Smart Terminal" /><div>The upgrade from a traditional terminal. Built-in receipt printer, rear camera + scanner, NFC / EMV / magstripe, Wi-Fi + 4G.<ul><li>Best for restaurants and retail counters</li><li>Print, email, or SMS receipts</li><li>Purchase $349.95 · software $19.95/mo/device</li><li>Free placement available if the location qualifies</li></ul></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="A920Pro.Right_Retail.png?v=23" alt="Smart Terminal" /><div>The upgrade from a traditional terminal. Built-in receipt printer, rear camera + scanner, NFC / EMV / magstripe, Wi-Fi + 4G.<ul><li>Best for restaurants and retail counters</li><li>Print, email, or SMS receipts</li><li>Purchase $349.95 · software $19.95/mo/device</li><li>Free placement available if the location qualifies</li></ul></div></div></div>
         </details>
         <details>
           <summary><span><span class="tag">Hybrid POS · PAX E600 Mini</span><br/>Smart Flex</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=22" alt="Smart Flex" /><div>Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer, charging dock + accessory hub, Wi-Fi + 4G.<ul><li>Best for cafes and growing retail</li><li>Purchase $549.95 · $49.95 setup · software $29.95/mo/device</li><li>Free placement still available if volume qualifies</li></ul></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=23" alt="Smart Flex" /><div>Part terminal, part point of sale. Merchant screen + customer-facing display, built-in printer, charging dock + accessory hub, Wi-Fi + 4G.<ul><li>Best for cafes and growing retail</li><li>Purchase $549.95 · $49.95 setup · software $29.95/mo/device</li><li>Free placement still available if volume qualifies</li></ul></div></div></div>
         </details>
         <details>
           <summary><span><span class="tag">Full counter POS · PAX E700</span><br/>Smart POS+</span></summary>
-          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="E700-W-1-us-image.png?v=22" alt="Smart POS+" /><div>Large countertop POS. Wi-Fi plus LAN. 12.5" merchant screen + 4.3" customer display, integrated printer, cash-drawer port.<ul><li>Best for busy retail, QSR, automotive, and healthcare counters</li><li>Purchase $949.95 · $99.95 setup · software $49.95/mo/device</li><li>Free placement still available if volume qualifies</li></ul></div></div></div>
+          <div class="acc-body"><div class="acc-grid"><img class="acc-pic" src="E700-W-1-us-image.png?v=23" alt="Smart POS+" /><div>Large countertop POS. Wi-Fi plus LAN. 12.5" merchant screen + 4.3" customer display, integrated printer, cash-drawer port.<ul><li>Best for busy retail, QSR, automotive, and healthcare counters</li><li>Purchase $949.95 · $99.95 setup · software $49.95/mo/device</li><li>Free placement still available if volume qualifies</li></ul></div></div></div>
         </details>
       </div>
     </section>
