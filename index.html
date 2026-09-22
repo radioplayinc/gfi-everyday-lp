@@ -74,6 +74,8 @@
   .acc-body li{padding:.28rem 0 .28rem 1rem;position:relative}
   .acc-body li:before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+  .ref-block{margin-top:1rem;padding-top:.95rem;border-top:1px solid var(--line)}
+  .ref-title{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:.95rem;margin-bottom:.7rem}
   form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.35rem;transition:border-color .3s ease, box-shadow .3s ease}
   form:focus-within{border-color:rgba(255,255,255,.22);box-shadow:0 0 0 1px rgba(255,255,255,.06)}
   .grid{display:grid;gap:.75rem}
@@ -186,6 +188,13 @@
           <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required /></div>
           <div><label for="device">Preferred system</label><select id="device" name="device"><option>Not sure — recommend one</option><option>Smart Terminal Mini (A77)</option><option>Smart Terminal (A920 Pro)</option><option>Smart Flex (E600 Mini)</option><option>Smart POS+ (E700)</option></select></div>
           <div><label for="volume">Est. monthly card volume</label><select id="volume" name="volume"><option>Under $5k</option><option>$5k–$15k</option><option>$15k–$50k</option><option>$50k+</option></select></div>
+        </div>
+        <div class="ref-block">
+          <p class="ref-title">Referral</p>
+          <div class="grid grid-2">
+            <div><label for="referral_name">Referred by</label><input id="referral_name" name="referral_name" placeholder="Name or company" /></div>
+            <div><label for="referral_number">Referral number</label><input id="referral_number" name="referral_number" placeholder="e.g. GF-1048" /></div>
+          </div>
         </div>
         <div style="margin-top:.75rem"><label for="notes">Anything we should know</label><textarea id="notes" name="notes" placeholder="Industry, locations, current processor…"></textarea></div>
         <div style="margin-top:1rem"><button type="submit">Submit application</button></div>
