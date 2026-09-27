@@ -1,2 +1,125 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><title>placeholder</title></head><body>pending</body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gurilla Finance — Free POS or modern checkout (if you qualify)</title>
+<meta name="description" content="Free Payanywhere Smart Flex path or modern checkout + Inovio — if you qualify. Board by Dec 15, 2026 for 90 days free Inovio. Gurilla Finance." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#070708;--card:#141416;--line:rgba(255,255,255,.1);--paper:#f4f4f1;--muted:#8a8a86;--accent:#ff6a1a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html,body{background:var(--bg);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.5;min-height:100%}
+  img{display:block;max-width:100%;height:auto;background:transparent}
+  a{color:inherit}
+  .wrap{width:min(1120px,calc(100% - 2rem));margin:0 auto}
+  header{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;padding:1.05rem 0}
+  header img{height:88px;width:auto;max-width:min(280px,46vw);object-fit:contain}
+  .hero-stage{height:165vh;position:relative}
+  .hero-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .bg-slides{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .bg-slides .slide{position:absolute;inset:-8%;background-repeat:no-repeat;background-position:center;background-size:min(78vw,900px) auto;opacity:0;filter:blur(12px) saturate(.8) brightness(.55);animation:bgSlide 28s ease-in-out infinite}
+  .bg-slides .slide:nth-child(1){background-image:url("pax%20a77.png?v=25");animation-delay:0s}
+  .bg-slides .slide:nth-child(2){background-image:url("A920Pro.Right_Retail.png?v=25");animation-delay:7s}
+  .bg-slides .slide:nth-child(3){background-image:url("PA_SmartFlexMini_FacingLeft_Retail.png?v=25");animation-delay:14s}
+  .bg-slides .slide:nth-child(4){background-image:url("E700-W-1-us-image.png?v=25");animation-delay:21s}
+  .bg-veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,rgba(7,7,8,.15) 0%,rgba(7,7,8,.82) 72%,#070708 100%)}
+  .scatter{position:relative;z-index:3;width:min(1180px,100%);height:100%;margin:0 auto}
+  .scatter .logo,.scatter .p{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+  .scatter .p{z-index:2;width:min(300px,26vw);cursor:pointer}
+  .p3,.p4{width:min(340px,30vw)}
+  .scatter .logo{width:min(280px,42vw);z-index:8;background:#fff;border-radius:22px;padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.4)}
+  .scatter .p > img{background:transparent;object-fit:contain;transition:transform .5s ease}
+  .scatter .p:hover{z-index:12}
+  .scatter .p:hover > img{transform:translateY(-8px) scale(1.04)}
+  .pname{position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#cfcfc8;white-space:nowrap;opacity:0}
+  .tip{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%);width:210px;background:rgba(17,17,19,.94);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:.65rem;opacity:0;pointer-events:none;z-index:20}
+  .p:hover .tip{opacity:1}
+  .tip img{width:72px;margin:0 auto .4rem}
+  .tip b,.tip span{display:block;text-align:center}
+  .tip span{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#8a8a86}
+  .tip ul{list-style:none}
+  .tip li{font-size:.62rem;padding:.15rem 0;border-top:1px solid rgba(255,255,255,.06)}
+  .hero-dock{position:absolute;left:0;right:0;bottom:1.6rem;z-index:9;text-align:center}
+  .hero-dock .offer{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#cfcfc8}
+  .hero-dock .scrollcue{margin-top:.55rem;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:#8a8a86}
+  .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:#8a8a86;margin-bottom:.7rem}
+  .sec-title{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:1.45rem;margin-bottom:1rem}
+  .sub{margin:.85rem 0 1.2rem;max-width:40rem;color:#bdbdb8}
+  .trust{display:flex;flex-wrap:wrap;gap:.55rem;margin:0 0 1.2rem}
+  .trust i{font-style:normal;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:.35rem .7rem}
+  .cta{display:inline-block;background:#fff;color:#000;text-decoration:none;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:.95rem 1.5rem;border-radius:999px}
+  section.block{padding:2.4rem 0}
+  .acc{border-top:1px solid rgba(255,255,255,.1)}
+  details{border-bottom:1px solid rgba(255,255,255,.1)}
+  summary{cursor:pointer;list-style:none;padding:1rem 0;font-weight:600}
+  summary::-webkit-details-marker{display:none}
+  .acc-body{padding:0 0 1rem;color:#c7c7c2}
+  .tag{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#8a8a86}
+  .pain{border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem;background:#111}
+  .ref-block{margin-top:1rem;padding-top:.95rem;border-top:1px solid rgba(255,255,255,.1)}
+  .ref-title{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:.95rem;margin-bottom:.7rem}
+  form{background:#141416;border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:1.35rem}
+  .grid{display:grid;gap:.75rem}
+  @media(min-width:720px){.grid-2{grid-template-columns:1fr 1fr}}
+  label{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#8a8a86;margin-bottom:.35rem}
+  input,select,textarea{width:100%;background:#0b0b0c;border:1px solid rgba(255,255,255,.1);color:#f4f4f1;border-radius:10px;padding:.75rem .8rem;font-size:16px}
+  textarea{min-height:90px}
+  button[type=submit]{width:100%;border:0;background:#fff;color:#000;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;padding:1rem;border-radius:999px;cursor:pointer}
+  .fine{margin-top:.7rem;font-size:.72rem;color:#8a8a86}
+  .fund-cta{display:block;text-align:center;margin:1.25rem 0 0;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;text-decoration:none}
+  footer{border-top:1px solid rgba(255,255,255,.1);padding:1.4rem 0 2.2rem;display:flex;justify-content:space-between;color:#8a8a86;font-size:.78rem}
+  footer a{color:#8a8a86;text-decoration:none}
+  @keyframes bgSlide{0%,23%{opacity:0}7%,16%{opacity:.55}26%,100%{opacity:0}}
+  @media(max-width:760px){header img{height:64px}.scatter .p{width:min(148px,34vw)}.p3,.p4{width:min(164px,38vw)}.scatter .logo{width:min(210px,52vw)}}
+  @media (hover:none){.tip{display:none}}
+</style>
+</head>
+<body>
+  <div class="hero-stage" id="heroStage">
+    <div class="hero-sticky">
+      <div class="bg-slides" aria-hidden="true"><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div></div>
+      <div class="bg-veil"></div>
+      <div class="wrap" style="position:absolute;top:0;left:0;right:0;z-index:8">
+        <header><a href="/"><img src="gurilla%20finance%20logo.png?v=25" alt="Gurilla Finance" /></a></header>
+      </div>
+      <div class="scatter" id="scatter">
+        <div class="p p1"><div class="tip"><img src="pax%20a77.png?v=25" alt="" /><b>Smart Terminal Mini</b><span>PAX A77</span><ul><li>5.5" Android touchscreen</li><li>Built-in barcode scanner</li><li>Wi-Fi + 4G backup</li></ul></div><img src="pax%20a77.png?v=25" alt="Smart Terminal Mini" /><div class="pname">Mini</div></div>
+        <div class="p p2"><div class="tip"><img src="A920Pro.Right_Retail.png?v=25" alt="" /><b>Smart Terminal</b><span>PAX A920 Pro</span><ul><li>Built-in receipt printer</li><li>Rear camera + scanner</li><li>Wi-Fi + 4G</li></ul></div><img src="A920Pro.Right_Retail.png?v=25" alt="Smart Terminal" /><div class="pname">Terminal</div></div>
+        <div class="logo"><img src="IMG_9090.png?v=25" alt="Gurilla Finance" /></div>
+        <div class="p p3"><div class="tip"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=25" alt="" /><b>Smart Flex</b><span>PAX E600 Mini</span><ul><li>Merchant + customer screens</li><li>Printer + charging dock</li><li>Wi-Fi + 4G</li></ul></div><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=25" alt="Smart Flex" /><div class="pname">Flex</div></div>
+        <div class="p p4"><div class="tip"><img src="E700-W-1-us-image.png?v=25" alt="" /><b>Smart POS+</b><span>PAX E700</span><ul><li>12.5" + 4.3" dual screens</li><li>Integrated printer</li><li>Wi-Fi + LAN</li></ul></div><img src="E700-W-1-us-image.png?v=25" alt="Smart POS+" /><div class="pname">POS+</div></div>
+      </div>
+      <div class="hero-dock"><div class="offer">Free POS if you qualify · Official Payanywhere</div><div class="scrollcue">Scroll</div></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <section class="block" id="pain"><p class="kicker">The leak</p><h2 class="sec-title">Keep more — fewer declines & chargebacks.</h2><p class="sub">Hardware bills and weak tooling quietly tax every sale. We structure a path that fights declines and chargebacks — not a rate-war pitch. If you qualify.</p><div class="grid grid-2"><div class="pain"><span class="tag">Declined · lost sale</span><br/><b>Old stack.</b> Declines recycle nowhere. Chargebacks land cold.</div><div class="pain"><span class="tag">Approved</span><br/><b>Everyday counter.</b> Free Smart Flex if you qualify. Tools watch the back door.</div></div></section>
+    <section class="block" id="path-a"><p class="kicker">Path A · Everyday · Tip / Retail</p><h2 class="sec-title">Free Smart Flex — if you qualify.</h2><p class="sub">Gurilla Everyday · Payanywhere Smart Flex (PAX E600 Mini). Everyday spearhead: free Smart Flex under program guidelines when you qualify. Not everyone gets a free machine. Mini (A77) stays as the tip-first alt — same Path A family.</p><p class="sub">If you qualify Dec 15 · 90 days free Inovio. Insert → angle → cart → checkout.</p><a class="cta" href="#quiz">Start my free equipment check</a></section>
+    <section class="block" id="path-b"><p class="kicker">Path B · Online</p><h2 class="sec-title">Checkout that fights declines.</h2><p class="sub">Embedded Checkout + Inovio · online operators. Embedded checkout + Inovio for online operators — stickier tools for declines, fraud, and chargebacks. No counter terminal you don’t need.</p><div class="trust"><i>Ethoca / RDR</i><i>Order Insight</i><i>3DS2</i><i>Decline recycling</i><i>P2PE / Tokenization</i></div><a class="cta" href="#quiz">Get my checkout path</a></section>
+    <section class="block" id="stickiness"><p class="kicker">Why it sticks</p><h2 class="sec-title">Tools that protect every sale.</h2><p class="sub">Likelihood isn’t a slogan — it’s the stack that keeps more sales from dying after the swipe.</p><div class="acc"><details open><summary>Ethoca / RDR · Order Insight</summary><div class="acc-body">Alerts + data that help stop chargebacks before they land.</div></details><details><summary>3DS2</summary><div class="acc-body">Friction where it counts — liability shift on eligible ecommerce auth.</div></details><details><summary>Decline recycling</summary><div class="acc-body">Retry soft declines intelligently so good cards don’t die once.</div></details><details><summary>P2PE / Tokenization</summary><div class="acc-body">Card data protected at the edge — less PCI surface, cleaner vault.</div></details></div></section>
+    <section class="block" id="window"><p class="kicker">Real window</p><h2 class="sec-title">Board in window: 90 days free Inovio.</h2><p class="sub">Merchants boarded Sep 15 – Dec 15, 2026 can get 90 days free Inovio — if you qualify. Calendar-true only. No fake countdown.</p><p class="sub"><b>December 2026</b> — window open through the 15th. After Dec 15 the free Inovio window ends — path is still equipment / checkout + tools if you qualify.</p></section>
+    <section class="block" id="quiz"><p class="kicker">Soft fit</p><h2 class="sec-title">See if you fit.</h2><p class="sub">Three quick taps. We’ll recommend Everyday Flex (Path A) or Online checkout (Path B) — or tell you straight if we won’t fake a quote. Indicative only · no MDR · no Peak. Soft fit first.</p><form action="https://formsubmit.co/financegurilla@gmail.com" method="POST"><input type="hidden" name="_subject" value="Gurilla Finance — soft fit" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><div class="grid grid-2"><div><label for="name">Full name</label><input id="name" name="name" required /></div><div><label for="business">Business name</label><input id="business" name="business" required /></div><div><label for="email">Email</label><input id="email" name="email" type="email" required /></div><div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required /></div><div><label for="channel">Where do you take cards?</label><select id="channel" name="channel"><option>In person · tip / retail</option><option>Online · ecommerce</option><option>Both / not sure</option></select></div><div><label for="volume">Monthly card volume</label><select id="volume" name="volume"><option>Under $10k</option><option>$10k – $50k</option><option>$50k – $150k</option><option>$150k+</option></select></div><div><label for="biztype">Business type</label><select id="biztype" name="biztype"><option>Retail / restaurant / services</option><option>Professional / B2B</option><option>Adult / gambling / crypto / CBD</option></select></div><div><label for="device">Preferred system</label><select id="device" name="device"><option>Not sure — recommend one</option><option>Smart Terminal Mini (A77)</option><option>Smart Flex (E600 Mini)</option><option>Smart Terminal (A920 Pro)</option><option>Smart POS+ (E700)</option><option>Online checkout only</option></select></div></div><div class="ref-block"><p class="ref-title">Referral</p><div class="grid grid-2"><div><label for="referral_name">Referred by</label><input id="referral_name" name="referral_name" placeholder="Name or company" /></div><div><label for="referral_number">Referral number</label><input id="referral_number" name="referral_number" placeholder="e.g. GF-1048" /></div></div></div><div style="margin-top:.75rem"><label for="notes">Anything we should know</label><textarea id="notes" name="notes"></textarea></div><div style="margin-top:1rem"><button type="submit">See if you fit</button></div><p class="fine">Indicative ≠ approved. Structure can change after underwriting. Equipment and promos only if you qualify. You can walk if we can’t structure a fit. Submitting is not approval, pricing, free hardware, or funding. Fit call within 24–48 hours. Agreement comes after review — no live e-sign on this page.</p></form><a class="fund-cta" href="https://7figurescredit.com/?a_aid=Gurillafinance" target="_blank" rel="noopener sponsored">Need funding? Click here to see if you qualify with no harm to your credit</a></section>
+    <section class="block" id="status"><p class="kicker">You’re in</p><h2 class="sec-title">We’ll confirm next steps.</h2><p class="sub">Thanks — we got your fit request. Expect a fit call within 24–48 hours (email preferred).</p><div class="acc"><details open><summary>1 · Fit request received</summary><div class="acc-body">Path + package noted. Indicative only.</div></details><details><summary>2 · Fit call (24–48h)</summary><div class="acc-body">We confirm channel, volume, and eligibility. No hope marketing.</div></details><details><summary>3 · Agreement after fit</summary><div class="acc-body">We’ll send the service agreement after the call — not before.</div></details><details><summary>4 · Underwriting → ship / activate</summary><div class="acc-body">On approval: ship or activate. Inovio tagged only if boarded in window and you qualify.</div></details></div><p class="fine">Questions? Email financegurilla@gmail.com · email preferred.</p></section>
+    <section class="block"><h2 class="sec-title">Free POS path or modern checkout — if you qualify.</h2><p class="sub">Board by Dec 15, 2026 for 90 days free Inovio. Soft fit first. Indicative path only — underwriting decides.</p><a class="cta" href="#quiz">See if you fit</a></section>
+    <footer><div>© 2026 Gurilla Finance</div><div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div></footer>
+  </div>
+<script>
+(function(){
+  var stage=document.getElementById('heroStage');
+  var logo=document.querySelector('.scatter .logo');
+  var names=document.querySelectorAll('.pname');
+  var mobile=window.matchMedia('(max-width:760px)');
+  function layout(){var m=mobile.matches;return [{el:document.querySelector('.p1'),x:m?-59:-84,y:m?-59:-69},{el:document.querySelector('.p2'),x:m?-59:-84,y:m?59:69},{el:document.querySelector('.p3'),x:m?59:84,y:m?-59:-69},{el:document.querySelector('.p4'),x:m?59:84,y:m?59:69}];}
+  var items=layout();
+  function progress(){var rect=stage.getBoundingClientRect();var total=Math.max(1,stage.offsetHeight-window.innerHeight);return Math.min(1,Math.max(0,-rect.top/total));}
+  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+  function apply(){var p=ease(progress());items.forEach(function(item){var x=-50+item.x*p,y=-50+item.y*p,s=0.58+0.42*p;item.el.style.transform='translate('+x+'%, '+y+'%) scale('+s+')';});names.forEach(function(n){n.style.opacity=p>0.55?Math.min(1,(p-0.55)/0.25):0;});if(logo){var fade=p<0.08?1:Math.max(0,1-(p-0.08)/0.62);logo.style.background='rgba(255,255,255,'+fade+')';logo.style.boxShadow=fade>0.02?'0 16px 40px rgba(0,0,0,'+(0.4*fade)+')':'none';logo.style.padding=(14*fade)+'px';}}
+  apply();window.addEventListener('scroll',function(){requestAnimationFrame(apply);},{passive:true});window.addEventListener('resize',function(){items=layout();apply();});
+})();
+</script>
+</body>
+</html>
