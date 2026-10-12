@@ -204,6 +204,20 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
 .stickybar span{font-size:.78rem;color:var(--dim)}
 .stickybar .cta{padding:.75rem 1.3rem;font-size:.7rem;white-space:nowrap}
 @keyframes bgSlide{0%,23%{opacity:0}7%,16%{opacity:.55}26%,100%{opacity:0}}
+/* motion system: scroll reveals, pointer tilt, card lift */
+html{scroll-behavior:smooth}
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,.7,.2,1)}
+[data-reveal].in{opacity:1;transform:none}
+[data-d="1"]{transition-delay:.09s}[data-d="2"]{transition-delay:.18s}[data-d="3"]{transition-delay:.27s}[data-d="4"]{transition-delay:.36s}
+.tilt{transform-style:preserve-3d;will-change:transform}
+@media(hover:hover) and (pointer:fine){
+  .path-card,.hcard{transition:transform .3s ease,box-shadow .3s ease}
+  .path-card:hover,.hcard:hover{transform:translateY(-4px)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  [data-reveal]{opacity:1;transform:none;transition:none}
+}
 @media(max-width:760px){
   header.site img.logo{height:56px}
   nav.desk a{display:none}
@@ -257,10 +271,10 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
 <div class="wrap">
 
   <section class="block" id="xray">
-    <p class="kicker">The X-Ray</p>
-    <h2 class="sec-title">Find your leak in 60 seconds.</h2>
-    <p class="sub">Answer four quick taps. We estimate where your processing bleeds: rate gaps, dead declines, chargebacks, hardware waste. Then we recommend a path. Illustrative math from industry averages, based on current information only. Not a quote, and not an analysis of your business. Your statement is the truth; this is the flashlight.</p>
-    <div class="xray-card" id="xrayCard">
+    <p class="kicker" data-reveal>The X-Ray</p>
+    <h2 class="sec-title" data-reveal data-d="1">Find your leak in 60 seconds.</h2>
+    <p class="sub" data-reveal data-d="2">Answer four quick taps. We estimate where your processing bleeds: rate gaps, dead declines, chargebacks, hardware waste. Then we recommend a path. Illustrative math from industry averages, based on current information only. Not a quote, and not an analysis of your business. Your statement is the truth; this is the flashlight.</p>
+    <div class="xray-card" id="xrayCard" data-reveal data-d="2">
       <div class="xray-progress"><i id="xbar"></i></div>
       <div class="xerr" id="xerr" role="alert"></div>
 
@@ -330,11 +344,11 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
   </section>
 
   <section class="block" id="paths">
-    <p class="kicker">Two paths</p>
-    <h2 class="sec-title">Pick your counter. Or your checkout.</h2>
-    <p class="sub">No rate-war pitch. One path for the physical counter, one for the online checkout, each with the tooling that protects it. Tap a card for the full spec.</p>
+    <p class="kicker" data-reveal>Two paths</p>
+    <h2 class="sec-title" data-reveal data-d="1">Pick your counter. Or your checkout.</h2>
+    <p class="sub" data-reveal data-d="2">No rate-war pitch. One path for the physical counter, one for the online checkout, each with the tooling that protects it. Tap a card for the full spec.</p>
     <div class="path-grid">
-      <div class="path-card" id="cardA" role="button" tabindex="0" aria-expanded="false">
+      <div class="path-card" id="cardA" data-reveal data-d="1" role="button" tabindex="0" aria-expanded="false">
         <p class="kicker">Path A · Everyday · Tip / Retail</p>
         <h3>Free Smart Flex if you qualify.</h3>
         <p>Payanywhere Smart Flex (PAX E600 Mini) for the everyday counter. Free under program guidelines when you qualify. Not everyone gets a free machine, and we say that upfront.</p>
@@ -347,7 +361,7 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
           <li><b>Promo:</b> board by Dec 15, 2026 → 90 days free Inovio, if you qualify</li>
         </ul></div>
       </div>
-      <div class="path-card" id="cardB" role="button" tabindex="0" aria-expanded="false">
+      <div class="path-card" id="cardB" data-reveal data-d="2" role="button" tabindex="0" aria-expanded="false">
         <p class="kicker">Path B · Online</p>
         <h3>Checkout that fights declines.</h3>
         <p>Embedded checkout + Inovio for online operators. No counter terminal you don&rsquo;t need. Just the tools that keep good cards from dying.</p>
@@ -360,16 +374,16 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
       </div>
     </div>
 
-    <p class="kicker" style="margin-top:2.4rem">Terminal playground</p>
+    <p class="kicker" style="margin-top:2.4rem" data-reveal>Terminal playground</p>
     <h2 class="sec-title" style="font-size:1.3rem">Build your counter.</h2>
-    <p class="sub">Tell us the scenario. We&rsquo;ll configure the setup. What you assemble here is what ships, if you qualify. One free terminal per physical location; $49.95 setup + $24.95/mo software apply on the Flex path.</p>
-    <div class="scen-row" id="scenRow">
+    <p class="sub" data-reveal data-d="1">Tell us the scenario. We&rsquo;ll configure the setup. What you assemble here is what ships, if you qualify. One free terminal per physical location; $49.95 setup + $24.95/mo software apply on the Flex path.</p>
+    <div class="scen-row" id="scenRow" data-reveal data-d="2">
       <button class="scen sel" data-scen="retail">Retail counter</button>
       <button class="scen" data-scen="restaurant">Restaurant + tips</button>
       <button class="scen" data-scen="mobile">On the move</button>
       <button class="scen" data-scen="flagship">Flagship / high volume</button>
     </div>
-    <div class="pg-stage">
+    <div class="pg-stage" data-reveal data-d="2">
       <div><img id="pgImg" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=25" alt="Recommended terminal" /></div>
       <div>
         <h3 id="pgName">Smart Flex</h3>
@@ -381,23 +395,23 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
   </section>
 
   <section class="block" id="numbers">
-    <p class="kicker">The program, in numbers</p>
-    <h2 class="sec-title">Real figures. No fairy dust.</h2>
-    <p class="sub">We don&rsquo;t publish approval rates we can&rsquo;t prove. Here&rsquo;s what the program actually is, in numbers we stand behind.</p>
+    <p class="kicker" data-reveal>The program, in numbers</p>
+    <h2 class="sec-title" data-reveal data-d="1">Real figures. No fairy dust.</h2>
+    <p class="sub" data-reveal data-d="2">We don&rsquo;t publish approval rates we can&rsquo;t prove. Here&rsquo;s what the program actually is, in numbers we stand behind.</p>
     <div class="stat-grid">
-      <div class="stat"><div class="n"><em>$49.95</em></div><p>One-time setup on the free Flex path. The device itself is free if you qualify. $24.95/mo software (+$8.95/mo cellular); $5/mo basic service and $25/mo minimums may apply. No lease.</p></div>
-      <div class="stat"><div class="n"><em>90</em> days</div><p>Free Inovio for merchants boarded Sep 15 to Dec 15, 2026, if you qualify.</p></div>
-      <div class="stat"><div class="n"><em>4</em> devices</div><p>PAX terminals in the family: Mini, Terminal, Flex, POS+. One quiz picks yours.</p></div>
-      <div class="stat"><div class="n"><em>48</em>h</div><p>Fit call within 24 to 48 hours of your X-Ray. A human, not a drip sequence.</p></div>
+      <div class="stat" data-reveal><div class="n"><em>$49.95</em></div><p>One-time setup on the free Flex path. The device itself is free if you qualify. $24.95/mo software (+$8.95/mo cellular); $5/mo basic service and $25/mo minimums may apply. No lease.</p></div>
+      <div class="stat" data-reveal data-d="1"><div class="n"><em>90</em> days</div><p>Free Inovio for merchants boarded Sep 15 to Dec 15, 2026, if you qualify.</p></div>
+      <div class="stat" data-reveal data-d="2"><div class="n"><em>4</em> devices</div><p>PAX terminals in the family: Mini, Terminal, Flex, POS+. One quiz picks yours.</p></div>
+      <div class="stat" data-reveal data-d="3"><div class="n"><em>48</em>h</div><p>Fit call within 24 to 48 hours of your X-Ray. A human, not a drip sequence.</p></div>
     </div>
   </section>
 
   <section class="block" id="nofineprint">
-    <p class="kicker">No fine print</p>
-    <h2 class="sec-title">What other processors bury, we publish.</h2>
-    <p class="sub">The industry runs on confusion: &ldquo;qualified rates&rdquo; that aren&rsquo;t, hardware leases dressed as freebies, jargon as a moat. Here&rsquo;s our position on all of it, in plain English.</p>
+    <p class="kicker" data-reveal>No fine print</p>
+    <h2 class="sec-title" data-reveal data-d="1">What other processors bury, we publish.</h2>
+    <p class="sub" data-reveal data-d="2">The industry runs on confusion: &ldquo;qualified rates&rdquo; that aren&rsquo;t, hardware leases dressed as freebies, jargon as a moat. Here&rsquo;s our position on all of it, in plain English.</p>
     <div class="qual-grid">
-      <div class="qual">
+      <div class="qual" data-reveal data-d="1">
         <h3>Who typically qualifies</h3>
         <ul>
           <li>US small businesses taking cards in person, online, or both</li>
@@ -407,7 +421,7 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
           <li>Okay with a fit call before any agreement. No instant-approval theater</li>
         </ul>
       </div>
-      <div class="qual no">
+      <div class="qual no" data-reveal data-d="2">
         <h3>Who we&rsquo;ll tell to walk</h3>
         <ul>
           <li>Existing Payanywhere merchants: the program covers new placements only</li>
@@ -418,7 +432,7 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
       </div>
     </div>
     <p class="sub" style="margin-top:1.2rem">Program terms, printed plainly: one free terminal per physical location. Equipment must activate within 60 days of approval (first $300+ batch deposited). Online volume over $85k/mo faces enhanced underwriting with extra documentation. Final qualification is determined in underwriting per NAB guidelines.</p>
-    <div class="acc" id="faq">
+    <div class="acc" id="faq" data-reveal data-d="2">
       <details open><summary>What is Inovio, plainly?</summary><div class="acc-body">Inovio is North&rsquo;s omnichannel payments gateway. Through it, eligible checkouts can use decline recycling, Ethoca/RDR and Order Insight alerts, 3DS2 authentication, and tokenization.</div></details>
       <details><summary>What does MDR mean?</summary><div class="acc-body">Merchant discount rate: the total percentage a processor takes from each card sale. Your statement shows a &ldquo;rate&rdquo;; your <i>effective</i> MDR (total fees ÷ total volume) is the real number. The X-Ray shows the dollars leaking; your effective MDR is total fees ÷ total volume on your statement.</div></details>
       <details><summary>What is decline recycling?</summary><div class="acc-body">When a card soft-declines (insufficient funds, do-not-honor), the system retries the authorization intelligently instead of letting a good sale die on the first attempt, where supported by the gateway.</div></details>
@@ -430,10 +444,10 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
   </section>
 
   <section class="block" id="window">
-    <p class="kicker">Real window</p>
-    <h2 class="sec-title">Board in window: 90 days free Inovio.</h2>
-    <p class="sub">Merchants boarded Sep 15 to Dec 15, 2026 get 90 days of Inovio free if you qualify. This timer is calendar-true. No fake countdown, ever.</p>
-    <div class="count" id="countdown" role="timer" aria-label="Time left in the promo window">
+    <p class="kicker" data-reveal>Real window</p>
+    <h2 class="sec-title" data-reveal data-d="1">Board in window: 90 days free Inovio.</h2>
+    <p class="sub" data-reveal data-d="2">Merchants boarded Sep 15 to Dec 15, 2026 get 90 days of Inovio free if you qualify. This timer is calendar-true. No fake countdown, ever.</p>
+    <div class="count" id="countdown" data-reveal data-d="2" role="timer" aria-label="Time left in the promo window">
       <div><b id="cd-d">–</b><span>days</span></div>
       <div><b id="cd-h">–</b><span>hours</span></div>
       <div><b id="cd-m">–</b><span>mins</span></div>
@@ -443,20 +457,20 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
   </section>
 
   <section class="block" id="human">
-    <p class="kicker">A human, actually</p>
-    <h2 class="sec-title">Talk to someone who&rsquo;s read a statement.</h2>
-    <p class="sub">Forms are fine. But money deserves a conversation. Pick your channel. A person answers, not a bot.</p>
+    <p class="kicker" data-reveal>A human, actually</p>
+    <h2 class="sec-title" data-reveal data-d="1">Talk to someone who&rsquo;s read a statement.</h2>
+    <p class="sub" data-reveal data-d="2">Forms are fine. But money deserves a conversation. Pick your channel. A person answers, not a bot.</p>
     <div class="human-grid">
-      <div class="hcard"><h3>Fit call</h3><p>24 to 48 hours after your X-Ray. Fifteen minutes, your statement on screen, straight answers.</p><a class="cta ghost" href="#xray" style="font-size:.68rem;padding:.8rem 1.3rem">Start my X-Ray</a></div>
-      <div class="hcard"><h3>Email</h3><p>Send your statement or your questions. A human replies. Email preferred.</p><a class="cta ghost" href="mailto:financegurilla@gmail.com?subject=Gurilla%20Finance%20question" style="font-size:.68rem;padding:.8rem 1.3rem">Email us</a></div>
+      <div class="hcard" data-reveal><h3>Fit call</h3><p>24 to 48 hours after your X-Ray. Fifteen minutes, your statement on screen, straight answers.</p><a class="cta ghost" href="#xray" style="font-size:.68rem;padding:.8rem 1.3rem">Start my X-Ray</a></div>
+      <div class="hcard" data-reveal data-d="1"><h3>Email</h3><p>Send your statement or your questions. A human replies. Email preferred.</p><a class="cta ghost" href="mailto:financegurilla@gmail.com?subject=Gurilla%20Finance%20question" style="font-size:.68rem;padding:.8rem 1.3rem">Email us</a></div>
       <div class="hcard" id="callCard" style="display:none"><h3>Call</h3><p>Prefer voice? Call now. If we miss you, we call back the same day.</p><a class="cta ghost" id="callLink" href="#" style="font-size:.68rem;padding:.8rem 1.3rem">Call now</a></div>
     </div>
   </section>
 
   <section class="block">
-    <h2 class="sec-title">Free POS path or modern checkout, <span class="accent">if you qualify.</span></h2>
-    <p class="sub">Run the X-Ray. Get your leak number, your path, and a fit call within 48 hours. Free device if you qualify. $49.95 setup + $24.95/mo software apply. Full terms in the No-fine-print section above. Or walk away knowing exactly where you stand. That&rsquo;s free too.</p>
-    <div class="cta-row"><a class="cta" href="#xray">X-Ray my processing</a></div>
+    <h2 class="sec-title" data-reveal>Free POS path or modern checkout, <span class="accent">if you qualify.</span></h2>
+    <p class="sub" data-reveal data-d="1">Run the X-Ray. Get your leak number, your path, and a fit call within 48 hours. Free device if you qualify. $49.95 setup + $24.95/mo software apply. Full terms in the No-fine-print section above. Or walk away knowing exactly where you stand. That&rsquo;s free too.</p>
+    <div class="cta-row" data-reveal data-d="2"><a class="cta" href="#xray">X-Ray my processing</a></div>
   </section>
 
   <footer>
@@ -542,17 +556,18 @@ function renderReport(){
   var L=calcLeak(),max=Math.max.apply(null,L.rows.map(function(r){return r.v;}));
   var num=document.getElementById("leakNum");
   var t0=null,dur=reduceMotion?1:1200;
-  function tick(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/dur);num.textContent=fmt(L.hi*p);if(p<1)requestAnimationFrame(tick);else num.textContent=fmt(L.lo)+" – "+fmt(L.hi);}
+  function tick(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/dur);var e=1-Math.pow(2,-10*p);num.textContent=fmt(L.hi*e);if(p<1)requestAnimationFrame(tick);else num.textContent=fmt(L.lo)+" – "+fmt(L.hi);}
   requestAnimationFrame(tick);
   document.getElementById("leakSub").textContent="Illustrative example based on current information only, not an analysis of your business. For "+CH_L[answers.channel].toLowerCase()+" · "+VOL_L[+answers.volume]+"/mo. Assumes ~0.9% effective-rate gap, ~1.2–2% decline loss, ~0.6% chargeback cost, ~$1,200/yr hardware waste. Your statement is the source of truth.";
   var wrap=document.getElementById("leakRows");wrap.innerHTML="";
-  L.rows.forEach(function(r){
+  L.rows.forEach(function(r,idx){
     var hl=(answers.pain==="declines"&&(r.k==="declines"||r.k==="declines2"))||(answers.pain==="chargebacks"&&r.k==="chargebacks")||(answers.pain==="fees"&&r.k==="fees");
     var div=document.createElement("div");div.className="lrow";
     div.innerHTML='<div class="lt"><b></b><span></span></div><div class="lbar'+(hl?" g":"")+'"><i></i></div>';
     div.querySelector("b").textContent=r.label;div.querySelector("span").textContent=fmt(r.v)+"/yr";
     wrap.appendChild(div);
-    requestAnimationFrame(function(){requestAnimationFrame(function(){div.querySelector("i").style.width=Math.max(4,(r.v/max*100))+"%";});});
+    var bar=div.querySelector("i");bar.style.transitionDelay=(idx*0.09)+"s";
+    requestAnimationFrame(function(){requestAnimationFrame(function(){bar.style.width=Math.max(4,(r.v/max*100))+"%";});});
   });
   var pick=document.getElementById("pathPick");
   if(answers.channel==="online"){pick.innerHTML="<b>Recommended: Path B, online checkout.</b><br /><span style=\"color:var(--dim);font-size:.88rem\">Embedded checkout + Inovio: decline recycling, 3DS2, Ethoca/RDR. No counter terminal you don&rsquo;t need.</span>";}
@@ -646,6 +661,27 @@ window.addEventListener("scroll",function(){requestAnimationFrame(sb);},{passive
 
 /* ---------- call card ---------- */
 if(GF_PHONE){var cc=document.getElementById("callCard");cc.style.display="";document.getElementById("callLink").href="tel:"+GF_PHONE;}
+
+/* ---------- scroll reveals (vanilla OffsetWindowReveal) ---------- */
+(function(){
+  var els=document.querySelectorAll("[data-reveal]");
+  if(!els.length)return;
+  if(reduceMotion||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:0.1,rootMargin:"0px 0px -6% 0px"});
+  els.forEach(function(e){io.observe(e);});
+})();
+
+/* ---------- pointer tilt on playground terminal (vanilla PointerTiltSurface) ---------- */
+(function(){
+  if(reduceMotion||!window.matchMedia("(hover:hover) and (pointer:fine)").matches)return;
+  var el=document.getElementById("pgImg");if(!el)return;
+  var wrap=el.closest(".pg-stage")||el.parentElement;wrap.style.perspective="1000px";el.classList.add("tilt");
+  var rx=0,ry=0,tx=0,ty=0,raf=null;
+  function loop(){rx+=(tx-rx)*0.14;ry+=(ty-ry)*0.14;el.style.transform="rotateX("+rx.toFixed(2)+"deg) rotateY("+ry.toFixed(2)+"deg)";if(Math.abs(tx-rx)>0.02||Math.abs(ty-ry)>0.02||tx!==0||ty!==0){raf=requestAnimationFrame(loop);}else{raf=null;el.style.transform="";}}
+  function kick(){if(!raf)raf=requestAnimationFrame(loop);}
+  wrap.addEventListener("pointermove",function(ev){var r=el.getBoundingClientRect();var px=(ev.clientX-r.left)/r.width-0.5,py=(ev.clientY-r.top)/r.height-0.5;ty=Math.max(-8,Math.min(8,px*14));tx=Math.max(-8,Math.min(8,-py*14));kick();});
+  wrap.addEventListener("pointerleave",function(){tx=0;ty=0;kick();});
+})();
 
 /* ---------- legacy hash ---------- */
 if(location.hash==="#quiz"){history.replaceState(null,"","#xray");document.getElementById("xray").scrollIntoView();}
