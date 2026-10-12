@@ -149,7 +149,13 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
 .scen-row{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0}
 .scen{background:var(--card2);border:1px solid var(--line);color:var(--paper);border-radius:999px;padding:.65rem 1.2rem;font-size:.8rem;letter-spacing:.06em;cursor:pointer;font-weight:600}
 .scen.sel{border-color:var(--accent);background:var(--accent-soft)}
-.pg-stage{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.6rem;display:grid;gap:1.2rem;align-items:center}
+.pg-stage{background:#0b0b0e;border:1px solid var(--line);border-radius:18px;padding:1.6rem;display:grid;gap:1.2rem;align-items:center;position:relative;overflow:hidden;isolation:isolate}
+.pg-bg{position:absolute;inset:0;z-index:0}
+.pg-stage .pg-bg img{position:absolute;inset:0;width:100%;height:100%;max-height:none;max-width:none;margin:0;object-fit:cover;object-position:center;opacity:0;transition:opacity .7s ease}
+.pg-stage .pg-bg img.on{opacity:1}
+.pg-stage::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(6,6,10,.9) 0%,rgba(6,6,10,.62) 48%,rgba(6,6,10,.3) 100%),linear-gradient(0deg,rgba(6,6,10,.55),transparent 45%);pointer-events:none}
+.pg-stage>*:not(.pg-bg){position:relative;z-index:2}
+.pg-stage img#pgImg{filter:drop-shadow(0 26px 50px rgba(0,0,0,.6))}
 @media(min-width:760px){.pg-stage{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}}
 .pg-stage img{max-height:300px;margin:0 auto;object-fit:contain}
 .pg-stage h3{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:1.3rem;margin-bottom:.5rem}
@@ -217,6 +223,7 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   [data-reveal]{opacity:1;transform:none;transition:none}
+  .pg-stage .pg-bg img{transition:none}
 }
 @media(max-width:760px){
   header.site img.logo{height:56px}
@@ -384,6 +391,7 @@ html{scroll-behavior:smooth}
       <button class="scen" data-scen="flagship">Flagship / high volume</button>
     </div>
     <div class="pg-stage" data-reveal data-d="2">
+      <div class="pg-bg" aria-hidden="true"><img id="pgBgA" class="on" src="img/scen-retail.jpg" alt="" /><img id="pgBgB" alt="" /></div>
       <div><img id="pgImg" src="PA_SmartFlexMini_FacingLeft_Retail.png?v=25" alt="Recommended terminal" /></div>
       <div>
         <h3 id="pgName">Smart Flex</h3>
@@ -610,22 +618,31 @@ document.getElementById("xsubmit").addEventListener("click",function(){
 
 /* ---------- playground ---------- */
 var SCEN={
-  retail:{img:"PA_SmartFlexMini_FacingLeft_Retail.png?v=25",name:"Smart Flex",why:"Dual screens for you and the customer: built for the everyday counter.",specs:["PAX E600 Mini: merchant + customer displays","Integrated printer + charging dock","Wi-Fi + 4G backup","Tip-ready, retail-ready"]},
-  restaurant:{img:"pax%20a77.png?v=25",name:"Smart Terminal Mini",why:"Tip-first and table-friendly. The compact Mini goes where the check goes.",specs:["PAX A60: compact Android terminal","Tip-ready for tables and counters","Wi-Fi + cellular options","Free placement if you qualify. $14.95/mo software, no setup fee"]},
-  mobile:{img:"A920Pro.Right_Retail.png?v=25",name:"Smart Terminal",why:"Printer in the hand, counter in the pocket, for business done anywhere.",specs:["PAX A920 Pro: built-in receipt printer","Rear camera + barcode scanner","Wi-Fi + 4G","All-day battery for the field"]},
-  flagship:{img:"E700-W-1-us-image.png?v=25",name:"Smart POS+",why:"The full station: big screens, big throughput, zero clutter.",specs:["PAX E700, 12.5\" + 4.3\" dual screens","Integrated printer","Wi-Fi + LAN","Built for high-volume counters"]}
+  retail:{img:"PA_SmartFlexMini_FacingLeft_Retail.png?v=25",bg:"img/scen-retail.jpg",name:"Smart Flex",why:"Dual screens for you and the customer: built for the everyday counter.",specs:["PAX E600 Mini: merchant + customer displays","Integrated printer + charging dock","Wi-Fi + 4G backup","Tip-ready, retail-ready"]},
+  restaurant:{img:"pax%20a77.png?v=25",bg:"img/scen-restaurant.jpg",name:"Smart Terminal Mini",why:"Tip-first and table-friendly. The compact Mini goes where the check goes.",specs:["PAX A60: compact Android terminal","Tip-ready for tables and counters","Wi-Fi + cellular options","Free placement if you qualify. $14.95/mo software, no setup fee"]},
+  mobile:{img:"A920Pro.Right_Retail.png?v=25",bg:"img/scen-mobile.jpg",name:"Smart Terminal",why:"Printer in the hand, counter in the pocket, for business done anywhere.",specs:["PAX A920 Pro: built-in receipt printer","Rear camera + barcode scanner","Wi-Fi + 4G","All-day battery for the field"]},
+  flagship:{img:"E700-W-1-us-image.png?v=25",bg:"img/scen-flagship.jpg",name:"Smart POS+",why:"The full station: big screens, big throughput, zero clutter.",specs:["PAX E700, 12.5\" + 4.3\" dual screens","Integrated printer","Wi-Fi + LAN","Built for high-volume counters"]}
 };
 document.querySelectorAll(".scen").forEach(function(b){
   b.addEventListener("click",function(){
     document.querySelectorAll(".scen").forEach(function(x){x.classList.remove("sel");});b.classList.add("sel");
     var s=SCEN[b.dataset.scen];var img=document.getElementById("pgImg");
     img.style.opacity=0;setTimeout(function(){img.src=s.img;img.alt=s.name;img.style.opacity=1;},reduceMotion?0:180);
+    setBg(s.bg);
     document.getElementById("pgName").textContent=s.name;
     document.getElementById("pgWhy").textContent=s.why;
     document.getElementById("pgSpecs").innerHTML=s.specs.map(function(x){return "<li>"+x+"</li>";}).join("");
   });
 });
 document.getElementById("pgSpecs").innerHTML=SCEN.retail.specs.map(function(x){return "<li>"+x+"</li>";}).join("");
+var pgBgA=document.getElementById("pgBgA"),pgBgB=document.getElementById("pgBgB"),bgFlip=false;
+function setBg(src){
+  var show=bgFlip?pgBgA:pgBgB,hide=bgFlip?pgBgB:pgBgA;bgFlip=!bgFlip;
+  var done=function(){show.classList.add("on");hide.classList.remove("on");};
+  show.onload=done;show.src=src;
+  if(show.complete&&show.naturalWidth>0)done();
+}
+Object.keys(SCEN).forEach(function(k){var im=new Image();im.src=SCEN[k].bg;});
 
 /* ---------- counters ---------- */
 var counted=false;
