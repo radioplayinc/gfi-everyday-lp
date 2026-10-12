@@ -2,3 +2,5 @@
 *.log
 .wrangler/
 node_modules/
+
+audit/
