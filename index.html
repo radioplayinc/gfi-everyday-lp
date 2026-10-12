@@ -19,12 +19,12 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"What is Inovio?","acceptedAnswer":{"@type":"Answer","text":"Inovio is the decline-fighting and chargeback toolkit Gurilla pairs with checkout: decline recycling, chargeback alerts (Ethoca/RDR and Order Insight), 3DS2 liability shift on eligible ecommerce transactions, and P2PE/tokenization to shrink PCI scope."}},
+{"@type":"Question","name":"What is Inovio?","acceptedAnswer":{"@type":"Answer","text":"Inovio is North's omnichannel payments gateway. Through it, eligible checkouts can use decline recycling, Ethoca/RDR and Order Insight alerts, 3DS2 authentication, and tokenization."}},
 {"@type":"Question","name":"What does MDR mean?","acceptedAnswer":{"@type":"Answer","text":"MDR (merchant discount rate) is the total percentage a processor takes from each card sale. Gurilla's X-Ray estimates your effective MDR from your volume so you can compare it against what you were quoted."}},
 {"@type":"Question","name":"What is decline recycling?","acceptedAnswer":{"@type":"Answer","text":"When a card is soft-declined (insufficient funds, do-not-honor), decline recycling retries the authorization intelligently instead of letting a good sale die on the first try."}},
 {"@type":"Question","name":"What is 3DS2?","acceptedAnswer":{"@type":"Answer","text":"3D Secure 2 is an authentication step for online payments that shifts fraud liability away from the merchant on eligible transactions, while keeping checkout friction low for legitimate buyers."}},
 {"@type":"Question","name":"What is Ethoca / RDR and Order Insight?","acceptedAnswer":{"@type":"Answer","text":"Ethoca alerts and Rapid Dispute Resolution (RDR), plus Visa Order Insight, share transaction data with issuers so disputes can be deflected or resolved before they become chargebacks."}},
-{"@type":"Question","name":"Who qualifies for the free POS?","acceptedAnswer":{"@type":"Answer","text":"Qualification depends on how you take cards, monthly card volume, and business type, confirmed on a fit call and in underwriting. Not every business qualifies, and Gurilla says so upfront rather than promising hardware to everyone."}}
+{"@type":"Question","name":"Who qualifies for the free POS?","acceptedAnswer":{"@type":"Answer","text":"Qualification depends on how you take cards, monthly card volume, and business type, confirmed on a fit call and in underwriting. New accounts only; excludes existing, seasonal, and pay-as-you-go mobile merchants. One free terminal per physical location; equipment must activate within 60 days of approval. The device is free if you qualify; a $49.95 setup fee and $24.95/mo software fee apply."}}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -238,7 +238,7 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
     <div class="bg-slides" aria-hidden="true"><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div></div>
     <div class="bg-veil"></div>
     <div class="scatter" id="scatter">
-      <div class="p p1"><div class="tip"><img src="pax%20a77.png?v=25" alt="" /><b>Smart Terminal Mini</b><span>PAX A77</span><ul><li>5.5&quot; Android touchscreen</li><li>Built-in barcode scanner</li><li>Wi-Fi + 4G backup</li></ul></div><img src="pax%20a77.png?v=25" alt="Smart Terminal Mini" /><div class="pname">Mini</div></div>
+      <div class="p p1"><div class="tip"><img src="pax%20a77.png?v=25" alt="" /><b>Smart Terminal Mini</b><span>PAX A60</span><ul><li>Compact Android terminal</li><li>Tip-ready for tables &amp; counters</li><li>Wi-Fi + cellular options</li></ul></div><img src="pax%20a77.png?v=25" alt="Smart Terminal Mini" /><div class="pname">Mini</div></div>
       <div class="p p2"><div class="tip"><img src="A920Pro.Right_Retail.png?v=25" alt="" /><b>Smart Terminal</b><span>PAX A920 Pro</span><ul><li>Built-in receipt printer</li><li>Rear camera + scanner</li><li>Wi-Fi + 4G</li></ul></div><img src="A920Pro.Right_Retail.png?v=25" alt="Smart Terminal" /><div class="pname">Terminal</div></div>
       <div class="logo"><img src="IMG_9090.png?v=25" alt="Gurilla Finance" /></div>
       <div class="p p3"><div class="tip"><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=25" alt="" /><b>Smart Flex</b><span>PAX E600 Mini</span><ul><li>Merchant + customer screens</li><li>Printer + charging dock</li><li>Wi-Fi + 4G</li></ul></div><img src="PA_SmartFlexMini_FacingLeft_Retail.png?v=25" alt="Smart Flex" /><div class="pname">Flex</div></div>
@@ -249,7 +249,7 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
       <p>Sixty seconds. Four taps. We show you where your card processing quietly bleeds — then tell you straight whether we can fix it, or whether you should walk.</p>
       <a class="cta" href="#xray">X-Ray my processing</a>
     </div>
-    <div class="hero-dock"><div class="offer">Free POS if you qualify · Official Payanywhere</div><div class="scrollcue">Scroll</div></div>
+    <div class="hero-dock"><div class="offer">Free POS if you qualify · Independent Payanywhere Sales Partner</div><div class="scrollcue">Scroll</div></div>
   </div>
 </div>
 
@@ -258,7 +258,7 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
   <section class="block" id="xray">
     <p class="kicker">The X-Ray</p>
     <h2 class="sec-title">Find your leak in 60 seconds.</h2>
-    <p class="sub">Answer four quick taps. We estimate where your processing bleeds — rate gap, dead declines, chargebacks, hardware waste — and recommend a path. Indicative math from industry averages, not a quote. Your statement is the truth; this is the flashlight.</p>
+    <p class="sub">Answer four quick taps. We estimate where your processing bleeds — rate gap, dead declines, chargebacks, hardware waste — and recommend a path. Illustrative math from industry averages, based on current information only — not a quote and not an analysis of your business. Your statement is the truth; this is the flashlight.</p>
     <div class="xray-card" id="xrayCard">
       <div class="xray-progress"><i id="xbar"></i></div>
       <div class="xerr" id="xerr" role="alert"></div>
@@ -307,7 +307,7 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
           <div class="full"><label for="xf-notes">Anything we should know <span style="text-transform:none;letter-spacing:0">(optional)</span></label><input id="xf-notes" name="notes" /></div>
         </div>
         <div class="xnav"><button class="xback" data-back="3">← Back</button><button class="cta" id="xsubmit">See my X-Ray</button></div>
-        <p class="fine">Indicative only — not approval, pricing, free hardware, or funding. Equipment and promos only if you qualify. Fit call within 24–48 hours. Agreement comes after review — no live e-sign on this page. You can walk if we can&rsquo;t structure a fit.</p>
+        <p class="fine">Indicative only — not approval, pricing, free hardware, or funding. Free-device path: $49.95 one-time setup + $24.95/mo software (+$8.95/mo cellular) apply; $5/mo basic service and $25/mo minimum discount fees may apply (minimums waived with flat-rate pricing). Equipment and promos only if you qualify. Fit call within 24–48 hours. Agreement comes after review — no live e-sign on this page. You can walk if we can&rsquo;t structure a fit.</p>
       </div>
 
       <div class="xstep" data-step="5">
@@ -339,8 +339,10 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
         <p>Payanywhere Smart Flex (PAX E600 Mini) for the everyday counter. Free under program guidelines when you qualify — not everyone gets a free machine, and we say that upfront.</p>
         <div class="path-specs"><ul>
           <li><b>Hardware:</b> Smart Flex E600 Mini — merchant + customer screens, printer + charging dock, Wi-Fi + 4G</li>
-          <li><b>Tip-first alt:</b> Smart Terminal Mini (PAX A77) — 5.5&quot; Android, barcode scanner, Wi-Fi + 4G backup</li>
-          <li><b>Stack:</b> decline recycling + chargeback alerts on eligible volume</li>
+          <li><b>Tip-first alt:</b> Smart Terminal Mini (PAX A60) — compact Android terminal, tip-ready</li>
+          <li><b>Stack:</b> decline recycling + chargeback alerts where supported by the gateway, on eligible volume</li>
+          <li><b>Fees:</b> $49.95 one-time setup, $24.95/mo software (+$8.95/mo cellular); $5/mo basic service + $25/mo minimum discount fees may apply (minimums waived with flat-rate pricing)</li>
+          <li><b>Eligibility:</b> new accounts only; one free terminal per physical location; activate (first $300+ batch) within 60 days of approval</li>
           <li><b>Promo:</b> board by Dec 15, 2026 → 90 days free Inovio, if you qualify</li>
         </ul></div>
       </div>
@@ -359,7 +361,7 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
 
     <p class="kicker" style="margin-top:2.4rem">Terminal playground</p>
     <h2 class="sec-title" style="font-size:1.3rem">Build your counter.</h2>
-    <p class="sub">Tell us the scenario — we&rsquo;ll configure the setup. What you assemble here is what ships, if you qualify.</p>
+    <p class="sub">Tell us the scenario — we&rsquo;ll configure the setup. What you assemble here is what ships, if you qualify. One free terminal per physical location; $49.95 setup + $24.95/mo software apply on the Flex path.</p>
     <div class="scen-row" id="scenRow">
       <button class="scen sel" data-scen="retail">Retail counter</button>
       <button class="scen" data-scen="restaurant">Restaurant + tips</button>
@@ -382,7 +384,7 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
     <h2 class="sec-title">Real figures. No fairy dust.</h2>
     <p class="sub">We don&rsquo;t publish approval rates we can&rsquo;t prove. Here&rsquo;s what the program actually is, in numbers we stand behind.</p>
     <div class="stat-grid">
-      <div class="stat"><div class="n"><em>$0</em></div><p>Upfront hardware cost on the free Flex path — if you qualify. No lease trap.</p></div>
+      <div class="stat"><div class="n"><em>$49.95</em></div><p>One-time setup on the free Flex path — the device itself is free if you qualify. $24.95/mo software (+$8.95/mo cellular); $5/mo basic service and $25/mo minimums may apply. No lease.</p></div>
       <div class="stat"><div class="n"><em>90</em> days</div><p>Free Inovio for merchants boarded Sep 15 – Dec 15, 2026, if you qualify.</p></div>
       <div class="stat"><div class="n"><em>4</em> devices</div><p>PAX terminals in the family: Mini, Terminal, Flex, POS+. One quiz picks yours.</p></div>
       <div class="stat"><div class="n"><em>48</em>h</div><p>Fit call within 24–48 hours of your X-Ray. A human, not a drip sequence.</p></div>
@@ -400,25 +402,29 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
           <li>US small businesses taking cards in person, online, or both</li>
           <li>Steady monthly card volume (the X-Ray bands it in 60 seconds)</li>
           <li>Retail, restaurant, services, professional / B2B</li>
+          <li>New accounts only — existing merchants aren&rsquo;t eligible for free placement</li>
           <li>Okay with a fit call before any agreement — no instant-approval theater</li>
         </ul>
       </div>
       <div class="qual no">
         <h3>Who we&rsquo;ll tell to walk</h3>
         <ul>
-          <li>Businesses we can&rsquo;t underwrite — we&rsquo;d rather say no than fake a yes</li>
+          <li>Existing Payanywhere merchants — the program covers new placements only</li>
+          <li>Seasonal businesses and pay-as-you-go mobile (different program, flat $50 activation)</li>
           <li>Anyone expecting guaranteed approval or a locked rate before review</li>
           <li>Models outside card acceptance (we&rsquo;re payments, not a bank)</li>
         </ul>
       </div>
     </div>
+    <p class="sub" style="margin-top:1.2rem">Program terms, printed plainly: one free terminal per physical location. Equipment must activate — first $300+ batch deposited — within 60 days of approval. Online volume over $85k/mo faces enhanced underwriting with extra documentation. Final qualification is determined in underwriting per NAB guidelines.</p>
     <div class="acc" id="faq">
-      <details open><summary>What is Inovio, plainly?</summary><div class="acc-body">The decline-fighting and chargeback toolkit we pair with checkout: decline recycling, chargeback alerts (Ethoca/RDR and Order Insight), 3DS2 liability shift on eligible ecommerce transactions, and P2PE/tokenization to shrink your PCI scope.</div></details>
-      <details><summary>What does MDR mean?</summary><div class="acc-body">Merchant discount rate — the total percentage a processor takes from each card sale. Your statement shows a &ldquo;rate&rdquo;; your <i>effective</i> MDR (total fees ÷ total volume) is the real number. The X-Ray estimates it from your volume band.</div></details>
-      <details><summary>What is decline recycling?</summary><div class="acc-body">When a card soft-declines (insufficient funds, do-not-honor), the system retries the authorization intelligently instead of letting a good sale die on the first attempt.</div></details>
-      <details><summary>What is 3DS2?</summary><div class="acc-body">3D Secure 2 adds an authentication step to online payments that shifts fraud liability away from you on eligible transactions — while staying low-friction for legitimate buyers.</div></details>
-      <details><summary>What are Ethoca / RDR and Order Insight?</summary><div class="acc-body">Ethoca alerts and Rapid Dispute Resolution share transaction data with card issuers so disputes can be deflected or resolved before they become chargebacks. Order Insight does the same inside Visa&rsquo;s network.</div></details>
-      <details><summary>Is the POS really free?</summary><div class="acc-body">The Smart Flex is free under program guidelines <i>if you qualify</i> — confirmed on the fit call and in underwriting. No lease, no &ldquo;free*&rdquo; with a 48-month asterisk. If you don&rsquo;t qualify, we tell you that instead of switching the offer mid-call.</div></details>
+      <details open><summary>What is Inovio, plainly?</summary><div class="acc-body">Inovio is North&rsquo;s omnichannel payments gateway. Through it, eligible checkouts can use decline recycling, Ethoca/RDR and Order Insight alerts, 3DS2 authentication, and tokenization.</div></details>
+      <details><summary>What does MDR mean?</summary><div class="acc-body">Merchant discount rate — the total percentage a processor takes from each card sale. Your statement shows a &ldquo;rate&rdquo;; your <i>effective</i> MDR (total fees ÷ total volume) is the real number. The X-Ray shows the dollars leaking; your effective MDR is total fees ÷ total volume on your statement.</div></details>
+      <details><summary>What is decline recycling?</summary><div class="acc-body">When a card soft-declines (insufficient funds, do-not-honor), the system retries the authorization intelligently instead of letting a good sale die on the first attempt — where supported by the gateway.</div></details>
+      <details><summary>What is 3DS2?</summary><div class="acc-body">3D Secure 2 adds an authentication step to online payments. Properly authenticated transactions may qualify for liability shift on eligible transactions — confirmed in underwriting.</div></details>
+      <details><summary>What are Ethoca / RDR and Order Insight?</summary><div class="acc-body">Ethoca alerts and Rapid Dispute Resolution share transaction data with card issuers. Alerts let you refund a sale before it becomes a chargeback; RDR auto-resolves within issuer rules (the refund amount applies). Order Insight does the same inside Visa&rsquo;s network.</div></details>
+      <details><summary>Is the POS really free?</summary><div class="acc-body">The Smart Flex <i>device</i> is free under program guidelines <i>if you qualify</i> — confirmed on the fit call and in underwriting. What&rsquo;s not free: $49.95 one-time setup, $24.95/mo software fee (+$8.95/mo cellular if used), $5/mo basic service fee, and a $25/mo minimum discount fee (minimums waived with flat-rate pricing). No lease, no 48-month asterisk — but the fees above are real, so we print them here. If you don&rsquo;t qualify, we tell you that instead of switching the offer mid-call.</div></details>
+      <details><summary>What does PCI compliance cost?</summary><div class="acc-body">PCI compliance is handled through PCI Plus, automatic on enrollment. Fees start in month 4 — $15 to $85/mo depending on tier — and show on your statement.</div></details>
     </div>
   </section>
 
@@ -448,13 +454,14 @@ footer .note{margin-top:1rem;font-size:.7rem;color:#5c5c58;max-width:60rem;line-
 
   <section class="block">
     <h2 class="sec-title">Free POS path or modern checkout — <span class="accent">if you qualify.</span></h2>
-    <p class="sub">Run the X-Ray. Get your leak number, your path, and a fit call within 48 hours. Or walk away knowing exactly where you stand — that&rsquo;s free too.</p>
+    <p class="sub">Run the X-Ray. Get your leak number, your path, and a fit call within 48 hours. Free device if you qualify — $49.95 setup + $24.95/mo software apply; full terms in the No-fine-print section above. Or walk away knowing exactly where you stand — that&rsquo;s free too.</p>
     <div class="cta-row"><a class="cta" href="#xray">X-Ray my processing</a></div>
   </section>
 
   <footer>
     <div class="frow"><div>© 2026 Gurilla Finance</div><div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div></div>
-    <p class="note">Gurilla Finance helps small businesses evaluate payment processing options. Equipment, promos, and funding are subject to qualification and underwriting; nothing on this page is an offer of credit. Estimates shown by the X-Ray are indicative illustrations from industry averages, not quotes. Gurilla Finance is a payments consultancy — not affiliated with any cryptocurrency or token project.</p>
+    <p class="note">Gurilla Finance is an independent Sales Partner of North. ©2024 North is a registered DBA of North American Bancard, LLC, a registered ISO of BMO Harris Bank N.A., Chicago, IL, Citizens Bank N.A., Providence, RI, The Bancorp Bank, Philadelphia, PA, and FBB Bank, Fresno, CA.</p>
+    <p class="note">Gurilla Finance helps small businesses evaluate payment processing options. Equipment, promos, and funding are subject to qualification and underwriting; nothing on this page is an offer of credit. Estimates shown by the X-Ray are illustrative examples based on current information only, not quotes or analyses of your business. Gurilla Finance is a payments consultancy — not affiliated with any cryptocurrency or token project.</p>
   </footer>
 </div>
 
@@ -537,7 +544,7 @@ function renderReport(){
   var t0=null,dur=reduceMotion?1:1200;
   function tick(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/dur);num.textContent=fmt(L.hi*p);if(p<1)requestAnimationFrame(tick);else num.textContent=fmt(L.lo)+" – "+fmt(L.hi);}
   requestAnimationFrame(tick);
-  document.getElementById("leakSub").textContent="Estimated annual leak for "+CH_L[answers.channel].toLowerCase()+" · "+VOL_L[+answers.volume]+"/mo. Indicative range from industry averages — your statement is the truth; this is the flashlight.";
+  document.getElementById("leakSub").textContent="Illustrative example based on current information only — not an analysis of your business. For "+CH_L[answers.channel].toLowerCase()+" · "+VOL_L[+answers.volume]+"/mo. Assumes ~0.9% effective-rate gap, ~1.2–2% decline loss, ~0.6% chargeback cost, ~$1,200/yr hardware waste. Your statement is the source of truth.";
   var wrap=document.getElementById("leakRows");wrap.innerHTML="";
   L.rows.forEach(function(r){
     var hl=(answers.pain==="declines"&&(r.k==="declines"||r.k==="declines2"))||(answers.pain==="chargebacks"&&r.k==="chargebacks")||(answers.pain==="fees"&&r.k==="fees");
@@ -549,7 +556,7 @@ function renderReport(){
   });
   var pick=document.getElementById("pathPick");
   if(answers.channel==="online"){pick.innerHTML="<b>Recommended: Path B — Online checkout.</b><br /><span style=\"color:var(--dim);font-size:.88rem\">Embedded checkout + Inovio: decline recycling, 3DS2, Ethoca/RDR. No counter terminal you don&rsquo;t need.</span>";}
-  else{var dev=answers.pain==="fees"?"Smart Flex (PAX E600 Mini)":"Smart Flex (PAX E600 Mini)";pick.innerHTML="<b>Recommended: Path A — "+dev+".</b><br /><span style=\"color:var(--dim);font-size:.88rem\">Free under program guidelines if you qualify. Your biggest pain — "+PAIN_L[answers.pain].toLowerCase()+" — is exactly what the stack is built to fight.</span>";}
+  else{var dev=answers.pain==="fees"?"Smart Flex (PAX E600 Mini)":"Smart Flex (PAX E600 Mini)";pick.innerHTML="<b>Recommended: Path A — "+dev+".</b><br /><span style=\"color:var(--dim);font-size:.88rem\">Free device if you qualify — $49.95 setup + $24.95/mo software (+$8.95/mo cellular) apply. Your biggest pain — "+PAIN_L[answers.pain].toLowerCase()+" — is exactly what the stack is built to fight.</span>";}
 }
 
 /* ---------- submit ---------- */
@@ -589,7 +596,7 @@ document.getElementById("xsubmit").addEventListener("click",function(){
 /* ---------- playground ---------- */
 var SCEN={
   retail:{img:"PA_SmartFlexMini_FacingLeft_Retail.png?v=25",name:"Smart Flex",why:"Dual screens for you and the customer — built for the everyday counter.",specs:["PAX E600 Mini — merchant + customer displays","Integrated printer + charging dock","Wi-Fi + 4G backup","Tip-ready, retail-ready"]},
-  restaurant:{img:"pax%20a77.png?v=25",name:"Smart Terminal Mini",why:"Tip-first and table-friendly — the A77 goes where the check goes.",specs:["PAX A77 — 5.5\" Android touchscreen","Built-in barcode scanner","Wi-Fi + 4G backup","Tip adjust on device"]},
+  restaurant:{img:"pax%20a77.png?v=25",name:"Smart Terminal Mini",why:"Tip-first and table-friendly — the compact Mini goes where the check goes.",specs:["PAX A60 — compact Android terminal","Tip-ready for tables and counters","Wi-Fi + cellular options","Free placement if you qualify — $14.95/mo software, no setup fee"]},
   mobile:{img:"A920Pro.Right_Retail.png?v=25",name:"Smart Terminal",why:"Printer in the hand, counter in the pocket — for business done anywhere.",specs:["PAX A920 Pro — built-in receipt printer","Rear camera + barcode scanner","Wi-Fi + 4G","All-day battery for the field"]},
   flagship:{img:"E700-W-1-us-image.png?v=25",name:"Smart POS+",why:"The full station — big screens, big throughput, zero clutter.",specs:["PAX E700 — 12.5\" + 4.3\" dual screens","Integrated printer","Wi-Fi + LAN","Built for high-volume counters"]}
 };
