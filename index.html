@@ -153,6 +153,12 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
 .pg-bg{position:absolute;inset:0;z-index:0}
 .pg-stage .pg-bg img{position:absolute;inset:0;width:100%;height:100%;max-height:none;max-width:none;margin:0;object-fit:cover;object-position:center;opacity:0;transition:opacity .7s ease}
 .pg-stage .pg-bg img.on{opacity:1}
+/* photo-backed cards */
+.has-photo{position:relative;overflow:hidden;isolation:isolate}
+.has-photo .cbg{position:absolute;inset:0;z-index:0}
+.has-photo .cbg img{width:100%;height:100%;object-fit:cover;display:block;opacity:.5}
+.has-photo::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,6,10,.74),rgba(6,6,10,.52));pointer-events:none}
+.has-photo>*:not(.cbg){position:relative;z-index:2}
 .pg-stage::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(6,6,10,.9) 0%,rgba(6,6,10,.62) 48%,rgba(6,6,10,.3) 100%),linear-gradient(0deg,rgba(6,6,10,.55),transparent 45%);pointer-events:none}
 .pg-stage>*:not(.pg-bg){position:relative;z-index:2}
 .pg-stage img#pgImg{filter:drop-shadow(0 26px 50px rgba(0,0,0,.6))}
@@ -355,7 +361,8 @@ html{scroll-behavior:smooth}
     <h2 class="sec-title" data-reveal data-d="1">Pick your counter. Or your checkout.</h2>
     <p class="sub" data-reveal data-d="2">No rate-war pitch. One path for the physical counter, one for the online checkout, each with the tooling that protects it. Tap a card for the full spec.</p>
     <div class="path-grid">
-      <div class="path-card" id="cardA" data-reveal data-d="1" role="button" tabindex="0" aria-expanded="false">
+      <div class="path-card has-photo" id="cardA" data-reveal data-d="1" role="button" tabindex="0" aria-expanded="false">
+        <div class="cbg" aria-hidden="true"><img src="img/card-patha.jpg" alt="" loading="lazy" decoding="async" /></div>
         <p class="kicker">Path A · Everyday · Tip / Retail</p>
         <h3>Free Smart Flex if you qualify.</h3>
         <p>Payanywhere Smart Flex (PAX E600 Mini) for the everyday counter. Free under program guidelines when you qualify. Not everyone gets a free machine, and we say that upfront.</p>
@@ -368,7 +375,8 @@ html{scroll-behavior:smooth}
           <li><b>Promo:</b> board by Dec 15, 2026 → 90 days free Inovio, if you qualify</li>
         </ul></div>
       </div>
-      <div class="path-card" id="cardB" data-reveal data-d="2" role="button" tabindex="0" aria-expanded="false">
+      <div class="path-card has-photo" id="cardB" data-reveal data-d="2" role="button" tabindex="0" aria-expanded="false">
+        <div class="cbg" aria-hidden="true"><img src="img/card-pathb.jpg" alt="" loading="lazy" decoding="async" /></div>
         <p class="kicker">Path B · Online</p>
         <h3>Checkout that fights declines.</h3>
         <p>Embedded checkout + Inovio for online operators. No counter terminal you don&rsquo;t need. Just the tools that keep good cards from dying.</p>
@@ -407,10 +415,10 @@ html{scroll-behavior:smooth}
     <h2 class="sec-title" data-reveal data-d="1">Real figures. No fairy dust.</h2>
     <p class="sub" data-reveal data-d="2">We don&rsquo;t publish approval rates we can&rsquo;t prove. Here&rsquo;s what the program actually is, in numbers we stand behind.</p>
     <div class="stat-grid">
-      <div class="stat" data-reveal><div class="n"><em>$49.95</em></div><p>One-time setup on the free Flex path. The device itself is free if you qualify. $24.95/mo software (+$8.95/mo cellular); $5/mo basic service and $25/mo minimums may apply. No lease.</p></div>
-      <div class="stat" data-reveal data-d="1"><div class="n"><em>90</em> days</div><p>Free Inovio for merchants boarded Sep 15 to Dec 15, 2026, if you qualify.</p></div>
-      <div class="stat" data-reveal data-d="2"><div class="n"><em>4</em> devices</div><p>PAX terminals in the family: Mini, Terminal, Flex, POS+. One quiz picks yours.</p></div>
-      <div class="stat" data-reveal data-d="3"><div class="n"><em>48</em>h</div><p>Fit call within 24 to 48 hours of your X-Ray. A human, not a drip sequence.</p></div>
+      <div class="stat has-photo" data-reveal><div class="cbg" aria-hidden="true"><img src="img/card-setup.jpg" alt="" loading="lazy" decoding="async" /></div><div class="n"><em>$49.95</em></div><p>One-time setup on the free Flex path. The device itself is free if you qualify. $24.95/mo software (+$8.95/mo cellular); $5/mo basic service and $25/mo minimums may apply. No lease.</p></div>
+      <div class="stat has-photo" data-reveal data-d="1"><div class="cbg" aria-hidden="true"><img src="img/card-inovio.jpg" alt="" loading="lazy" decoding="async" /></div><div class="n"><em>90</em> days</div><p>Free Inovio for merchants boarded Sep 15 to Dec 15, 2026, if you qualify.</p></div>
+      <div class="stat has-photo" data-reveal data-d="2"><div class="cbg" aria-hidden="true"><img src="img/card-devices.jpg" alt="" loading="lazy" decoding="async" /></div><div class="n"><em>4</em> devices</div><p>PAX terminals in the family: Mini, Terminal, Flex, POS+. One quiz picks yours.</p></div>
+      <div class="stat has-photo" data-reveal data-d="3"><div class="cbg" aria-hidden="true"><img src="img/card-human.jpg" alt="" loading="lazy" decoding="async" /></div><div class="n"><em>48</em>h</div><p>Fit call within 24 to 48 hours of your X-Ray. A human, not a drip sequence.</p></div>
     </div>
   </section>
 
@@ -419,7 +427,8 @@ html{scroll-behavior:smooth}
     <h2 class="sec-title" data-reveal data-d="1">What other processors bury, we publish.</h2>
     <p class="sub" data-reveal data-d="2">The industry runs on confusion: &ldquo;qualified rates&rdquo; that aren&rsquo;t, hardware leases dressed as freebies, jargon as a moat. Here&rsquo;s our position on all of it, in plain English.</p>
     <div class="qual-grid">
-      <div class="qual" data-reveal data-d="1">
+      <div class="qual has-photo" data-reveal data-d="1">
+        <div class="cbg" aria-hidden="true"><img src="img/card-qualifies.jpg" alt="" loading="lazy" decoding="async" /></div>
         <h3>Who typically qualifies</h3>
         <ul>
           <li>US small businesses taking cards in person, online, or both</li>
@@ -429,7 +438,8 @@ html{scroll-behavior:smooth}
           <li>Okay with a fit call before any agreement. No instant-approval theater</li>
         </ul>
       </div>
-      <div class="qual no" data-reveal data-d="2">
+      <div class="qual no has-photo" data-reveal data-d="2">
+        <div class="cbg" aria-hidden="true"><img src="img/card-walk.jpg" alt="" loading="lazy" decoding="async" /></div>
         <h3>Who we&rsquo;ll tell to walk</h3>
         <ul>
           <li>Existing Payanywhere merchants: the program covers new placements only</li>
@@ -469,8 +479,8 @@ html{scroll-behavior:smooth}
     <h2 class="sec-title" data-reveal data-d="1">Talk to someone who&rsquo;s read a statement.</h2>
     <p class="sub" data-reveal data-d="2">Forms are fine. But money deserves a conversation. Pick your channel. A person answers, not a bot.</p>
     <div class="human-grid">
-      <div class="hcard" data-reveal><h3>Fit call</h3><p>24 to 48 hours after your X-Ray. Fifteen minutes, your statement on screen, straight answers.</p><a class="cta ghost" href="#xray" style="font-size:.68rem;padding:.8rem 1.3rem">Start my X-Ray</a></div>
-      <div class="hcard" data-reveal data-d="1"><h3>Email</h3><p>Send your statement or your questions. A human replies. Email preferred.</p><a class="cta ghost" href="mailto:financegurilla@gmail.com?subject=Gurilla%20Finance%20question" style="font-size:.68rem;padding:.8rem 1.3rem">Email us</a></div>
+      <div class="hcard has-photo" data-reveal><div class="cbg" aria-hidden="true"><img src="img/card-fitcall.jpg" alt="" loading="lazy" decoding="async" /></div><h3>Fit call</h3><p>24 to 48 hours after your X-Ray. Fifteen minutes, your statement on screen, straight answers.</p><a class="cta ghost" href="#xray" style="font-size:.68rem;padding:.8rem 1.3rem">Start my X-Ray</a></div>
+      <div class="hcard has-photo" data-reveal data-d="1"><div class="cbg" aria-hidden="true"><img src="img/card-email.jpg" alt="" loading="lazy" decoding="async" /></div><h3>Email</h3><p>Send your statement or your questions. A human replies. Email preferred.</p><a class="cta ghost" href="mailto:financegurilla@gmail.com?subject=Gurilla%20Finance%20question" style="font-size:.68rem;padding:.8rem 1.3rem">Email us</a></div>
       <div class="hcard" id="callCard" style="display:none"><h3>Call</h3><p>Prefer voice? Call now. If we miss you, we call back the same day.</p><a class="cta ghost" id="callLink" href="#" style="font-size:.68rem;padding:.8rem 1.3rem">Call now</a></div>
     </div>
   </section>
